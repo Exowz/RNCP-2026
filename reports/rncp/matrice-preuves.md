@@ -13,10 +13,10 @@ Legende : 🟢 prouve et reproductible · 🟡 amorce, preuve a completer · ⚪
 | C7 | 🟢 | Benchmark de services retenus/ecartes, dont sobriete et hors ligne. | `docs/benchmark.md` |
 | C8 | 🟢 | LM Studio local, modele charge, acces HTTP, test et metriques. | `docs/service-ia.md`, `tests/model/test_lm_studio_service.py` |
 | C9 | 🟢 | API modele authentifiee, OpenAPI et contrats d'entree/sortie testes. | `docs/api-modele.md`, `tests/api/test_api_modele.py` |
-| C10 | 🟡 | Appel HTTP reel app → API, degradation prevue. | `app/`, [annexe demo](../annexes/demo-verticale-2026-08-24.md) |
+| C10 | 🟢 | Appel HTTP reel app → API, degradation et restitution accessible ; parcours Docker journalise. | `app/`, `docs/specs-fonctionnelles.md`, `reports/annexes/livraison-docker-2026-08-24.md` |
 | C11 | 🟢 | Metriques qualite, derive Evidently, latence/erreurs et alertes. | `docs/monitoring-modele.md`, `scripts/monitor_model.py` |
-| C12 | 🟡 | Tests data, Spark, PostgreSQL, auth et contrat prediction ; couverture entrainement a completer. | `pytest -q`, `tests/` |
-| C13 | 🟡 | Workflow CI execute : fixtures, collecte, entrainement, tests et lint ; packaging/livraison a finaliser. | `.github/workflows/verify.yml`, `docs/ci.md` |
+| C12 | 🟢 | Tests data, Spark, PostgreSQL, API, validation, entrainement, evaluation et rechargement d'artefact. | `tests/model/test_entrainement.py`, `pytest -m "not local_service"` |
+| C13 | 🟢 | Pipeline GitHub execute : tests, entrainement, evaluation, build Python et artefact modele livre. | [run 32777222782](https://github.com/Exowz/RNCP-2026/actions/runs/32777222782), `docs/ci.md` |
 | C14 | 🟢 | Personas, user stories, acceptation et exigences WCAG/RGAA explicites. | `docs/specs-fonctionnelles.md` |
 | C15 | 🟢 | Architecture, flux, dependances, POC et contrainte hors ligne documentes. | `docs/architecture.md` |
 | C16 | 🟡 | Pilotage individuel, tableau, Definition of Done, risques et REX ; limite collectif assumee. | `docs/pilotage.md` |
