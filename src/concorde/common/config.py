@@ -37,6 +37,8 @@ class Settings(BaseSettings):
     app_port: int = 8000
     model_api_url: str = "http://127.0.0.1:8002"
     data_api_url: str = "http://127.0.0.1:8001"
+    lm_studio_url: str = "http://127.0.0.1:1234/v1"
+    lm_studio_model: str = "google/gemma-4-e4b"
 
     # --- Securite (C17) ---
     api_keys: str = Field(

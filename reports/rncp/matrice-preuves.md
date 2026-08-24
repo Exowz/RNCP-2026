@@ -9,9 +9,9 @@ Legende : 🟢 prouve et reproductible · 🟡 amorce, preuve a completer · ⚪
 | C3 | 🟢 | Nettoyage DVF/DPE, jointure et tableau avant/apres. | `python -m concorde.clean`, `reports/annexes/nettoyage_avant_apres.md` |
 | C4 | 🟢 | MCD/MPD, PostgreSQL local, import idempotent et registre RGPD. | `docs/data-model.md`, `docs/rgpd.md`, `scripts/import_postgres.py` |
 | C5 | 🟢 | API data REST authentifiee, OpenAPI et test de filtre. | `api/data/`, `docs/api-data.md`, `tests/api/test_api_data.py` |
-| C6 | ⚪ | — | — |
-| C7 | ⚪ | — | — |
-| C8 | ⚪ | — | — |
+| C6 | 🟡 | Veille datee, sources qualifiees et decisions ; limite individuel assumee. | `docs/veille.md` |
+| C7 | 🟢 | Benchmark de services retenus/ecartes, dont sobriete et hors ligne. | `docs/benchmark.md` |
+| C8 | 🟢 | LM Studio local, modele charge, acces HTTP, test et metriques. | `docs/service-ia.md`, `tests/model/test_lm_studio_service.py` |
 | C9 | 🟡 | API modele locale, contrats Pydantic, OpenAPI et roles ; tests metier a completer. | `api/model/`, `http://127.0.0.1:8002/docs` |
 | C10 | 🟡 | Appel HTTP reel app → API, degradation prevue. | `app/`, [annexe demo](../annexes/demo-verticale-2026-08-24.md) |
 | C11 | 🟡 | Compteurs et latence JSON ; rapport Evidently et alertes restent a faire. | `monitoring/model/` |
