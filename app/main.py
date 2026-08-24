@@ -23,8 +23,9 @@ from __future__ import annotations
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Annotated, Any
+from urllib.parse import urlencode
 
-from fastapi import FastAPI, Form, Request
+from fastapi import FastAPI, Form, Query, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -80,11 +81,34 @@ LIBELLES_CONFIANCE = {
 LIBELLES_ALEA = {0: "Nul", 1: "Tres faible", 2: "Faible", 3: "Moyen", 4: "Fort"}
 
 
-def _contexte_commun(request: Request, profil: str) -> dict[str, Any]:
+def _liens_profil(request: Request, params_extra: dict[str, str] | None = None) -> dict[str, str]:
+    """Construit, pour chaque profil, l'URL qui rejoue **la page courante** dans ce profil.
+
+    Un simple `href="?profil=analyste"` renverrait un GET sur la page courante.
+    Sur `/evaluer`, qui repond a un POST de formulaire, cela produisait un
+    `405 Method Not Allowed` affiche en JSON brut : la bascule de profil, qui est
+    pourtant la demonstration centrale (meme calcul, deux restitutions), cassait
+    exactement la ou elle devait convaincre.
+
+    Le lien reconstruit donc l'URL complete en conservant les parametres utiles
+    (dont `cas`) et en ne remplacant que `profil`.
+    """
+    base = dict(request.query_params)
+    base.pop("profil", None)
+    base.update(params_extra or {})
+    return {
+        cle: f"{request.url.path}?{urlencode({**base, 'profil': cle})}" for cle in PROFILS
+    }
+
+
+def _contexte_commun(
+    request: Request, profil: str, params_extra: dict[str, str] | None = None
+) -> dict[str, Any]:
     return {
         "request": request,
         "profil": profil if profil in PROFILS else "particulier",
         "profils": PROFILS,
+        "liens_profil": _liens_profil(request, params_extra),
         "exemples": charger_exemples(),
     }
 
@@ -102,9 +126,30 @@ def evaluer(
     profil: Annotated[str, Form()] = "particulier",
     cas: Annotated[str, Form()] = "coherent",
 ) -> HTMLResponse:
+    """Soumission du formulaire de choix de cas."""
+    return _rendre_evaluation(request, profil, cas)
+
+
+@app.get("/evaluer", response_class=HTMLResponse, summary="Rejouer une evaluation")
+def evaluer_get(
+    request: Request,
+    profil: Annotated[str, Query()] = "particulier",
+    cas: Annotated[str, Query()] = "coherent",
+) -> HTMLResponse:
+    """Meme evaluation, atteignable en GET.
+
+    Necessaire pour que la bascule de profil fonctionne depuis la page de
+    resultat, et accessoirement pour qu'un resultat soit partageable par URL.
+    L'evaluation est idempotente et sans effet de bord : elle relit une fixture
+    et interroge l'API du modele, donc l'exposer en GET est legitime.
+    """
+    return _rendre_evaluation(request, profil, cas)
+
+
+def _rendre_evaluation(request: Request, profil: str, cas: str) -> HTMLResponse:
     """Appelle l'API modele en HTTP et restitue le verdict selon le profil."""
     exemples = charger_exemples()
-    contexte = _contexte_commun(request, profil)
+    contexte = _contexte_commun(request, profil, params_extra={"cas": cas})
 
     if cas not in exemples:
         contexte |= {

@@ -63,3 +63,78 @@ test unitaire isole.
 repertoire de travail est accessible dans `sys.path`. La commande de reference
 est desormais `uv run ...`, identique a celle de la CI. Toute evolution de la
 chaine doit etre verifiee avec Java 17 et le workflow distant avant livraison.
+
+---
+
+# Incident APP-2026-08-25 — la bascule de profil renvoyait `405` en pleine demonstration
+
+## Contexte et impact
+
+Le parcours de demonstration repose sur une bascule : le **meme** rapprochement,
+lu en profil « particulier » puis en profil « analyste credit ». C'est la
+demonstration centrale du produit — le calcul ne change pas, seule la
+restitution change.
+
+Depuis la page de resultat, un clic sur « Analyste credit » affichait
+`{"detail":"Method Not Allowed"}` en JSON brut. Impact : le parcours casse
+exactement a l'etape qui doit convaincre, et sur un ecran technique illisible
+pour un utilisateur.
+
+## Reproduction
+
+Deterministe, en deux gestes :
+
+```bash
+.venv/bin/uvicorn app.main:app --port 8000    # + API modele sur 8002
+# Ouvrir /, choisir un cas, « Evaluer », puis cliquer « Analyste credit »
+```
+
+Ou directement : `curl -i "http://127.0.0.1:8000/evaluer?profil=analyste"` →
+`HTTP/1.1 405 Method Not Allowed`.
+
+## Diagnostic
+
+Dans `app/templates/base.html`, les liens de profil du bandeau etaient
+relatifs : `href="?profil={{ cle }}"`. Un lien relatif de cette forme conserve
+le chemin courant et emet un **GET**. Sur `/`, `/transparence` et
+`/exploitation` — toutes des routes GET — le lien fonctionnait. Sur `/evaluer`,
+declaree en **POST** uniquement parce qu'elle repondait a un formulaire, le GET
+n'avait aucun gestionnaire : Starlette repondait `405`.
+
+La cause n'est donc ni le modele ni l'API : c'est une **hypothese implicite du
+gabarit** — « toute page est atteignable en GET » — qui n'etait vraie que pour
+trois pages sur quatre. Le defaut etait invisible en test unitaire parce
+qu'aucun test ne suivait les liens du bandeau.
+
+## Correctif
+
+1. `app/main.py` : ajout d'un gestionnaire `GET /evaluer` partageant la meme
+   fonction de rendu que le POST. L'evaluation est idempotente et sans effet de
+   bord (lecture d'une fixture + appel a l'API modele) : l'exposer en GET est
+   legitime, et rend le resultat partageable par URL.
+2. `app/main.py` : les liens de profil sont desormais **construits cote
+   serveur** (`_liens_profil`), en conservant le chemin et les parametres utiles
+   — dont `cas` — et en ne remplacant que `profil`. Le gabarit ne fabrique plus
+   d'URL.
+
+## Non-regression
+
+`tests/app/test_bascule_profil.py`, six tests portant le marqueur `regression` :
+
+- `GET /evaluer` doit rendre du HTML et non `405` ;
+- le lien de profil doit conserver le cas evalue ;
+- la bascule doit rester disponible sur les quatre pages (parametre) ;
+- les deux profils doivent restituer **le meme calcul**, seule la profondeur
+  technique differant.
+
+**Preuve avant/apres.** Correctif retire (`git stash`), les six tests echouent,
+le journal enregistrant `GET /evaluer -> 405`. Correctif remis, les six passent.
+
+## REX
+
+Un lien relatif porte une hypothese sur le verbe HTTP de la page courante. Des
+qu'une route repond a un formulaire, cette hypothese devient fausse sans que
+rien ne le signale. Regle retenue : **aucune URL n'est fabriquee dans un
+gabarit** ; elles sont construites cote serveur, ou le jeu de routes est connu.
+Un test de parcours suivant les liens de navigation aurait attrape le defaut
+avant la demonstration — c'est desormais le cas.

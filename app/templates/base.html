@@ -25,7 +25,7 @@
         <ul>
           {% for cle, nom in profils.items() %}
           <li>
-            <a href="?profil={{ cle }}"
+            <a href="{{ liens_profil[cle] }}"
                {% if cle == profil %}aria-current="page"{% endif %}>{{ nom }}</a>
           </li>
           {% endfor %}
