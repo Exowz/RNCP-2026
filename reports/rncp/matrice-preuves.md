@@ -14,7 +14,7 @@ Legende : 🟢 prouve et reproductible · 🟡 amorce, preuve a completer · ⚪
 | C8 | 🟢 | LM Studio local, modele charge, acces HTTP, test et metriques. | `docs/service-ia.md`, `tests/model/test_lm_studio_service.py` |
 | C9 | 🟢 | API modele authentifiee, OpenAPI et contrats d'entree/sortie testes. | `docs/api-modele.md`, `tests/api/test_api_modele.py` |
 | C10 | 🟡 | Appel HTTP reel app → API, degradation prevue. | `app/`, [annexe demo](../annexes/demo-verticale-2026-08-24.md) |
-| C11 | 🟡 | Compteurs et latence JSON ; rapport Evidently et alertes restent a faire. | `monitoring/model/` |
+| C11 | 🟢 | Metriques qualite, derive Evidently, latence/erreurs et alertes. | `docs/monitoring-modele.md`, `scripts/monitor_model.py` |
 | C12 | 🟡 | Tests data, Spark, PostgreSQL, auth et contrat prediction ; couverture entrainement a completer. | `pytest -q`, `tests/` |
 | C13 | 🟡 | Workflow CI complet ecrit ; execution GitHub et packaging restent a prouver. | `.github/workflows/verify.yml`, `docs/ci.md` |
 | C14 | ⚪ | — | — |
