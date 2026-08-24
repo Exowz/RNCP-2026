@@ -34,9 +34,9 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - run: uv sync --frozen --extra dev
       - run: uv run python scripts/make_sample_fixture.py
+      - run: uv run python scripts/import_postgres.py
       - run: uv run python -m concorde.collect
       - run: uv run python -m concorde.clean
-      - run: uv run python scripts/import_postgres.py
       - run: uv run python -m concorde.model.entrainement
       - run: uv run pytest -m "not local_service"
       - run: uv run ruff check src api app tests scripts
