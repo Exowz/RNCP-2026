@@ -1,0 +1,559 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+### /Users/mke-kapoor/Downloads/séance 1/Coaching_ECE_Simplon_Ref (1).pdf — 33 pages
+
+
+--- page 1 ---
+Comprendre et réussir le référentiel Simplon
+Développeur en Intelligence Artificielle
+Plan de coaching - 10 séances de 2h - 4 groupes de 6 étudiants
+K. Kadri
+ECE - Coaching projet et soutenance
+2026
+1 / 33
+
+
+--- page 2 ---
+Objectif du coaching
+But central
+Transformer un projet technique en dossier de preuves aligné sur les compétences C1 à C21.
+Règle d’or
+Une slide de soutenance ne doit pas seulement raconter ce qui a été fait : elle doit prouver qu’une
+compétence est réalisée.
+Résultat attendu
+À la fin, chaque groupe dispose d’un rapport, d’un dépôt Git, d’une démonstration et d’une soutenance
+où chaque compétence est reliée à une preuve concrète.
+2 / 33
+
+
+--- page 3 ---
+Lecture stratégique du référentiel
+Ce que le jury évalue
+Des compétences observables
+Des livrables exploitables
+Des preuves techniques
+Une capacité à justifier les choix
+Ce qui fait perdre du temps
+Développer sans tracer les preuves
+Faire un modèle IA isolé
+Négliger API, tests, monitoring, Git
+Préparer la soutenance trop tard
+3 / 33
+
+
+--- page 4 ---
+Architecture du référentiel : 3 blocs, 21 compétences
+Bloc
+Finalité
+Compétences
+Bloc 1
+Collecter, stocker et mettre à disposition les données
+C1-C5
+Bloc 2
+Intégrer modèles et services IA, API, MLOps
+C6-C13
+Bloc 3
+Réaliser une application IA, CI/CD, monitoring, incident
+C14-C21
+Principe de construction
+Le projet doit être pensé comme une chaîne complète : données →modèle/service IA →API →
+application →tests →monitoring →soutenance.
+4 / 33
+
+
+--- page 5 ---
+Le livrable n’est pas un rapport classique
+Structure du rapport professionnel
+1 Contexte, acteurs, objectifs, contraintes
+2 Spécifications fonctionnelles et techniques
+3 Réalisation data, IA, API, application
+4 Tests, CI/CD, monitoring, sécurité, accessibilité
+5 Bilan, limites, décisions et perspectives
+Chaque section doit contenir
+Une décision technique, une preuve, une capture, un lien Git, une commande de reproduction, ou un
+résultat de test.
+5 / 33
+
+
+--- page 6 ---
+La soutenance : logique de preuve par slide
+Format conseillé
+1 idée forte par slide
+1 compétence ou groupe de compétences par slide
+1 capture ou schéma technique par slide
+1 phrase de justification
+Test simple
+Si on enlève le titre de la slide, le jury doit encore comprendre quelle compétence est prouvée par la
+capture, le schéma ou le résultat affiché.
+6 / 33
+
+
+--- page 7 ---
+Bloc 1 - C1 à C5 : données exploitables
+Intention du bloc
+Montrer que le groupe sait construire un socle data fiable, reproductible et accessible.
+Comp.
+À démontrer
+Preuve minimale
+C1
+Extraction multi-sources
+Scripts, logs, fichiers bruts
+C2
+Requêtes SQL
+Requêtes documentées, résultats
+C3
+Agrégation / nettoyage
+Dataset final, règles, tests qualité
+C4
+Base RGPD
+MCD/MPD, import, registre RGPD
+C5
+API data REST
+Endpoints, auth, OpenAPI
+7 / 33
+
+
+--- page 8 ---
+Slide preuve - C1 : collecte automatisée
+Ce que la slide doit montrer
+Sources utilisées : API, fichier, base, scraping ou équivalent
+Script exécutable avec point d’entrée clair
+Gestion des erreurs et sauvegarde des résultats
+Piège à éviter
+Ne pas montrer seulement un CSV final. Il faut prouver la collecte automatisée : commande, logs,
+structure du script, résultat produit.
+Preuve forte
+Capture terminal : python collect.py –source all + arborescence data/raw/ + commit Git.
+8 / 33
+
+
+--- page 9 ---
+Slide preuve - C2/C3 : SQL, nettoyage, agrégation
+C2 - SQL
+Requêtes lisibles
+Jointures expliquées
+Filtres justifiés
+Optimisation si pertinente
+C3 - Agrégation
+Données fusionnées
+Valeurs manquantes traitées
+Formats homogènes
+Dataset final versionné
+Piège à éviter
+Dire “on a nettoyé les données” sans tableau avant/après, sans règles, sans scripts, sans justification.
+9 / 33
+
+
+--- page 10 ---
+Slide preuve - C4/C5 : base de données et API data
+C4 - Base de données
+Preuve attendue : MCD/MPD, choix SGBD, script d’import, RGPD, procédure d’installation.
+C5 - API de mise à disposition des données
+Preuve attendue : routes REST, authentification, documentation OpenAPI, exemples de requêtes.
+Piège critique
+Une base sans modèle, ou une API sans authentification/documentation, donne une impression de
+prototype non professionnel.
+10 / 33
+
+
+--- page 11 ---
+Bloc 2 - C6 à C13 : service IA intégré et industrialisable
+Comp.
+À démontrer
+Preuve minimale
+C6
+Veille technique/réglementaire
+Sources fiables, synthèse, planning
+C7
+Benchmark de services IA
+Tableau comparatif, décision
+C8
+Paramétrage service IA
+Installation, accès, monitoring
+C9
+API modèle IA
+Endpoints, auth, tests, docs
+C10
+Intégration dans application
+App fonctionnelle connectée à l’API
+C11
+Monitoring modèle
+Métriques, dashboard, alertes
+C12
+Tests modèle/data
+Tests automatisés, couverture
+C13
+Livraison continue modèle
+Pipeline CI/CD MLOps
+11 / 33
+
+
+--- page 12 ---
+Slide preuve - C6/C7 : veille et benchmark
+Ce que le jury veut voir
+Une question de veille claire
+Des sources qualifiées
+Un benchmark avec services retenus et écartés
+Une recommandation argumentée
+Piège à éviter
+Confondre benchmark et liste d’outils. Il faut comparer selon le besoin : coût, contraintes, sécurité,
+données, performance, éco-responsabilité, intégration.
+12 / 33
+
+
+--- page 13 ---
+Slide preuve - C8/C9 : service IA et API modèle
+C8 - Service IA
+Installation/configuration
+Gestion des accès
+Dépendances
+Monitoring disponible
+C9 - API modèle
+Endpoint /predict
+Authentification
+Validation des entrées
+Tests et OpenAPI
+Preuve forte
+Capture Swagger/OpenAPI + requête test + réponse JSON + résultat pytest.
+13 / 33
+
+
+--- page 14 ---
+Slide preuve - C10 : intégration API dans l’application
+Ce qui doit être visible
+L’application appelle réellement l’API IA
+Le résultat IA modifie l’expérience utilisateur
+Les erreurs API sont gérées
+L’accessibilité de l’interface est considérée
+Piège à éviter
+Avoir une démo Streamlit ou front-end qui simule le résultat au lieu d’appeler réellement l’API.
+14 / 33
+
+
+--- page 15 ---
+Slide preuve - C11/C12/C13 : MLOps minimal mais réel
+C11 - Monitoring modèle
+Métriques suivies : performance, dérive des données, latence, erreurs, santé système.
+C12 - Tests automatisés
+Tests sur format des données, preprocessing, prédiction, validation du modèle, endpoints.
+C13 - Livraison continue
+Pipeline : tests →entraînement/évaluation →rapport →packaging →livraison.
+Impasse temporelle
+Ne pas attendre la fin pour ajouter MLOps. Prévoir un pipeline simple dès la semaine 2.
+15 / 33
+
+
+--- page 16 ---
+Bloc 3 - C14 à C21 : application IA complète
+Comp.
+À démontrer
+Preuve minimale
+C14
+Analyse besoin application
+User stories, critères, accessibilité
+C15
+Architecture technique
+Schémas, flux, POC, choix outils
+C16
+Coordination agile
+Kanban, rôles, rituels, avancement
+C17
+Développement application
+UI, sécurité, accès, tests, docs
+C18
+Intégration continue
+Workflow CI, tests auto
+C19
+Livraison continue app
+Build, packaging, livraison
+C20
+Monitoring applicatif
+Logs, métriques, dashboard, alertes
+C21
+Incident technique
+Diagnostic, correction, preuve
+16 / 33
+
+
+--- page 17 ---
+Slide preuve - C14/C15 : cadrage et architecture
+C14 - Besoin fonctionnel
+Preuve attendue : personas, user stories, critères d’acceptation, exigences d’accessibilité.
+C15 - Cadre technique
+Preuve attendue : architecture, flux de données, dépendances, services externes, POC pré-production.
+Piège à éviter
+Un beau projet technique sans besoin utilisateur clair devient difficile à défendre devant le jury.
+17 / 33
+
+
+--- page 18 ---
+Slide preuve - C16 : conduite agile
+Preuves attendues
+Rôles dans le groupe
+Backlog, Kanban, sprint planning
+Rituels et décisions
+Gestion des imprévus
+Preuve forte
+Capture Jira/Trello/GitHub Projects + burndown simple + exemple de décision prise après blocage.
+18 / 33
+
+
+--- page 19 ---
+Slide preuve - C17 : développement applicatif
+Ce qui doit être démontré
+Interfaces conformes aux maquettes
+Fonctionnalités métier opérationnelles
+Gestion des droits et accès
+Flux de données intégrés
+Sécurité OWASP et tests métier
+Piège à éviter
+Montrer seulement l’interface. Il faut aussi montrer l’architecture, les droits, les tests et la
+documentation.
+19 / 33
+
+
+--- page 20 ---
+Slide preuve - C18/C19 : CI/CD application
+C18 - Intégration continue
+Workflow GitHub Actions/GitLab CI
+Installation dépendances
+Exécution tests
+Statut vert/rouge compris
+C19 - Livraison continue
+Build ou image Docker
+Packaging
+Livraison en pré-production
+Procédure documentée
+20 / 33
+
+
+--- page 21 ---
+Slide preuve - C20/C21 : monitoring et incident
+C20 - Surveillance applicative
+Preuve attendue : logs, métriques, seuils, alertes, dashboard local ou distant.
+C21 - Résolution d’incident
+Preuve attendue : incident décrit, diagnostic, hypothèse, correction, test de non-régression, retour
+d’expérience.
+Piège à éviter
+Inventer un incident oralement. Il faut une trace : ticket, log, commit correctif, test avant/après.
+21 / 33
+
+
+--- page 22 ---
+Organisation : 10 séances de 2h
+Format
+4 groupes de 6 étudiants. Chaque séance produit un incrément visible : dépôt, schéma, test, API, démo,
+slide ou section de rapport.
+Rythme proposé
+20 min : point collectif et pièges du jour
+70 min : coaching par groupe
+20 min : revue de preuves
+10 min : objectifs avant la séance suivante
+22 / 33
+
+
+--- page 23 ---
+Séances 1 à 5 : construire le socle
+S.
+Objectif
+Sortie attendue
+1
+Lire le référentiel et cadrer le projet
+Matrice compétences/preuves
+2
+Données : collecte et SQL
+Scripts C1/C2 + premières captures
+3
+Nettoyage, base, API data
+C3/C4/C5 démontrables
+4
+Veille, benchmark, choix IA
+C6/C7/C8 documentés
+5
+API modèle et intégration app
+C9/C10 première démo
+23 / 33
+
+
+--- page 24 ---
+Séances 6 à 10 : industrialiser et convaincre
+S.
+Objectif
+Sortie attendue
+6
+Monitoring modèle et tests
+C11/C12 opérationnels
+7
+CI/CD modèle et architecture app
+C13/C14/C15 alignés
+8
+App, agile, sécurité, CI/CD
+C16-C19 prouvés
+9
+Monitoring app et incident
+C20/C21 prouvés
+10
+Soutenance blanche et rapport final
+Slides preuves + corrections finales
+24 / 33
+
+
+--- page 25 ---
+Matrice de preuve à remplir par chaque groupe
+Comp.
+Preuve technique
+Où dans Git/rapport ?
+Slide soutenance
+C1
+Script collecte + logs
+/src/data/collect.py
+Slide 4
+C5
+API data + OpenAPI
+/api/data
+Slide 7
+C9
+API modèle + tests
+/api/model
+Slide 10
+C11
+Dashboard métriques
+/monitoring
+Slide 12
+C18
+CI tests auto
+/.github/workflows
+Slide 17
+C21
+Incident corrigé
+ticket + commit
+Slide 20
+Règle de validation
+Aucune compétence ne doit rester au statut “on l’a fait”. Elle doit être reliée à une preuve localisable.
+25 / 33
+
+
+--- page 26 ---
+Structure recommandée du dépôt Git
+project-ai-ece/
+README.md
+docs/
+# specs, architecture, RGPD, benchmark
+data/
+# raw, processed, samples
+notebooks/
+# exploration uniquement
+src/
+# collecte, nettoyage, features, model
+api/
+# API data et API model
+app/
+# front ou application
+tests/
+# tests data, API, modèle, app
+monitoring/
+# logs, métriques, dashboards
+.github/workflows/
+# CI/CD
+reports/
+# rapport, captures, annexes
+Piège à éviter
+Le notebook unique qui contient tout : collecte, nettoyage, modèle, API, tests et résultats.
+26 / 33
+
+
+--- page 27 ---
+Structure recommandée de soutenance
+1 Contexte, besoin, acteurs, contraintes
+2 Architecture globale et flux de données
+3 Bloc 1 : preuves data C1-C5
+4 Bloc 2 : preuves IA/API/MLOps C6-C13
+5 Bloc 3 : preuves app/CI/CD/MCO C14-C21
+6 Démonstration live courte
+7 Bilan, limites, améliorations
+Principe
+Chaque slide comporte un bandeau discret : Compétences prouvées : Cx, Cy.
+27 / 33
+
+
+--- page 28 ---
+Checklist avant soutenance
+Technique
+✓Dépôt Git accessible
+✓README reproductible
+✓Tests exécutables
+✓API documentée
+✓Démo préparée hors internet
+Jury
+✓Matrice compétences/preuves
+✓Captures lisibles
+✓Décisions justifiées
+✓Limites assumées
+✓Chaque étudiant connaît sa partie
+28 / 33
+
+
+--- page 29 ---
+Les pièges majeurs à éviter
+Top 7
+1 Tout miser sur le modèle IA et oublier data/API/tests/monitoring
+2 Faire une soutenance narrative sans preuves
+3 Ne pas versionner les scripts et configurations
+4 Avoir une API sans authentification ni OpenAPI
+5 Oublier accessibilité, RGPD, sécurité OWASP
+6 Ajouter CI/CD et monitoring la dernière semaine
+7 Ne pas préparer d’incident technique documenté
+29 / 33
+
+
+--- page 30 ---
+Méthode incrémentale par groupe
+À chaque séance, chaque groupe doit sortir avec
+Une preuve ajoutée au dépôt
+Une capture exploitable pour la soutenance
+Une section de rapport commencée ou corrigée
+Une décision technique écrite
+Une action prioritaire avant la séance suivante
+Logique CEO/projet
+On ne cherche pas seulement à finir un code. On construit un dossier défendable devant un jury.
+30 / 33
+
+
+--- page 31 ---
+Slide modèle : preuve compétence
+Titre
+C9 - API REST exposant le modèle IA
+Preuves affichées
+Capture Swagger
+Exemple requête/réponse
+Résultat des tests
+Lien dépôt Git
+Phrase de défense
+“Cette slide prouve que le modèle est exposé via une
+API sécurisée, testée et documentée, conformément
+aux attentes de C9.”
+31 / 33
+
+
+--- page 32 ---
+Conclusion : stratégie de réussite
+Le bon réflexe
+Pour chaque compétence : Action réalisée →preuve technique →justification →slide de
+soutenance.
+Message important
+La réussite ne dépend pas seulement du niveau du modèle IA. Elle dépend de votre capacité à montrer
+une chaîne professionnelle complète, documentée, testée, sécurisée et maintenable.
+Objectif final
+Un jury doit pouvoir dire : “la compétence est visible, vérifiable et reproductible.”
+32 / 33
+
+
+--- page 33 ---
+Référence
+Document source
+Référentiels d’activités, de compétences et d’évaluation - Développeur en intelligence artificielle,
+Simplon, 2023.
+Usage pédagogique
+Cette présentation reformule le référentiel sous forme de plan de coaching et de matrice de preuves pour
+les étudiants de l’ECE.
+33 / 33
+

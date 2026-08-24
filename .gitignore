@@ -1,0 +1,56 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# --- Secrets : jamais versionnes (C17) ---
+.env
+.env.local
+*.key
+*.pem
+secrets/
+
+# --- Donnees volumineuses : versionnees par DVC, pas par Git (C3) ---
+data/raw/*
+data/processed/*
+data/external/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
+!**/*.dvc
+# data/samples/ EST versionne : fixtures de la demo hors ligne
+
+# --- MLOps ---
+mlruns/
+mlartifacts/
+.dvc/cache/
+.dvc/tmp/
+
+# --- Monitoring : les logs sont generes, pas versionnes (C20) ---
+monitoring/logs/*
+!monitoring/logs/.gitkeep
+monitoring/app/*.jsonl
+monitoring/model/*.html
+monitoring/model/*.json
+
+# --- Artefacts de modele : versionnes par DVC (voir models/) ---
+models/*.pt
+models/*.joblib
+
+# --- OS / IDE ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# --- Spark ---
+spark-warehouse/
+metastore_db/
+derby.log
