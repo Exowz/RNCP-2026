@@ -7,8 +7,8 @@ Legende : 🟢 prouve et reproductible · 🟡 amorce, preuve a completer · ⚪
 | C1 | 🟢 | Six collecteurs rejouables : fichier, service web, page web, PostgreSQL et Spark. | `concorde.collect`, manifeste `data/raw/_manifest.json` |
 | C2 | 🟢 | Jointure/filtres PostgreSQL et agregation Spark SQL executees et testees. | `docs/queries.md`, `tests/data/test_requetes_sql.py` |
 | C3 | 🟢 | Nettoyage DVF/DPE, jointure et tableau avant/apres. | `python -m concorde.clean`, `reports/annexes/nettoyage_avant_apres.md` |
-| C4 | ⚪ | — | — |
-| C5 | ⚪ | — | — |
+| C4 | 🟢 | MCD/MPD, PostgreSQL local, import idempotent et registre RGPD. | `docs/data-model.md`, `docs/rgpd.md`, `scripts/import_postgres.py` |
+| C5 | 🟢 | API data REST authentifiee, OpenAPI et test de filtre. | `api/data/`, `docs/api-data.md`, `tests/api/test_api_data.py` |
 | C6 | ⚪ | — | — |
 | C7 | ⚪ | — | — |
 | C8 | ⚪ | — | — |
