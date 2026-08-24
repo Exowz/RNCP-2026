@@ -22,8 +22,8 @@ Legende : 🟢 prouve et reproductible · 🟡 amorce, preuve a completer · ⚪
 | C16 | 🟡 | Pilotage individuel, tableau, Definition of Done, risques et REX ; limite collectif assumee. | `docs/pilotage.md` |
 | C17 | 🟢 | Roles API, validation, CSP/entetes, secrets hors Git, pseudonymisation et accessibilite. | `docs/securite.md`, `tests/api/`, `app/templates/` |
 | C18 | 🟢 | CI GitHub executee avec succes sur `23c5421`. | [run 32772913151](https://github.com/Exowz/RNCP-2026/actions/runs/32772913151), `docs/ci.md` |
-| C19 | ⚪ | — | — |
-| C20 | 🟡 | Logs JSONL, correlation et pseudonymisation. Dashboard/seuils a faire. | [annexe demo](../annexes/demo-verticale-2026-08-24.md) |
+| C19 | 🟢 | Image Docker locale construite, demarrage Compose `--no-build`, sonde healthy et parcours app → API journalise. | `Dockerfile`, `docs/livraison.md`, `reports/annexes/livraison-docker-2026-08-24.md` |
+| C20 | 🟢 | Logs JSONL pseudonymises, correlation, seuils, alertes et dashboard local. | `docs/monitoring-app.md`, `/exploitation`, `tests/app/test_app_hors_ligne.py` |
 | C21 | 🟢 | Deux echecs CI reels, causes diagnostiquees, correctifs minimaux et execution verte de non-regression. | `docs/incident.md`, [run 32772913151](https://github.com/Exowz/RNCP-2026/actions/runs/32772913151) |
 
 ## Preuve de la tranche verticale — 24 aout 2026

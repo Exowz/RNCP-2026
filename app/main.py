@@ -161,6 +161,19 @@ def transparence(request: Request, profil: str = "particulier") -> HTMLResponse:
     return gabarits.TemplateResponse(request, "transparence.html", contexte)
 
 
+@app.get("/exploitation", response_class=HTMLResponse, summary="Surveillance locale")
+def exploitation(request: Request, profil: str = "particulier") -> HTMLResponse:
+    """Restitue les compteurs, seuils et alertes locaux de l'application. (C20)"""
+    contexte = _contexte_commun(request, profil)
+    instantane = metriques.instantane()
+    contexte |= {
+        "instantane": instantane,
+        "routes": sorted(instantane["routes"].items()),
+        "alertes": instantane["alertes"],
+    }
+    return gabarits.TemplateResponse(request, "exploitation.html", contexte)
+
+
 @app.get("/sante", summary="Etat de l'application et de son amont")
 def sante() -> dict[str, Any]:
     """Sante de l'application **et** de l'API qu'elle consomme."""

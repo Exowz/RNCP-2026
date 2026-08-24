@@ -40,3 +40,13 @@ jobs:
       - run: uv run python -m concorde.model.entrainement
       - run: uv run pytest -m "not local_service"
       - run: uv run ruff check src api app tests scripts
+      - run: uv build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: concorde-livraison-${{ github.sha }}
+          if-no-files-found: error
+          path: |
+            dist/
+            models/concorde_moteur.pt
+            docs/fiche-modele.md
+            reports/annexes/metriques_modele.json

@@ -1,0 +1,22 @@
+services:
+  concorde:
+    image: concorde:local
+    pull_policy: never
+    build:
+      context: .
+    environment:
+      CONCORDE_OFFLINE: "true"
+      CONCORDE_MODEL_API_URL: http://127.0.0.1:8002
+      CONCORDE_API_KEYS: dev-reader-key:reader,dev-analyst-key:analyst,dev-admin-key:admin
+    ports:
+      - "127.0.0.1:${CONCORDE_DEMO_PORT:-8000}:8000"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "from urllib.request import urlopen; assert urlopen('http://127.0.0.1:8000/sante', timeout=3).status == 200"
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
