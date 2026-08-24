@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block titre %}{{ erreur_titre }}{% endblock %}
+{% block contenu %}
+<!-- role="alert" : l'erreur est annoncee immediatement par le lecteur d'ecran.
+     Critere RGAA 7.4. -->
+<div class="encart encart--alerte" role="alert">
+  <h1>{{ erreur_titre }}</h1>
+  <p>{{ erreur_message }}</p>
+</div>
+<p>
+  Aucun resultat partiel n'est affiche&nbsp;: en cas de panne du service d'evaluation,
+  l'application prefere ne rien avancer plutot qu'avancer quelque chose d'invalide.
+</p>
+<p><a class="bouton" href="/?profil={{ profil }}">Revenir a l'accueil</a></p>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block titre %}Modele et regles{% endblock %}
+{% block contenu %}
+<h1>Comment Concorde decide</h1>
+<p class="chapeau">
+  Toutes les regles appliquees sont publiees ici, avec leur seuil et leur justification.
+  Ces informations proviennent de l'API du modele, pas d'une page redigee a part&nbsp;:
+  elles ne peuvent donc pas diverger du code reellement execute.
+</p>
+
+<section aria-labelledby="titre-fiche">
+  <h2 id="titre-fiche">Fiche du modele</h2>
+  <table>
+    <caption>Identite du modele actuellement servi</caption>
+    <tbody>
+      <tr><th scope="row">Version</th><td><code>{{ fiche.version }}</code></td></tr>
+      <tr><th scope="row">Entraine le</th><td>{{ fiche.entraine_le[:19] }}</td></tr>
+      <tr><th scope="row">Commit Git</th><td><code>{{ fiche.commit_git }}</code></td></tr>
+      <tr><th scope="row">Graine aleatoire</th><td><code>{{ fiche.graine }}</code></td></tr>
+      <tr><th scope="row">Lignes d'entrainement</th><td>{{ fiche.nb_lignes_entrainement }}</td></tr>
+      <tr><th scope="row">Empreinte des donnees</th><td><code>{{ fiche.empreinte_donnees[:24] }}…</code></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section aria-labelledby="titre-limites-modele">
+  <h2 id="titre-limites-modele">Limites assumees</h2>
+  <ul>
+    {% for limite in fiche.limites %}<li>{{ limite }}</li>{% endfor %}
+  </ul>
+</section>
+
+<section aria-labelledby="titre-regles">
+  <h2 id="titre-regles">Regles de coherence</h2>
+  <table>
+    <caption>Chaque regle, son seuil et la raison de ce seuil</caption>
+    <thead>
+      <tr>
+        <th scope="col">Identifiant</th>
+        <th scope="col">Regle</th>
+        <th scope="col">Gravite</th>
+        <th scope="col">Seuil</th>
+        <th scope="col">Justification</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for regle in regles %}
+      <tr>
+        <th scope="row"><code>{{ regle.identifiant }}</code></th>
+        <td>{{ regle.libelle }}</td>
+        <td>
+          <span class="etiquette etiquette--{{ regle.gravite }}">
+            {{ 'Majeur' if regle.gravite == 'majeur' else 'Mineur' }}
+          </span>
+        </td>
+        <td><code>{{ regle.seuil }}</code></td>
+        <td>{{ regle.justification }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

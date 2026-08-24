@@ -49,7 +49,7 @@ class Settings(BaseSettings):
     pg_port: int = 5433
     pg_db: str = "concorde"
     pg_user: str = "concorde"
-    pg_password: str = "change-me-in-local-env"
+    pg_password: str = "change-me-in-local-env"  # noqa: S105 - valeur factice documentee
 
     # --- Execution ---
     offline: bool = True

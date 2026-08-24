@@ -1,0 +1,13 @@
+code_commune,nom_commune,type_alea,niveau_alea,source
+33063,BORDEAUX,inondation,Moyen,Georisques (BRGM) - extrait fige pour demonstration hors ligne
+33063,BORDEAUX,retrait_gonflement_argiles,Moyen,Georisques (BRGM) - extrait fige pour demonstration hors ligne
+33063,BORDEAUX,cavites_souterraines,Nul,Georisques (BRGM) - extrait fige pour demonstration hors ligne
+33063,BORDEAUX,seisme,Faible,Georisques (BRGM) - extrait fige pour demonstration hors ligne
+17300,ROCHEFORT,inondation,Fort,Georisques (BRGM) - extrait fige pour demonstration hors ligne
+17300,ROCHEFORT,retrait_gonflement_argiles,Faible,Georisques (BRGM) - extrait fige pour demonstration hors ligne
+17300,ROCHEFORT,cavites_souterraines,Moyen,Georisques (BRGM) - extrait fige pour demonstration hors ligne
+17300,ROCHEFORT,seisme,Faible,Georisques (BRGM) - extrait fige pour demonstration hors ligne
+24016,ANNESSE-ET-BEAULIEU,inondation,Moyen,Georisques (BRGM) - extrait fige pour demonstration hors ligne
+24016,ANNESSE-ET-BEAULIEU,retrait_gonflement_argiles,Faible,Georisques (BRGM) - extrait fige pour demonstration hors ligne
+24016,ANNESSE-ET-BEAULIEU,cavites_souterraines,Faible,Georisques (BRGM) - extrait fige pour demonstration hors ligne
+24016,ANNESSE-ET-BEAULIEU,seisme,Faible,Georisques (BRGM) - extrait fige pour demonstration hors ligne

@@ -30,6 +30,7 @@ data/external/*
 # --- MLOps ---
 mlruns/
 mlartifacts/
+mlflow.db
 .dvc/cache/
 .dvc/tmp/
 
@@ -37,6 +38,7 @@ mlartifacts/
 monitoring/logs/*
 !monitoring/logs/.gitkeep
 monitoring/app/*.jsonl
+monitoring/app/*.json
 monitoring/model/*.html
 monitoring/model/*.json
 

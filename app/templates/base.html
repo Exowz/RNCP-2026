@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titre %}Concorde{% endblock %} — Concorde</title>
+  <meta name="description" content="Concorde evalue la fiabilite du rapprochement entre une mutation immobiliere et un diagnostic energetique. Aucune estimation de prix.">
+  <link rel="stylesheet" href="/static/concorde.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <!-- Lien d'evitement : premier element focusable, permet a un utilisateur au
+       clavier ou au lecteur d'ecran d'atteindre le contenu sans traverser la
+       navigation. Critere RGAA 12.7. -->
+  <a class="lien-evitement" href="#contenu">Aller au contenu principal</a>
+
+  <header class="bandeau">
+    <div class="bandeau__interieur">
+      <p class="marque">
+        <a href="/?profil={{ profil }}">Concorde</a>
+        <span class="marque__sous-titre">fiabilite des rapprochements DVF+ &times; DPE</span>
+      </p>
+      <nav class="nav-profil" aria-label="Profil de lecture">
+        <span id="libelle-profil" class="nav-profil__libelle">Lecture&nbsp;:</span>
+        <ul>
+          {% for cle, nom in profils.items() %}
+          <li>
+            <a href="?profil={{ cle }}"
+               {% if cle == profil %}aria-current="page"{% endif %}>{{ nom }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="contenu">
+    {% block contenu %}{% endblock %}
+  </main>
+
+  <footer class="pied">
+    <p>
+      Sources&nbsp;: DVF+ (DGALN&nbsp;/&nbsp;Cerema), Observatoire DPE-Audit (ADEME),
+      Georisques (BRGM). <a href="/transparence?profil={{ profil }}">Modele et regles appliquees</a>.
+    </p>
+    <p class="pied__avertissement">
+      Concorde <strong>n'estime aucun prix</strong> et ne produit aucune tarification.
+      Il qualifie la fiabilite d'un rapprochement entre sources publiques.
+    </p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% block titre %}Resultat de l'evaluation{% endblock %}
+{% block contenu %}
+
+<nav aria-label="Fil d'Ariane" class="fil">
+  <ol>
+    <li><a href="/?profil={{ profil }}">Accueil</a></li>
+    <li aria-current="page">Resultat</li>
+  </ol>
+</nav>
+
+<h1>{{ intitule_cas }}</h1>
+<p class="chapeau">
+  Mutation <strong>{{ entree.id_mutation }}</strong> &middot;
+  {{ entree.type_local }} de {{ entree.surface_reelle_bati }}&nbsp;m&sup2; &middot;
+  parcelle <code>{{ entree.id_parcelle }}</code>
+  {% if verdict.numero_dpe %} &middot; DPE <code>{{ verdict.numero_dpe }}</code>{% endif %}
+</p>
+
+<!-- aria-live : le resultat arrive apres une action de l'utilisateur ; un
+     lecteur d'ecran doit l'annoncer sans que l'utilisateur ait a le chercher. -->
+<div aria-live="polite">
+
+  <p class="verdict-phrase">{{ verdict.explication }}</p>
+
+  <!-- Le sens n'est jamais porte par la couleur seule : chaque carte porte un
+       symbole textuel et un libelle explicite. Critere RGAA 3.1. -->
+  <section class="cartes" aria-label="Synthese de l'evaluation">
+
+    <article class="carte carte--{{ 'ok' if verdict.score_coherence == 1 else 'alerte' }}">
+      <h2>Coherence</h2>
+      <p class="carte__valeur">
+        <span aria-hidden="true">{{ '✓' if verdict.score_coherence == 1 else '!' }}</span>
+        {{ verdict.score_coherence | pourcent }}
+      </p>
+      <p class="carte__legende">
+        {% if verdict.motifs %}
+          {{ verdict.motifs | length }} contradiction(s) entre la mutation et le diagnostic
+        {% elif verdict.statut == 'non_evaluable' %}
+          Non verifiable, faute de diagnostic rapproche
+        {% else %}
+          Aucune contradiction detectee
+        {% endif %}
+      </p>
+    </article>
+
+    <article class="carte carte--{{ libelle_anomalie[1] }}">
+      <h2>Atypicite</h2>
+      <p class="carte__valeur">
+        <span aria-hidden="true">{{ '•' if verdict.score_anomalie is none else '◆' }}</span>
+        {{ libelle_anomalie[0] }}
+      </p>
+      <p class="carte__legende">
+        {% if verdict.score_anomalie is not none %}
+          Plus atypique que {{ verdict.score_anomalie | pourcent }} des rapprochements appris
+        {% else %}
+          Aucun score&nbsp;: il n'y a rien a comparer
+        {% endif %}
+      </p>
+    </article>
+
+    <article class="carte carte--{{ libelle_confiance[1] }}">
+      <h2>Confiance</h2>
+      <p class="carte__valeur">
+        <span aria-hidden="true">{{ '✓' if verdict.confiance.niveau == 'eleve' else '?' }}</span>
+        {{ libelle_confiance[0] }}
+      </p>
+      <p class="carte__legende">
+        {{ verdict.confiance.reserves | length }} reserve(s) sur la qualite de l'information
+      </p>
+    </article>
+
+  </section>
+
+  {% if verdict.motifs %}
+  <section aria-labelledby="titre-motifs">
+    <h2 id="titre-motifs">Ce qui se contredit</h2>
+    <ul class="liste-motifs">
+      {% for motif in verdict.motifs %}
+      <li class="motif motif--{{ motif.gravite }}">
+        <p class="motif__entete">
+          <span class="etiquette etiquette--{{ motif.gravite }}">
+            {{ 'Majeur' if motif.gravite == 'majeur' else 'Mineur' }}
+          </span>
+          {% if profil == 'analyste' %}<code>{{ motif.identifiant }}</code>{% endif %}
+        </p>
+        <p>{{ motif.message }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if verdict.confiance.reserves %}
+  <section aria-labelledby="titre-reserves">
+    <h2 id="titre-reserves">Ce que l'on ne sait pas</h2>
+    <ul class="liste-motifs">
+      {% for reserve in verdict.confiance.reserves %}
+      <li class="motif motif--reserve">
+        <p>{{ reserve.message }}</p>
+        {% if profil == 'analyste' %}
+        <p class="motif__technique">
+          <code>{{ reserve.identifiant }}</code> &middot;
+          penalite de confiance&nbsp;: &minus;{{ reserve.penalite }}
+        </p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <section aria-labelledby="titre-aleas">
+    <h2 id="titre-aleas">Exposition aux aleas naturels</h2>
+    <p>
+      Niveau maximal releve sur la commune&nbsp;: <strong>{{ libelle_alea }}</strong>
+      ({{ verdict.exposition_aleas.nb_aleas_significatifs }} alea(s) de niveau
+      significatif). Source&nbsp;: Georisques (BRGM).
+    </p>
+    <p class="aide">
+      Cette exposition est communale, pas parcellaire&nbsp;: elle situe un contexte,
+      elle ne caracterise pas le bien.
+    </p>
+  </section>
+
+  {% if profil == 'analyste' and verdict.variables_atypiques %}
+  <section aria-labelledby="titre-variables">
+    <h2 id="titre-variables">Decomposition de l'ecart</h2>
+    <p class="aide">
+      Part de l'erreur de reconstruction portee par chaque variable&nbsp;: c'est la reponse
+      a &laquo;&nbsp;pourquoi cette ligne est-elle signalee&nbsp;?&nbsp;&raquo;.
+    </p>
+    <table>
+      <caption>Variables contribuant le plus a l'atypicite</caption>
+      <thead>
+        <tr>
+          <th scope="col">Variable</th>
+          <th scope="col">Valeur</th>
+          <th scope="col">Part de l'ecart</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for variable in verdict.variables_atypiques %}
+        <tr>
+          <th scope="row"><code>{{ variable.variable }}</code></th>
+          <td>{{ '—' if variable.valeur is none else variable.valeur }}</td>
+          <td>{{ variable.part_de_l_ecart | pourcent }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="aide">
+      Erreur de reconstruction brute&nbsp;: <code>{{ verdict.erreur_reconstruction }}</code> &middot;
+      modele <code>{{ verdict.modele.version }}</code> entraine le
+      {{ verdict.modele.entraine_le[:10] }}.
+    </p>
+  </section>
+  {% endif %}
+
+</div>
+
+<p><a class="bouton bouton--secondaire" href="/?profil={{ profil }}">Evaluer un autre rapprochement</a></p>
+{% endblock %}

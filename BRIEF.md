@@ -128,10 +128,27 @@ projet/
   tests/              # tests data, API, modèle, app
   monitoring/         # logs, métriques, dashboards
   .github/workflows/  # CI/CD
-  reports/            # les 5 rapports, captures, annexes
+  reports/
+    rncp/             # les 5 rapports E1-E5, matrice de preuves, slides RNCP
+    substitution/     # rapport n°21, doc du tableau de conformité, slides Derraz
 ```
 
 Piège explicite du coaching : **le notebook unique** qui contient tout.
+
+### Substitution et RNCP dans un seul dépôt
+
+**Le code n'est pas dupliqué et n'a pas à l'être** : c'est un seul système. Ce qui se sépare, ce sont
+les **livrables**, parce qu'ils s'adressent à deux lecteurs qui lisent le même dépôt sous deux angles.
+
+- **Substitution (M. Derraz)** : ne regarde que l'**usine** — CI/CD, tests, MLflow, DVC, Evidently,
+  Docker, tableau de conformité avant déploiement. Le domaine immobilier n'est pour lui que le cas
+  d'usage qui alimente l'usine. Le sujet n°21 autorise explicitement les « datasets tabulaires » et
+  les « jeux maison », donc le jeu de données construit ici entre dans son cadre sans justification.
+- **RNCP** : regarde la **chaîne complète**, dont l'usine n'est qu'un tiers (bloc 3). Il faut en plus
+  la couche données en amont (C1-C5) et l'application en aval (C14-C17).
+
+Rien à déclarer de part et d'autre : le candidat choisit librement son sujet de RNCP, et le projet de
+substitution n'a pas à mentionner le RNCP.
 
 ## Matrice de preuves — à remplir au fil de l'eau
 

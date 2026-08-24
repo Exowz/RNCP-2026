@@ -1,0 +1,129 @@
+{
+  "rapports_nettoyage": [
+    {
+      "jeu": "dvf",
+      "lignes_initiales": 997,
+      "lignes_finales": 900,
+      "lignes_supprimees": 97,
+      "taux_suppression_global": 0.097292,
+      "regles": [
+        {
+          "identifiant": "DVF-01",
+          "libelle": "surface batie exploitable",
+          "nature": "filtre",
+          "lignes_avant": 997,
+          "lignes_apres": 975,
+          "lignes_supprimees": 22,
+          "taux_suppression": 0.022066,
+          "justification": "Une surface nulle, absente ou negative rend tout ratio au m2 indefini : la ligne ne peut ni etre comparee ni etre rapprochee."
+        },
+        {
+          "identifiant": "DVF-02",
+          "libelle": "surface batie plausible (<= 2000 m2)",
+          "nature": "filtre",
+          "lignes_avant": 975,
+          "lignes_apres": 967,
+          "lignes_supprimees": 8,
+          "taux_suppression": 0.008205,
+          "justification": "Au-dela de 2000 m2 il ne s'agit plus d'un logement mais d'un lot ou d'une saisie erronee ; le perimetre du projet est le logement."
+        },
+        {
+          "identifiant": "DVF-03",
+          "libelle": "valeur fonciere renseignee et positive",
+          "nature": "filtre",
+          "lignes_avant": 967,
+          "lignes_apres": 947,
+          "lignes_supprimees": 20,
+          "taux_suppression": 0.020683,
+          "justification": "La valeur fonciere sert de signal de coherence (pas de prediction). Absente ou nulle, elle ne porte aucune information exploitable."
+        },
+        {
+          "identifiant": "DVF-04",
+          "libelle": "type de local retenu (Maison ou Appartement)",
+          "nature": "filtre",
+          "lignes_avant": 947,
+          "lignes_apres": 922,
+          "lignes_supprimees": 25,
+          "taux_suppression": 0.026399,
+          "justification": "Les dependances et locaux industriels n'ont pas de DPE logement comparable : les rapprocher produirait du bruit, pas de l'information."
+        },
+        {
+          "identifiant": "DVF-05",
+          "libelle": "deduplication (id_mutation, id_parcelle)",
+          "nature": "filtre",
+          "lignes_avant": 922,
+          "lignes_apres": 904,
+          "lignes_supprimees": 18,
+          "taux_suppression": 0.019523,
+          "justification": "Une mutation portant plusieurs dispositions apparait plusieurs fois dans DVF+ ; sans deduplication, le meme bien pese plusieurs fois dans les scores."
+        },
+        {
+          "identifiant": "DVF-06",
+          "libelle": "date de mutation valide",
+          "nature": "filtre",
+          "lignes_avant": 904,
+          "lignes_apres": 900,
+          "lignes_supprimees": 4,
+          "taux_suppression": 0.004425,
+          "justification": "Une date non interpretable interdit de calculer l'ecart temporel avec le DPE, qui est un signal de coherence central."
+        }
+      ]
+    },
+    {
+      "jeu": "dpe",
+      "lignes_initiales": 726,
+      "lignes_finales": 689,
+      "lignes_supprimees": 37,
+      "taux_suppression_global": 0.050964,
+      "regles": [
+        {
+          "identifiant": "DPE-01",
+          "libelle": "numero de DPE present",
+          "nature": "filtre",
+          "lignes_avant": 726,
+          "lignes_apres": 716,
+          "lignes_supprimees": 10,
+          "taux_suppression": 0.013774,
+          "justification": "Le numero ADEME est la cle de reference du diagnostic : sans lui, l'enregistrement n'est pas verifiable a la source."
+        },
+        {
+          "identifiant": "DPE-02",
+          "libelle": "etiquette dans l'echelle reglementaire A-G",
+          "nature": "filtre",
+          "lignes_avant": 716,
+          "lignes_apres": 708,
+          "lignes_supprimees": 8,
+          "taux_suppression": 0.011173,
+          "justification": "Toute autre valeur signale un enregistrement corrompu ou hors norme."
+        },
+        {
+          "identifiant": "DPE-03",
+          "libelle": "date d'etablissement valide",
+          "nature": "filtre",
+          "lignes_avant": 708,
+          "lignes_apres": 702,
+          "lignes_supprimees": 6,
+          "taux_suppression": 0.008475,
+          "justification": "Necessaire pour situer le diagnostic par rapport a la mutation."
+        },
+        {
+          "identifiant": "DPE-04",
+          "libelle": "deduplication par numero de DPE",
+          "nature": "filtre",
+          "lignes_avant": 702,
+          "lignes_apres": 689,
+          "lignes_supprimees": 13,
+          "taux_suppression": 0.018519,
+          "justification": "Les exports ADEME successifs peuvent republier un meme diagnostic."
+        }
+      ]
+    }
+  ],
+  "rapprochement": {
+    "nb_rapprochements": 922,
+    "nb_avec_dpe": 716,
+    "nb_sans_dpe": 206,
+    "taux_appariement": 0.776573,
+    "parcelles_multi_dpe": 44
+  }
+}

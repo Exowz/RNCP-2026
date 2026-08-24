@@ -1,0 +1,6073 @@
+[
+  {
+    "id_mutation": "2023-100000",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100001",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100002",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100003",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100004",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100005",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100006",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100007",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100008",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100009",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100010",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100011",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100012",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100013",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100014",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100015",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100016",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100017",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100018",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100019",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100020",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100021",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100022",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100023",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100024",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100025",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100026",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "surface_dpe_manquante"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100027",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100028",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100029",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100030",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100031",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100032",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100033",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100034",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100035",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100036",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100037",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100038",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100039",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100040",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100041",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100042",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100043",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100044",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100045",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100046",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100047",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100048",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100049",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100050",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100051",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100052",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100053",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100054",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100055",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100056",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100057",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100058",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100059",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100060",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100061",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100062",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100063",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100064",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100065",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100066",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100067",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100068",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100069",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100070",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100071",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100072",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100073",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100074",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100075",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100076",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100077",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100078",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100079",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100080",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100081",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100082",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100083",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100084",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100085",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100086",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100087",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100088",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100089",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100090",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100091",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100092",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100093",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100094",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100095",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100096",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100097",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100098",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100099",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100100",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100101",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100102",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100103",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100104",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100105",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100106",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100107",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100108",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100109",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100110",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100111",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100112",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100113",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100114",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100115",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100116",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100117",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100118",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100119",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100120",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100121",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100122",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100123",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100124",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100125",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100126",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100127",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100128",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100129",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100130",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100131",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100132",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100133",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100134",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100135",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100136",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100137",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100138",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100139",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100140",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100141",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100142",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100143",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100144",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100145",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100146",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100147",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100148",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100149",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100150",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100151",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100152",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100153",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100154",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100155",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100156",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100157",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100158",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100159",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100160",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100161",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100162",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100163",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100164",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100165",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100166",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100167",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100168",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100169",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100170",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100171",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100172",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100173",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100174",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100175",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100176",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100177",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100178",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100179",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100180",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100181",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100182",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100183",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100184",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100185",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100186",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100187",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100188",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100189",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100190",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100191",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100192",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100193",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100194",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100195",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100196",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100197",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100198",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100199",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100200",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100201",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100202",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100203",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "annee_construction_manquante"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100204",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100205",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100206",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100207",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100208",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100209",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100210",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100211",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100212",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100213",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100214",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100215",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100216",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100217",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100218",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100219",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100220",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100221",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100222",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100223",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100224",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100225",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100226",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100227",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100228",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100229",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100230",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100231",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100232",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100233",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100234",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100235",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100236",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100237",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100238",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100239",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100240",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100241",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100242",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100243",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100244",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100245",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100246",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100247",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100248",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100249",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100250",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100251",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100252",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100253",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100254",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100255",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100256",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100257",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100258",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100259",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100260",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100261",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100262",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100263",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100264",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100265",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100266",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100267",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100268",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100269",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100270",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100271",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100272",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100273",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100274",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100275",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100276",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100277",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100278",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100279",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100280",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100281",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100282",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100283",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100284",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100285",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100286",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100287",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100288",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100289",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100290",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100291",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100292",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100293",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100294",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100295",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100296",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100297",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100298",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100299",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100300",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100301",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100302",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100303",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100304",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100305",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100306",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100307",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100308",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100309",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100310",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100311",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100312",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100313",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100314",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100315",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100316",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100317",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100318",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100319",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100320",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100321",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100322",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100323",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100324",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100325",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100326",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100327",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100328",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100329",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100330",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100331",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100332",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100333",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100334",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100335",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100336",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100337",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100338",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100339",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100340",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100341",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100342",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100343",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100344",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "annee_construction_manquante"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100345",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100346",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100347",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100348",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100349",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100350",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100351",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100352",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100353",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100354",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100355",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100356",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100357",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100358",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100359",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100360",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100361",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100362",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100363",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "annee_construction_manquante"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100364",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100365",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100366",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100367",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100368",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100369",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100370",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100371",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100372",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100373",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100374",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100375",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100376",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100377",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100378",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100379",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100380",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100381",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100382",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100383",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100384",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100385",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100386",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100387",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100388",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100389",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100390",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100391",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100392",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100393",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100394",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100395",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100396",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100397",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100398",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100399",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100400",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100401",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100402",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100403",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100404",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100405",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100406",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100407",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100408",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100409",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100410",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100411",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100412",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100413",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100414",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100415",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100416",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100417",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100418",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100419",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100420",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100421",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100422",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100423",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100424",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100425",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100426",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100427",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100428",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100429",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100430",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100431",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100432",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100433",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100434",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100435",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100436",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100437",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100438",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100439",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100440",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100441",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100442",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100443",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100444",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100445",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100446",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100447",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100448",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100449",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100450",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100451",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100452",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100453",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100454",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100455",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100456",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100457",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100458",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100459",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100460",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100461",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100462",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100463",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100464",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100465",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100466",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100467",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100468",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100469",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100470",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100471",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100472",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100473",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100474",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100475",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100476",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100477",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100478",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100479",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100480",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100481",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100482",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100483",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100484",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100485",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100486",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100487",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100488",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100489",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100490",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100491",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100492",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100493",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100494",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100495",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100496",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100497",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100498",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100499",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100500",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100501",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100502",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100503",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100504",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100505",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100506",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100507",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100508",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100509",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100510",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100511",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100512",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100513",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100514",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100515",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100516",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100517",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100518",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100519",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100520",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100521",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100522",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100523",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100524",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100525",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100526",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100527",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100528",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100529",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100530",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100531",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100532",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100533",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100534",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100535",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100536",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100537",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100538",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100539",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100540",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100541",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100542",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100543",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100544",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100545",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100546",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100547",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100548",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100549",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100550",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100551",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100552",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100553",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100554",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100555",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100556",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100557",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100558",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100559",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100560",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100561",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100562",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100563",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100564",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100565",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100566",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100567",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100568",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100569",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100570",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100571",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100572",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100573",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100574",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100575",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100576",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100577",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100578",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100579",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100580",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100581",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100582",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100583",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100584",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100585",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100586",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100587",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100588",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100589",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100590",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100591",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100592",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100593",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100594",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100595",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100596",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100597",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100598",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100599",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100600",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100601",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100602",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100603",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100604",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100605",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100606",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100607",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100608",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100609",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100610",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100611",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100612",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100613",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100614",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100615",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100616",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100617",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100618",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100619",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100620",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100621",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100622",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100623",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100624",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100625",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100626",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100627",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100628",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100629",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100630",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100631",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100632",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100633",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100634",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100635",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100636",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100637",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100638",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100639",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100640",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100641",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100642",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100643",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100644",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100645",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100646",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100647",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100648",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100649",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100650",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100651",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100652",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100653",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100654",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100655",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100656",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100657",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100658",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100659",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100660",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100661",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100662",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100663",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100664",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100665",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100666",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100667",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100668",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100669",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100670",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100671",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100672",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante",
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100673",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100674",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100675",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100676",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100677",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100678",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100679",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100680",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100681",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100682",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100683",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100684",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100685",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100686",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100687",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100688",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100689",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100690",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100691",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100692",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100693",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100694",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100695",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100696",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100697",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100698",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100699",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100700",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100701",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100702",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100703",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100704",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100705",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100706",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100707",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100708",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100709",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100710",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100711",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100712",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100713",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100714",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100715",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100716",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100717",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100718",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100719",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100720",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100721",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100722",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100723",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100724",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100725",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100726",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100727",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100728",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100729",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100730",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100731",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100732",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100733",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100734",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100735",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100736",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100737",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100738",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100739",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100740",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100741",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100742",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100743",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100744",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100745",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100746",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100747",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100748",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100749",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100750",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100751",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100752",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100753",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100754",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100755",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100756",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100757",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100758",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100759",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100760",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100761",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100762",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100763",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100764",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100765",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100766",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100767",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100768",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100769",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100770",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100771",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100772",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100773",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100774",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100775",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100776",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100777",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100778",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100779",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100780",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100781",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100782",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100783",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100784",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100785",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100786",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100787",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100788",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100789",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100790",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100791",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100792",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100793",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100794",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100795",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100796",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100797",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100798",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100799",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100800",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100801",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100802",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100803",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100804",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100805",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100806",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100807",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100808",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100809",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100810",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100811",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100812",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100813",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100814",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100815",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100816",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100817",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100818",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100819",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100820",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100821",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100822",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100823",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100824",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100825",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100826",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100827",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100828",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100829",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100830",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100831",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100832",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100833",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100834",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100835",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100836",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100837",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100838",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100839",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100840",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100841",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100842",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100843",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100844",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100845",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100846",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100847",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100848",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100849",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100850",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100851",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100852",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100853",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100854",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100855",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100856",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100857",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100858",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100859",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100860",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100861",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100862",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100863",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100864",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100865",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100866",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100867",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100868",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100869",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100870",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100871",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100872",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100873",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "surface_dpe_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100874",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100875",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100876",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100877",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100878",
+    "anomalies_plantees": [
+      "dpe_posterieur_mutation"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100879",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100880",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100881",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100882",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100883",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100884",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100885",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100886",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100887",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100888",
+    "anomalies_plantees": [
+      "valeur_fonciere_atypique"
+    ],
+    "incertitudes_plantees": [],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100889",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100890",
+    "anomalies_plantees": [
+      "desaccord_type_local"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100891",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100892",
+    "anomalies_plantees": [
+      "ecart_surface"
+    ],
+    "incertitudes_plantees": [
+      "geocodage_incertain"
+    ],
+    "anormal": true
+  },
+  {
+    "id_mutation": "2023-100893",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100894",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [
+      "geocodage_incertain",
+      "annee_construction_manquante"
+    ],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100895",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100896",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100897",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100898",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  },
+  {
+    "id_mutation": "2023-100899",
+    "anomalies_plantees": [],
+    "incertitudes_plantees": [],
+    "anormal": false
+  }
+]

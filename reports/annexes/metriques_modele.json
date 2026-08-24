@@ -1,0 +1,15 @@
+{
+  "perte_validation": 0.227485,
+  "epoques_effectuees": 220,
+  "nb_test": 108,
+  "taux_signalement_atypique": 0.1204,
+  "auc_autoencodeur": 0.9095,
+  "average_precision_autoencodeur": 0.8427,
+  "taux_base_anomalies": 0.2407,
+  "regles_precision_circulaire": 0.8824,
+  "regles_rappel_circulaire": 0.5769,
+  "regles_f1_circulaire": 0.6977,
+  "systeme_precision": 0.8889,
+  "systeme_rappel": 0.6154,
+  "systeme_f1": 0.7273
+}

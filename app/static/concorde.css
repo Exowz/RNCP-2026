@@ -1,0 +1,209 @@
+/* Concorde — feuille de style unique, servie localement.
+ *
+ * Aucune ressource distante : ni police Google, ni CDN, ni image externe. C'est
+ * a la fois la contrainte de demonstration hors ligne et la politique de
+ * securite du contenu (CSP `default-src 'self'`) posee par l'API.
+ *
+ * Les couleurs sont choisies pour un contraste >= 4.5:1 avec leur fond
+ * (WCAG 2.1 AA, critere 1.4.3). Le sens n'est jamais porte par la couleur
+ * seule : chaque etat porte aussi un libelle et un symbole.
+ */
+
+:root {
+  --fond: #fbfaf8;
+  --fond-carte: #ffffff;
+  --texte: #1a1a1a;          /* 15.9:1 sur --fond */
+  --texte-doux: #4a4a4a;     /*  8.0:1 sur --fond */
+  --trait: #d6d2cc;
+  --accent: #1c4f7c;         /*  7.6:1 sur blanc  */
+  --accent-fond: #e8eff5;
+  --ok: #12563a;             /*  7.4:1 sur blanc  */
+  --ok-fond: #e6f2ec;
+  --attention: #7a4c00;      /*  7.1:1 sur blanc  */
+  --attention-fond: #fdf1dc;
+  --alerte: #8f1d1d;         /*  8.1:1 sur blanc  */
+  --alerte-fond: #fbeaea;
+  --neutre: #45474a;
+  --neutre-fond: #eeeeef;
+  --rayon: 6px;
+  --espace: 1rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- Lien d'evitement : invisible jusqu'au focus clavier (RGAA 12.7) --- */
+.lien-evitement {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  z-index: 100;
+}
+.lien-evitement:focus { left: 0; }
+
+/* --- Focus toujours visible, jamais supprime (RGAA 10.7) --- */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+a { color: var(--accent); }
+a:hover { text-decoration-thickness: 2px; }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--neutre-fond);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+/* --- Bandeau --- */
+.bandeau { background: var(--fond-carte); border-bottom: 1px solid var(--trait); }
+.bandeau__interieur {
+  max-width: 62rem; margin: 0 auto; padding: var(--espace);
+  display: flex; flex-wrap: wrap; gap: var(--espace);
+  align-items: baseline; justify-content: space-between;
+}
+.marque { margin: 0; font-size: 1.25rem; font-weight: 700; }
+.marque a { color: var(--texte); text-decoration: none; }
+.marque a:focus-visible { text-decoration: underline; }
+.marque__sous-titre {
+  display: block; font-size: 0.8rem; font-weight: 400; color: var(--texte-doux);
+}
+.nav-profil { display: flex; align-items: center; gap: 0.5rem; }
+.nav-profil__libelle { font-size: 0.9rem; color: var(--texte-doux); }
+.nav-profil ul { list-style: none; display: flex; gap: 0.25rem; margin: 0; padding: 0; }
+.nav-profil a {
+  display: block; padding: 0.35rem 0.75rem; border: 1px solid var(--trait);
+  border-radius: var(--rayon); text-decoration: none; font-size: 0.9rem;
+  background: var(--fond-carte);
+}
+.nav-profil a[aria-current="page"] {
+  background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600;
+}
+
+/* --- Contenu --- */
+.contenu { max-width: 62rem; margin: 0 auto; padding: 2rem var(--espace) 3rem; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 0.5rem; }
+h2 { font-size: 1.2rem; margin: 2rem 0 0.5rem; }
+.legende { font-size: 1.2rem; margin: 0 0 0.25rem; }
+.chapeau { font-size: 1.05rem; color: var(--texte-doux); max-width: 46rem; }
+.aide { font-size: 0.9rem; color: var(--texte-doux); }
+
+.fil ol { list-style: none; display: flex; gap: 0.5rem; padding: 0; margin: 0 0 1rem;
+          font-size: 0.9rem; }
+.fil li + li::before { content: "›"; margin-right: 0.5rem; color: var(--texte-doux); }
+
+/* --- Formulaire --- */
+.formulaire { margin: 1.5rem 0; }
+fieldset { border: 1px solid var(--trait); border-radius: var(--rayon);
+           padding: var(--espace); margin: 0 0 var(--espace); background: var(--fond-carte); }
+legend { padding: 0 0.5rem; }
+
+.liste-choix { list-style: none; margin: 0.75rem 0 0; padding: 0; display: grid; gap: 0.5rem; }
+.liste-choix li { display: flex; align-items: flex-start; gap: 0.65rem;
+                  border: 1px solid var(--trait); border-radius: var(--rayon);
+                  padding: 0.75rem; }
+.liste-choix input[type="radio"] { margin-top: 0.35rem; width: 1.1rem; height: 1.1rem;
+                                   accent-color: var(--accent); flex: none; }
+.liste-choix label { cursor: pointer; }
+.liste-choix li:has(input:checked) { border-color: var(--accent); background: var(--accent-fond); }
+.choix__titre { display: block; font-weight: 600; }
+.choix__detail { display: block; font-size: 0.85rem; color: var(--texte-doux); }
+
+.bouton {
+  display: inline-block; background: var(--accent); color: #fff; border: 1px solid var(--accent);
+  border-radius: var(--rayon); padding: 0.65rem 1.25rem; font-size: 1rem; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+}
+.bouton:hover { background: #16406a; }
+.bouton--secondaire { background: var(--fond-carte); color: var(--accent); }
+
+/* --- Cartes de synthese --- */
+.verdict-phrase {
+  font-size: 1.1rem; border-left: 4px solid var(--accent); padding-left: 1rem;
+  margin: 1.5rem 0; max-width: 46rem;
+}
+.cartes { display: grid; gap: var(--espace); grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.carte { background: var(--fond-carte); border: 1px solid var(--trait);
+         border-left-width: 5px; border-radius: var(--rayon); padding: var(--espace); }
+.carte h2 { margin: 0; font-size: 0.85rem; text-transform: uppercase;
+            letter-spacing: 0.06em; color: var(--texte-doux); }
+.carte__valeur { margin: 0.35rem 0; font-size: 1.35rem; font-weight: 700; }
+.carte__legende { margin: 0; font-size: 0.9rem; color: var(--texte-doux); }
+.carte--ok { border-left-color: var(--ok); }
+.carte--ok .carte__valeur { color: var(--ok); }
+.carte--attention { border-left-color: var(--attention); }
+.carte--attention .carte__valeur { color: var(--attention); }
+.carte--alerte { border-left-color: var(--alerte); }
+.carte--alerte .carte__valeur { color: var(--alerte); }
+.carte--neutre { border-left-color: var(--neutre); }
+.carte--neutre .carte__valeur { color: var(--neutre); }
+
+/* --- Motifs et reserves --- */
+.liste-motifs { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; }
+.motif { border: 1px solid var(--trait); border-left-width: 5px;
+         border-radius: var(--rayon); padding: 0.85rem; background: var(--fond-carte); }
+.motif p { margin: 0.25rem 0; }
+.motif--majeur { border-left-color: var(--alerte); background: var(--alerte-fond); }
+.motif--mineur { border-left-color: var(--attention); background: var(--attention-fond); }
+.motif--reserve { border-left-color: var(--neutre); background: var(--neutre-fond); }
+.motif__entete { display: flex; align-items: center; gap: 0.5rem; }
+.motif__technique { font-size: 0.85rem; color: var(--texte-doux); }
+
+.etiquette { font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+             letter-spacing: 0.05em; padding: 0.15rem 0.5rem; border-radius: 999px;
+             border: 1px solid currentColor; }
+.etiquette--majeur { color: var(--alerte); }
+.etiquette--mineur { color: var(--attention); }
+
+/* --- Encarts --- */
+.encart { background: var(--fond-carte); border: 1px solid var(--trait);
+          border-radius: var(--rayon); padding: var(--espace); margin: 2rem 0; }
+.encart h1, .encart h2 { margin-top: 0; }
+.encart--alerte { border-left: 5px solid var(--alerte); background: var(--alerte-fond); }
+
+/* --- Tableaux --- */
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0;
+        background: var(--fond-carte); font-size: 0.95rem; }
+caption { text-align: left; font-size: 0.9rem; color: var(--texte-doux);
+          padding-bottom: 0.4rem; }
+th, td { border: 1px solid var(--trait); padding: 0.55rem 0.7rem;
+         text-align: left; vertical-align: top; }
+thead th { background: var(--accent-fond); }
+
+/* --- Pied --- */
+.pied { border-top: 1px solid var(--trait); background: var(--fond-carte);
+        padding: 1.5rem var(--espace); }
+.pied p { max-width: 62rem; margin: 0 auto 0.5rem; font-size: 0.9rem;
+          color: var(--texte-doux); }
+.pied__avertissement { font-size: 0.85rem; }
+
+/* --- Respect des preferences systeme (RGAA 13.8 / WCAG 2.3.3) --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important;
+                           transition-duration: 0.01ms !important; }
+}
+@media (prefers-contrast: more) {
+  :root { --trait: #000; --texte-doux: #2a2a2a; }
+}
+
+/* --- Petits ecrans : le contenu reste lisible sans defilement horizontal --- */
+@media (max-width: 40rem) {
+  .bandeau__interieur { flex-direction: column; align-items: flex-start; }
+  .contenu { padding-top: 1.25rem; }
+  table { display: block; overflow-x: auto; }
+}

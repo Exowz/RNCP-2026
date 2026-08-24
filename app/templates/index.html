@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block titre %}Evaluer un rapprochement{% endblock %}
+{% block contenu %}
+<h1>Que disent reellement les donnees sur ce bien&nbsp;?</h1>
+
+<p class="chapeau">
+  Concorde rapproche une <strong>mutation immobiliere</strong> (DVF+) et un
+  <strong>diagnostic de performance energetique</strong> (ADEME), puis repond a trois
+  questions distinctes&nbsp;: les deux enregistrements se contredisent-ils, ce rapprochement
+  ressemble-t-il aux autres, et peut-on se fier a cette reponse.
+</p>
+
+{% if not exemples %}
+<div class="encart encart--alerte" role="alert">
+  <h2>Aucun cas disponible</h2>
+  <p>
+    La table des rapprochements n'a pas ete construite. Executez
+    <code>python -m concorde.collect</code> puis <code>python -m concorde.clean</code>.
+  </p>
+</div>
+{% else %}
+<form action="/evaluer" method="post" class="formulaire">
+  <input type="hidden" name="profil" value="{{ profil }}">
+
+  <fieldset>
+    <legend><h2 class="legende">Choisir un rapprochement</h2></legend>
+    <p id="aide-cas" class="aide">
+      Ces cas sont extraits du jeu de donnees reel traite par la chaine, et non inventes.
+      Chacun illustre un comportement different du systeme.
+    </p>
+    <ul class="liste-choix" role="radiogroup" aria-describedby="aide-cas">
+      {% for cle, exemple in exemples.items() %}
+      <li>
+        <input type="radio" id="cas-{{ cle }}" name="cas" value="{{ cle }}"
+               {% if loop.first %}checked{% endif %}>
+        <label for="cas-{{ cle }}">
+          <span class="choix__titre">{{ exemple.intitule }}</span>
+          <span class="choix__detail">
+            Mutation {{ exemple.donnees.id_mutation }} &middot;
+            {{ exemple.donnees.type_local }} de {{ exemple.donnees.surface_reelle_bati }}&nbsp;m&sup2;
+            &middot; commune {{ exemple.donnees.code_commune }}
+          </span>
+        </label>
+      </li>
+      {% endfor %}
+    </ul>
+  </fieldset>
+
+  <button type="submit" class="bouton">Evaluer ce rapprochement</button>
+</form>
+{% endif %}
+
+<section class="encart" aria-labelledby="titre-limites">
+  <h2 id="titre-limites">Ce que Concorde ne fait pas</h2>
+  <ul>
+    <li>Il <strong>n'estime pas</strong> la valeur d'un bien et ne produit aucune tarification.</li>
+    <li>Il ne conclut pas quand un diagnostic n'a pas pu etre rapproche&nbsp;: il le dit.</li>
+    <li>
+      Il ne generalise pas au parc francais&nbsp;: la base DPE de l'ADEME n'en est pas
+      un echantillon representatif, et l'agence demande explicitement une lecture prudente.
+    </li>
+  </ul>
+</section>
+{% endblock %}
