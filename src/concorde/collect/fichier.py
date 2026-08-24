@@ -21,6 +21,7 @@ from pathlib import Path
 import pandas as pd
 
 from concorde.collect.base import Collecteur
+from concorde.collect.spark_dpe import lire_dpe_par_spark
 from concorde.common.paths import DATA_SAMPLES
 
 #: Colonnes DVF+ indispensables a la suite de la chaine.
@@ -83,11 +84,11 @@ class CollecteurDVF(Collecteur):
 
 
 class CollecteurDPE(Collecteur):
-    """Diagnostics de performance energetique depuis un fichier CSV ADEME."""
+    """Diagnostics ADEME lus par Spark depuis un extrait CSV local."""
 
     nom = "dpe"
-    type_source = "fichier"
-    origine = "Observatoire DPE-Audit (ADEME) — extrait CSV local"
+    type_source = "big_data"
+    origine = "Observatoire DPE-Audit (ADEME) — extrait CSV local lu par Spark"
 
     def __init__(self, source: Path | None = None, **kwargs) -> None:
         super().__init__(**kwargs)
@@ -99,10 +100,10 @@ class CollecteurDPE(Collecteur):
                 f"Fichier DPE introuvable : {self.source}. "
                 "Executer `python scripts/make_sample_fixture.py` pour regenerer les extraits."
             )
-        df = pd.read_csv(
-            self.source,
-            dtype={"Code_INSEE_(BAN)": str, "Code_postal_(BAN)": str, "N°DPE": str},
-        )
+        df = lire_dpe_par_spark(self.source)
+        for colonne in ("Code_INSEE_(BAN)", "Code_postal_(BAN)", "N°DPE"):
+            if colonne in df:
+                df[colonne] = df[colonne].astype(str)
         _verifier_schema(df, COLONNES_DPE_REQUISES, "DPE ADEME")
         return df
 

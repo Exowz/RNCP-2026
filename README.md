@@ -16,6 +16,7 @@ de modele, CDN ou appel d'API externe n'est necessaire.
 
 ```bash
 # Dans le depot, avec les dependances deja installees dans .venv/
+source scripts/spark-env.sh  # Java 17 local, requis uniquement par le DPE Spark
 .venv/bin/python -m concorde.collect
 .venv/bin/python -m concorde.clean
 .venv/bin/python -m concorde.model.entrainement
@@ -59,3 +60,5 @@ autorise pour l'appel reel application → API. Les tests `tests/api/` et
 - `monitoring/logs/*.jsonl` : journaux structures correles par `request_id`.
 - `reports/annexes/nettoyage_avant_apres.md` et
   `reports/annexes/metriques_modele.json` : sorties regenerables de la chaine.
+- [Execution Spark DPE](docs/spark.md) : Java 17 epingle et preuve de lecture
+  Spark locale.
