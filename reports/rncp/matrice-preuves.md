@@ -17,10 +17,10 @@ Legende : 🟢 prouve et reproductible · 🟡 amorce, preuve a completer · ⚪
 | C11 | 🟢 | Metriques qualite, derive Evidently, latence/erreurs et alertes. | `docs/monitoring-modele.md`, `scripts/monitor_model.py` |
 | C12 | 🟡 | Tests data, Spark, PostgreSQL, auth et contrat prediction ; couverture entrainement a completer. | `pytest -q`, `tests/` |
 | C13 | 🟡 | Workflow CI execute : fixtures, collecte, entrainement, tests et lint ; packaging/livraison a finaliser. | `.github/workflows/verify.yml`, `docs/ci.md` |
-| C14 | ⚪ | — | — |
-| C15 | ⚪ | — | — |
-| C16 | 🟡 | Journal de decisions individuel existe ; backlog et retrospective a faire. | `docs/journal-decisions.md` |
-| C17 | 🟡 | Authentification par cle et entetes de securite implementes ; preuve de test a completer. | `src/concorde/service/securite.py` |
+| C14 | 🟢 | Personas, user stories, acceptation et exigences WCAG/RGAA explicites. | `docs/specs-fonctionnelles.md` |
+| C15 | 🟢 | Architecture, flux, dependances, POC et contrainte hors ligne documentes. | `docs/architecture.md` |
+| C16 | 🟡 | Pilotage individuel, tableau, Definition of Done, risques et REX ; limite collectif assumee. | `docs/pilotage.md` |
+| C17 | 🟢 | Roles API, validation, CSP/entetes, secrets hors Git, pseudonymisation et accessibilite. | `docs/securite.md`, `tests/api/`, `app/templates/` |
 | C18 | 🟢 | CI GitHub executee avec succes sur `23c5421`. | [run 32772913151](https://github.com/Exowz/RNCP-2026/actions/runs/32772913151), `docs/ci.md` |
 | C19 | ⚪ | — | — |
 | C20 | 🟡 | Logs JSONL, correlation et pseudonymisation. Dashboard/seuils a faire. | [annexe demo](../annexes/demo-verticale-2026-08-24.md) |

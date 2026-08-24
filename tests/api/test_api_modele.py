@@ -38,3 +38,17 @@ def test_predict_rejette_un_champ_inconnu() -> None:
         reponse = client.post("/predict", json=charge, headers={"X-API-Key": "dev-reader-key"})
 
     assert reponse.status_code == 422
+
+
+def test_sante_pose_les_entetes_de_securite_et_reprend_la_correlation() -> None:
+    """Evite une reponse API sans protection navigateur ni trace exploitable."""
+    request_id = "preuve-c17-correlation"
+
+    with TestClient(app) as client:
+        reponse = client.get("/sante", headers={"X-Request-ID": request_id})
+
+    assert reponse.status_code == 200
+    assert reponse.headers["X-Request-ID"] == request_id
+    assert reponse.headers["X-Content-Type-Options"] == "nosniff"
+    assert reponse.headers["X-Frame-Options"] == "DENY"
+    assert "default-src 'self'" in reponse.headers["Content-Security-Policy"]
