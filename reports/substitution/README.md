@@ -1,5 +1,3 @@
 # Livrable de substitution n°21 — Secure MLOps
 
-Ce dossier recevra le rapport et les preuves propres a l'usine MLOps : tests,
-entrainement/evaluation, monitoring modele, packaging Docker et CI executee.
-Le meme code Concorde sert de cas d'usage ; il n'est pas duplique.
+Le rapport principal est [rapport.md](rapport.md). Le conducteur de soutenance est [slides-substitution.md](slides-substitution.md). Le code et les preuves sont communs au RNCP ; seuls l'angle et le lecteur changent.
