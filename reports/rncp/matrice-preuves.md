@@ -4,8 +4,8 @@ Legende : 🟢 prouve et reproductible · 🟡 amorce, preuve a completer · ⚪
 
 | Comp. | Etat | Preuve actuelle | Emplacement / commande |
 |---|---|---|---|
-| C1 | 🟡 | DVF fichier et DPE big data (Spark) executes ; trois types de sources restent a faire. | `concorde.collect`, [preuve Spark](../annexes/spark-dpe-2026-08-24.md) |
-| C2 | 🟡 | Lecture Spark executee ; requetes Spark SQL et SGBD restent a documenter. | `docs/spark.md` |
+| C1 | 🟢 | Six collecteurs rejouables : fichier, service web, page web, PostgreSQL et Spark. | `concorde.collect`, manifeste `data/raw/_manifest.json` |
+| C2 | 🟢 | Jointure/filtres PostgreSQL et agregation Spark SQL executees et testees. | `docs/queries.md`, `tests/data/test_requetes_sql.py` |
 | C3 | 🟢 | Nettoyage DVF/DPE, jointure et tableau avant/apres. | `python -m concorde.clean`, `reports/annexes/nettoyage_avant_apres.md` |
 | C4 | ⚪ | — | — |
 | C5 | ⚪ | — | — |

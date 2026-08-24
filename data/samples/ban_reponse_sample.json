@@ -1,0 +1,8 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type": "Feature", "properties": {"id": "33063_8081_00034", "label": "34 Rue Sainte-Catherine 33000 Bordeaux", "score": 0.98, "citycode": "33063", "postcode": "33000", "type": "housenumber"}},
+    {"type": "Feature", "properties": {"id": "17300_8081_00012", "label": "12 Place Colbert 17300 Rochefort", "score": 0.96, "citycode": "17300", "postcode": "17300", "type": "housenumber"}},
+    {"type": "Feature", "properties": {"id": "24016_8081_00007", "label": "7 Route de Perigueux 24430 Annesse-et-Beaulieu", "score": 0.91, "citycode": "24016", "postcode": "24430", "type": "housenumber"}}
+  ]
+}

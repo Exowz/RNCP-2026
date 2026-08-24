@@ -12,7 +12,10 @@ from __future__ import annotations
 import sys
 
 from concorde.collect.base import Collecteur
+from concorde.collect.base_de_donnees import CollecteurPostgreSQL
 from concorde.collect.fichier import CollecteurAleas, CollecteurDPE, CollecteurDVF
+from concorde.collect.page_web import CollecteurPageGeorisques
+from concorde.collect.service_web import CollecteurBAN
 from concorde.common.logging_setup import new_request_id, setup_logging
 from concorde.common.paths import ensure_dirs
 
@@ -20,6 +23,9 @@ COLLECTEURS: dict[str, type[Collecteur]] = {
     "dvf": CollecteurDVF,
     "dpe": CollecteurDPE,
     "aleas": CollecteurAleas,
+    "ban": CollecteurBAN,
+    "page_georisques": CollecteurPageGeorisques,
+    "communes_postgres": CollecteurPostgreSQL,
 }
 
 

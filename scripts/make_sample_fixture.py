@@ -57,7 +57,7 @@ def _voie(rng: random.Random) -> tuple[str, str]:
 
 
 def generer(nb_biens: int = 900) -> dict[str, list[dict]]:
-    rng = random.Random(SEED)
+    rng = random.Random(SEED)  # noqa: S311 - fixture deterministe, pas un secret
     dvf: list[dict] = []
     dpe: list[dict] = []
     aleas: list[dict] = []
@@ -181,7 +181,7 @@ def generer(nb_biens: int = 900) -> dict[str, list[dict]]:
 
     # --- Georisques : exposition par commune (extrait du service web) ---
     for commune in COMMUNES:
-        rng_c = random.Random(SEED + int(commune["code_commune"]))
+        rng_c = random.Random(SEED + int(commune["code_commune"]))  # noqa: S311
         catalogue = [
             ("inondation", rng_c.choice(["Faible", "Moyen", "Fort"])),
             ("retrait_gonflement_argiles", rng_c.choice(["Faible", "Moyen", "Fort"])),
@@ -197,7 +197,7 @@ def generer(nb_biens: int = 900) -> dict[str, list[dict]]:
                 "source": "Georisques (BRGM) - extrait fige pour demonstration hors ligne",
             })
 
-    ajouter_lignes_corrompues(dvf, dpe, random.Random(SEED + 7))
+    ajouter_lignes_corrompues(dvf, dpe, random.Random(SEED + 7))  # noqa: S311
 
     return {"dvf": dvf, "dpe": dpe, "aleas": aleas, "verite": verite}
 
@@ -260,7 +260,7 @@ def ajouter_lignes_corrompues(dvf: list[dict], dpe: list[dict], rng: random.Rand
 
     m = len(dpe)
     # DPE-01 : numero de diagnostic absent.
-    for i in range(int(m * 0.015)):
+    for _i in range(int(m * 0.015)):
         ligne = dict(rng.choice(dpe))
         ligne["N\u00b0DPE"] = ""
         dpe.append(ligne)
@@ -289,7 +289,7 @@ def ajouter_lignes_corrompues(dvf: list[dict], dpe: list[dict], rng: random.Rand
 def ecrire(donnees: dict[str, list[dict]]) -> None:
     SAMPLES.mkdir(parents=True, exist_ok=True)
 
-    for nom, lignes, fichier in (
+    for _nom, lignes, fichier in (
         ("dvf", donnees["dvf"], "dvf_sample.csv"),
         ("dpe", donnees["dpe"], "dpe_ademe_sample.csv"),
         ("aleas", donnees["aleas"], "georisques_sample.csv"),
