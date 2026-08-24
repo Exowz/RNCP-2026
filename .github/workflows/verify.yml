@@ -1,0 +1,42 @@
+name: Verification Concorde
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quality-model:
+    runs-on: ubuntu-24.04
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_DB: concorde
+          POSTGRES_USER: concorde
+          POSTGRES_PASSWORD: change-me-in-local-env
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U concorde -d concorde"
+          --health-interval 5s --health-timeout 3s --health-retries 10
+    env:
+      CONCORDE_PG_PORT: 5432
+      CONCORDE_OFFLINE: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen --extra dev
+      - run: uv run python scripts/make_sample_fixture.py
+      - run: uv run python -m concorde.collect
+      - run: uv run python -m concorde.clean
+      - run: uv run python scripts/import_postgres.py
+      - run: uv run python -m concorde.model.entrainement
+      - run: uv run pytest -m "not local_service"
+      - run: uv run ruff check src api app tests scripts

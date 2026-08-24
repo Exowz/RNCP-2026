@@ -77,6 +77,7 @@ markers = [
     "app: tests de l'application (C10, C17)",
     "slow: tests longs (Spark, entrainement complet)",
     "regression: tests de non-regression lies a un incident (C21)",
+    "local_service: test necessitant un service local deja charge (LM Studio)",
 ]
 
 [tool.coverage.run]

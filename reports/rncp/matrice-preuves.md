@@ -12,11 +12,11 @@ Legende : 🟢 prouve et reproductible · 🟡 amorce, preuve a completer · ⚪
 | C6 | 🟡 | Veille datee, sources qualifiees et decisions ; limite individuel assumee. | `docs/veille.md` |
 | C7 | 🟢 | Benchmark de services retenus/ecartes, dont sobriete et hors ligne. | `docs/benchmark.md` |
 | C8 | 🟢 | LM Studio local, modele charge, acces HTTP, test et metriques. | `docs/service-ia.md`, `tests/model/test_lm_studio_service.py` |
-| C9 | 🟡 | API modele locale, contrats Pydantic, OpenAPI et roles ; tests metier a completer. | `api/model/`, `http://127.0.0.1:8002/docs` |
+| C9 | 🟢 | API modele authentifiee, OpenAPI et contrats d'entree/sortie testes. | `docs/api-modele.md`, `tests/api/test_api_modele.py` |
 | C10 | 🟡 | Appel HTTP reel app → API, degradation prevue. | `app/`, [annexe demo](../annexes/demo-verticale-2026-08-24.md) |
 | C11 | 🟡 | Compteurs et latence JSON ; rapport Evidently et alertes restent a faire. | `monitoring/model/` |
-| C12 | 🟡 | Deux tests d'integration du contrat hors ligne ; couverture modele a construire. | `pytest -q`, `tests/` |
-| C13 | 🟡 | Chaine locale collecte → nettoyage → entrainement → artefact. CI et packaging a faire. | commandes README |
+| C12 | 🟡 | Tests data, Spark, PostgreSQL, auth et contrat prediction ; couverture entrainement a completer. | `pytest -q`, `tests/` |
+| C13 | 🟡 | Workflow CI complet ecrit ; execution GitHub et packaging restent a prouver. | `.github/workflows/verify.yml`, `docs/ci.md` |
 | C14 | ⚪ | — | — |
 | C15 | ⚪ | — | — |
 | C16 | 🟡 | Journal de decisions individuel existe ; backlog et retrospective a faire. | `docs/journal-decisions.md` |
