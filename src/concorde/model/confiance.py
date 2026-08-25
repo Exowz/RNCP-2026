@@ -1,12 +1,12 @@
 """Niveau de confiance : ce que l'on ne sait pas, rendu explicite. (C9)
 
 La confiance n'est pas la probabilite que le bien soit anormal. C'est le credit
-que l'on peut accorder au resultat lui-meme, compte tenu de ce qui manque.
+que l'on peut accorder au resultat lui-même, compte tenu de ce qui manque.
 
-Un rapprochement peut etre parfaitement coherent et neanmoins peu fiable : deux
-DPE sur la meme parcelle, un geocodage grossier, une annee de construction
+Un rapprochement peut être parfaitement cohérent et neanmoins peu fiable : deux
+DPE sur la même parcelle, un géocodage grossier, une année de construction
 absente. Confondre les deux notions produirait exactement le defaut que le projet
-denonce : une reponse trop assuree sur une donnee trop pauvre.
+denonce : une réponse trop assuree sur une donnée trop pauvre.
 
 Les penalites sont additives, plafonnees, et chacune est restituee a
 l'utilisateur avec sa raison.
@@ -38,7 +38,7 @@ SEUIL_ECART_TEMPOREL_ANNEES = 8.0
 
 @dataclass(frozen=True, slots=True)
 class Reserve:
-    """Une raison, lisible, de ne pas accorder un credit total au resultat."""
+    """Une raison, lisible, de ne pas accorder un crédit total au résultat."""
 
     identifiant: str
     message: str
@@ -95,8 +95,8 @@ def evaluer(variables: dict[str, Any], a_dpe: bool) -> Confiance:
             reserves=[
                 Reserve(
                     "CONF-00",
-                    "Aucun DPE n'a pu etre rapproche de cette mutation. Aucune verification "
-                    "de coherence n'est possible : le systeme ne conclut pas.",
+                    "Aucun DPE n'a pu être rapproché de cette mutation. Aucune vérification "
+                    "de cohérence n'est possible : le système ne conclut pas.",
                     1.0,
                 )
             ],
@@ -107,13 +107,13 @@ def evaluer(variables: dict[str, Any], a_dpe: bool) -> Confiance:
 
     score_ban = _fini(variables.get("score_ban"))
     if score_ban != score_ban:  # NaN : score absent
-        reserves.append(Reserve("CONF-01", "Le score de geocodage BAN du DPE est absent.", 0.15))
+        reserves.append(Reserve("CONF-01", "Le score de géocodage BAN du DPE est absent.", 0.15))
         penalite += 0.15
     elif score_ban < SEUIL_SCORE_BAN:
         reserves.append(
             Reserve(
                 "CONF-02",
-                f"Le geocodage de l'adresse du DPE est approximatif (score BAN {score_ban:.2f} "
+                f"Le géocodage de l'adresse du DPE est approximatif (score BAN {score_ban:.2f} "
                 f"< {SEUIL_SCORE_BAN:.2f}) : le rattachement a la parcelle est incertain.",
                 0.25,
             )
@@ -150,7 +150,7 @@ def evaluer(variables: dict[str, Any], a_dpe: bool) -> Confiance:
         reserves.append(
             Reserve(
                 "CONF-05",
-                f"Le DPE et la mutation sont separes de {ecart:.1f} ans : l'etat decrit peut "
+                f"Le DPE et la mutation sont séparés de {ecart:.1f} ans : l'état décrit peut "
                 "avoir change.",
                 0.10,
             )

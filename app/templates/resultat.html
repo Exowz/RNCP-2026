@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% block titre %}Resultat de l'evaluation{% endblock %}
+{% block titre %}Résultat de l'evaluation{% endblock %}
 {% block contenu %}
 
 <nav aria-label="Fil d'Ariane" class="fil">
   <ol>
     <li><a href="/?profil={{ profil }}">Accueil</a></li>
-    <li aria-current="page">Resultat</li>
+    <li aria-current="page">Résultat</li>
   </ol>
 </nav>
 
@@ -28,7 +28,7 @@
   <section class="cartes" aria-label="Synthese de l'evaluation">
 
     <article class="carte carte--{{ 'ok' if verdict.score_coherence == 1 else 'alerte' }}">
-      <h2>Coherence</h2>
+      <h2>Cohérence</h2>
       <p class="carte__valeur">
         <span aria-hidden="true">{{ '✓' if verdict.score_coherence == 1 else '!' }}</span>
         {{ verdict.score_coherence | pourcent }}
@@ -37,9 +37,9 @@
         {% if verdict.motifs %}
           {{ verdict.motifs | length }} contradiction(s) entre la mutation et le diagnostic
         {% elif verdict.statut == 'non_evaluable' %}
-          Non verifiable, faute de diagnostic rapproche
+          Non verifiable, faute de diagnostic rapproché
         {% else %}
-          Aucune contradiction detectee
+          Aucune contradiction détectée
         {% endif %}
       </p>
     </article>
@@ -66,7 +66,7 @@
         {{ libelle_confiance[0] }}
       </p>
       <p class="carte__legende">
-        {{ verdict.confiance.reserves | length }} reserve(s) sur la qualite de l'information
+        {{ verdict.confiance.reserves | length }} réserve(s) sur la qualite de l'information
       </p>
     </article>
 
@@ -101,7 +101,7 @@
         {% if profil == 'analyste' %}
         <p class="motif__technique">
           <code>{{ reserve.identifiant }}</code> &middot;
-          penalite de confiance&nbsp;: &minus;{{ reserve.penalite }}
+          pénalité de confiance&nbsp;: &minus;{{ reserve.penalite }}
         </p>
         {% endif %}
       </li>
@@ -125,18 +125,18 @@
 
   {% if profil == 'analyste' and verdict.variables_atypiques %}
   <section aria-labelledby="titre-variables">
-    <h2 id="titre-variables">Decomposition de l'ecart</h2>
+    <h2 id="titre-variables">Décomposition de l'écart</h2>
     <p class="aide">
       Part de l'erreur de reconstruction portee par chaque variable&nbsp;: c'est la reponse
       a &laquo;&nbsp;pourquoi cette ligne est-elle signalee&nbsp;?&nbsp;&raquo;.
     </p>
     <table>
-      <caption>Variables contribuant le plus a l'atypicite</caption>
+      <caption>Variables contribuant le plus a l'atypicité</caption>
       <thead>
         <tr>
           <th scope="col">Variable</th>
           <th scope="col">Valeur</th>
-          <th scope="col">Part de l'ecart</th>
+          <th scope="col">Part de l'écart</th>
         </tr>
       </thead>
       <tbody>
@@ -151,7 +151,7 @@
     </table>
     <p class="aide">
       Erreur de reconstruction brute&nbsp;: <code>{{ verdict.erreur_reconstruction }}</code> &middot;
-      modele <code>{{ verdict.modele.version }}</code> entraine le
+      modèle <code>{{ verdict.modele.version }}</code> entraîné le
       {{ verdict.modele.entraine_le[:10] }}.
     </p>
   </section>

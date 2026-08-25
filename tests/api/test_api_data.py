@@ -1,5 +1,6 @@
 """Contrat de l'API data REST. (C5)"""
 
+import pytest
 from api.data.main import app
 from api.model.schemas import RapprochementEntree
 from fastapi.testclient import TestClient
@@ -52,7 +53,8 @@ def test_detail_rapprochement_fournit_une_charge_predict_et_sa_presentation() ->
     corps = reponse.json()
     assert corps["presentation"]["nom_commune"] == "ANNESSE-ET-BEAULIEU"
     assert corps["presentation"]["etiquette_dpe"] == "E"
-    assert corps["presentation"]["adresse_ban"].startswith("48 ALLEE DES CHENES")
+    # Garantie RGPD : l'API data ne publie aucune adresse detaillee (voir docs/rgpd.md).
+    assert "adresse_ban" not in corps["presentation"]
     entree = RapprochementEntree.model_validate(corps["donnees"])
     assert entree.id_mutation == "2023-100021"
 
@@ -73,3 +75,35 @@ def test_demonstration_reutilise_cinq_cas_reels_et_les_rend_comprehensibles() ->
     }
     assert all(item["presentation"]["nom_commune"] for item in cas)
     assert all("donnees" in item for item in cas)
+
+
+@pytest.mark.regression
+def test_aucune_adresse_detaillee_n_est_publiee_par_l_api_data() -> None:
+    """Verrouille l'engagement de minimisation du registre RGPD. (C4, C17)
+
+    `docs/rgpd.md` engage Concorde a ne publier ni fiche de bien ni adresse
+    complete dans l'API data : le croisement d'une adresse precise, d'un prix de
+    vente et d'une etiquette energetique augmente le risque de reidentification.
+
+    L'adresse reste presente dans la table interne, ou elle sert au
+    rapprochement ; elle ne doit simplement jamais franchir la frontiere de
+    l'API. Ce test echoue si quelqu'un la reexpose, y compris par inadvertance
+    en elargissant un schema de sortie.
+    """
+    entetes = {"X-API-Key": "dev-reader-key"}
+    with TestClient(app) as client:
+        reponses = [
+            client.get("/rapprochements", headers=entetes),
+            client.get("/rapprochements/demonstration", headers=entetes),
+            client.get("/rapprochements/2023-100021", headers=entetes),
+        ]
+
+    for reponse in reponses:
+        assert reponse.status_code == 200
+        corps = reponse.text
+        assert "adresse_ban" not in corps, (
+            f"Une adresse est exposee par {reponse.request.url.path} : "
+            "cela contredit l'engagement de minimisation de docs/rgpd.md."
+        )
+        assert "ALLEE DES CHENES" not in corps
+        assert "ROUTE DE PERIGUEUX" not in corps

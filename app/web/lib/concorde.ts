@@ -8,7 +8,6 @@ export type Presentation = {
   nom_commune: string;
   code_commune: string;
   code_departement: string;
-  adresse_ban: string | null;
   etiquette_dpe: string | null;
   type_local: string;
   date_mutation: string;
@@ -81,7 +80,7 @@ async function appel<T>(base: string, chemin: string, init?: RequestInit): Promi
       headers: { "X-API-Key": cleApi(), ...init?.headers },
     });
   } catch {
-    throw new Error("Le service Concorde attendu localement ne repond pas.");
+    throw new Error("Le service Concorde attendu localement ne répond pas.");
   }
   if (!reponse.ok) throw new Error(`Le service Concorde a refuse la demande (${reponse.status}).`);
   return reponse.json() as Promise<T>;

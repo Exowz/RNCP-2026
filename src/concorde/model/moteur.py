@@ -1,24 +1,24 @@
-"""Artefact de modele gele et moteur d'inference. (C9, C13)
+"""Artefact de modèle gele et moteur d'inference. (C9, C13)
 
-L'artefact (`models/concorde_moteur.pt`) contient **tout** ce qui est necessaire
+L'artefact (`models/concorde_moteur.pt`) contient **tout** ce qui est nécessaire
 pour rejouer une prediction a l'identique :
 
 - les poids de l'auto-encodeur ;
-- les parametres de normalisation (moyennes, ecarts-types) ;
-- les medianes d'imputation ;
-- les medianes de prix communales de reference ;
+- les paramètres de normalisation (moyennes, écarts-types) ;
+- les médianes d'imputation ;
+- les médianes de prix communales de reference ;
 - la grille de calibration qui transforme une erreur de reconstruction en
   percentile ;
 - la table d'exposition aux aleas ;
 - une fiche : version, date, graine, empreinte du jeu d'entrainement, metriques.
 
-Consequence : servir le modele ne demande **aucun** acces reseau, aucune base,
-aucun recalcul sur les donnees de production. C'est ce qui rend la demonstration
+Consequence : servir le modèle ne demande **aucun** acces reseau, aucune base,
+aucun recalcul sur les données de production. C'est ce qui rend la demonstration
 hors ligne possible et la prediction reproductible.
 
-Le meme code de variables sert a l'entrainement et a l'inference
-(`features.construction`). Il ne peut donc pas exister d'ecart entre ce que le
-modele a appris et ce qu'on lui presente en production.
+Le même code de variables sert à l'entrainement et a l'inference
+(`features.construction`). Il ne peut donc pas exister d'écart entre ce que le
+modèle a appris et ce qu'on lui présenté en production.
 """
 
 from __future__ import annotations
@@ -51,7 +51,7 @@ SEUIL_A_VERIFIER = 0.80
 
 @dataclass(slots=True)
 class FicheModele:
-    """Carte d'identite du modele, exposee par l'API et affichee dans l'application."""
+    """Carte d'identité du modèle, exposée par l'API et affichée dans l'application."""
 
     version: str
     entraine_le: str
@@ -181,7 +181,7 @@ class Moteur:
 
         if not a_dpe:
             verdict["explication"] = (
-                "Aucun DPE n'a pu etre rapproche de cette mutation. Le systeme ne produit "
+                "Aucun DPE n'a pu être rapproché de cette mutation. Le système ne produit "
                 "pas de score : il signale une inconnue."
             )
             return verdict
@@ -243,7 +243,7 @@ class Moteur:
         chemin = chemin or CHEMIN_ARTEFACT_DEFAUT
         if not chemin.exists():
             raise FileNotFoundError(
-                f"Artefact de modele introuvable : {chemin}. "
+                f"Artefact de modèle introuvable : {chemin}. "
                 "Executer `python -m concorde.model.entrainement` pour le produire."
             )
         # L'artefact Concorde ne contient que tenseurs et types primitifs ; ne jamais
@@ -266,7 +266,7 @@ class Moteur:
             raise ValueError(
                 "Le contrat de variables de l'artefact ne correspond pas au code courant.\n"
                 f"  artefact : {variables_artefact}\n  code     : {VARIABLES_COMPARAISON}\n"
-                "Reentrainer le modele avant de le servir."
+                "Réentraîner le modèle avant de le servir."
             )
 
         modele = AutoEncodeur(
@@ -302,22 +302,22 @@ def _rediger_explication(verdict: dict[str, Any]) -> str:
     if motifs:
         majeurs = [m for m in motifs if m["gravite"] == "majeur"]
         tete = (
-            f"{len(majeurs)} contradiction(s) majeure(s) detectee(s) entre la mutation et le DPE."
+            f"{len(majeurs)} contradiction(s) majeure(s) détectée(s) entre la mutation et le DPE."
             if majeurs
-            else f"{len(motifs)} reserve(s) de coherence detectee(s)."
+            else f"{len(motifs)} réserve(s) de cohérence détectée(s)."
         )
     elif niveau == "atypique":
         tete = (
             "Aucune contradiction connue, mais ce rapprochement ne ressemble pas au reste "
-            "du jeu de donnees."
+            "du jeu de données."
         )
     else:
-        tete = "Aucune contradiction detectee entre la mutation et le DPE."
+        tete = "Aucune contradiction détectée entre la mutation et le DPE."
 
     queue = {
-        "eleve": "Les donnees disponibles permettent de le dire avec un bon niveau de certitude.",
-        "moyen": "Des informations manquent : lire ce resultat avec prudence.",
-        "faible": "Trop d'informations manquent pour se fier a ce resultat.",
-        "insuffisant": "Les donnees ne permettent pas de conclure.",
+        "eleve": "Les données disponibles permettent de le dire avec un bon niveau de certitude.",
+        "moyen": "Des informations manquent : lire ce résultat avec prudence.",
+        "faible": "Trop d'informations manquent pour se fier à ce résultat.",
+        "insuffisant": "Les données ne permettent pas de conclure.",
     }[conf]
-    return f"{tete} Coherence : {coherence:.0%}. {queue}"
+    return f"{tete} Cohérence : {coherence:.0%}. {queue}"

@@ -91,7 +91,7 @@ def _verite_terrain() -> pd.DataFrame:
 
 
 def _motifs_majeurs(df: pd.DataFrame) -> np.ndarray:
-    """Vrai lorsqu'au moins une regle de coherence majeure se declenche."""
+    """Vrai lorsqu'au moins une règle de cohérence majeure se déclenche."""
     sortie = np.zeros(len(df), dtype=bool)
     for i, (_, ligne) in enumerate(df.iterrows()):
         _, motifs = regles_coherence.evaluer(ligne.to_dict())
@@ -183,15 +183,15 @@ def entrainer_et_geler(
     fiche.metriques = {k: v for k, v in metriques.items() if isinstance(v, (int, float))}
     fiche.limites = [
         "Le detecteur est non supervise : aucune etiquette « rapprochement faux » n'existe "
-        "dans les donnees publiques.",
-        "Les regles de coherence et les anomalies du jeu de demonstration relevent des memes "
-        "familles de contradictions : le rappel des regles est circulaire et n'est pas une "
+        "dans les données publiques.",
+        "Les règles de cohérence et les anomalies du jeu de démonstration relèvent des mêmes "
+        "familles de contradictions : le rappel des règles est circulaire et n'est pas une "
         "mesure de performance.",
         "La base DPE de l'ADEME n'est pas representative du parc francais ; aucune "
         "generalisation a l'echelle nationale n'est possible.",
         "Le rapprochement s'appuie sur la parcelle cadastrale : il est ambigu en copropriete, "
-        "ce que le systeme signale sans le resoudre.",
-        "Le modele ne predit ni prix ni valeur : il qualifie la fiabilite d'un rapprochement.",
+        "ce que le système signale sans le résoudre.",
+        "Le modèle ne prédit ni prix ni valeur : il qualifie la fiabilité d'un rapprochement.",
     ]
 
     chemin = moteur.sauvegarder(chemin_artefact)
@@ -340,7 +340,7 @@ def _ecrire_fiche(moteur: Moteur, metriques: dict) -> None:
     lectures = {
         "auc_autoencodeur": "**Informatif.** Pouvoir de tri de l'auto-encodeur seul, qui n'a "
                             "vu ni les regles ni les etiquettes.",
-        "average_precision_autoencodeur": "**Informatif.** Precision moyenne, robuste au "
+        "average_precision_autoencodeur": "**Informatif.** Précision moyenne, robuste au "
                                           "desequilibre des classes.",
         "taux_base_anomalies": "Proportion d'anomalies dans le jeu de test (reference).",
         "regles_precision_circulaire": "**Circulaire.** Les regles visent les memes familles "

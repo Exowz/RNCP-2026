@@ -84,7 +84,7 @@ def test_les_deux_profils_rendent_le_meme_calcul() -> None:
     assert "different de 45%" in particulier.text
     assert "different de 45%" in analyste.text
     # Seul l'analyste recoit la decomposition technique de l'ecart.
-    assert "Decomposition de l'ecart" in analyste.text
-    assert "Decomposition de l'ecart" not in particulier.text
+    assert "Décomposition de l'écart" in analyste.text
+    assert "Décomposition de l'écart" not in particulier.text
 
     disable_offline_guard()

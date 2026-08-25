@@ -20,7 +20,6 @@ class PresentationRapprochement(BaseModel):
     nom_commune: str
     code_commune: str
     code_departement: str
-    adresse_ban: str | None = None
     etiquette_dpe: str | None = None
     type_local: str
     date_mutation: date
@@ -38,7 +37,6 @@ class RapprochementListe(BaseModel):
     nom_commune: str
     code_commune: str
     code_departement: str
-    adresse_ban: str | None = None
     etiquette_dpe: str | None = None
     type_local: str
     date_mutation: date

@@ -99,7 +99,6 @@ def _presentation(ligne: pd.Series) -> PresentationRapprochement:
         nom_commune=str(ligne["nom_commune"]),
         code_commune=str(ligne["code_commune"]).zfill(5),
         code_departement=str(ligne["code_departement"]).zfill(2),
-        adresse_ban=_texte_ou_rien(ligne.get("adresse_ban")),
         etiquette_dpe=_texte_ou_rien(ligne.get("etiquette_dpe")),
         type_local=str(ligne["type_local"]),
         date_mutation=pd.Timestamp(ligne["date_mutation"]).date(),

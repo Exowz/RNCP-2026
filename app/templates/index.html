@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block titre %}Evaluer un rapprochement{% endblock %}
 {% block contenu %}
-<h1>Que disent reellement les donnees sur ce bien&nbsp;?</h1>
+<h1>Que disent reellement les données sur ce bien&nbsp;?</h1>
 
 <p class="chapeau">
-  Concorde rapproche une <strong>mutation immobiliere</strong> (DVF+) et un
-  <strong>diagnostic de performance energetique</strong> (ADEME), puis repond a trois
+  Concorde rapproché une <strong>mutation immobiliere</strong> (DVF+) et un
+  <strong>diagnostic de performance énergétique</strong> (ADEME), puis repond a trois
   questions distinctes&nbsp;: les deux enregistrements se contredisent-ils, ce rapprochement
   ressemble-t-il aux autres, et peut-on se fier a cette reponse.
 </p>
@@ -25,8 +25,8 @@
   <fieldset>
     <legend><h2 class="legende">Choisir un rapprochement</h2></legend>
     <p id="aide-cas" class="aide">
-      Ces cas sont extraits du jeu de donnees reel traite par la chaine, et non inventes.
-      Chacun illustre un comportement different du systeme.
+      Ces cas sont extraits du jeu de données reel traite par la chaine, et non inventes.
+      Chacun illustre un comportement diffèrent du système.
     </p>
     <ul class="liste-choix" role="radiogroup" aria-describedby="aide-cas">
       {% for cle, exemple in exemples.items() %}
@@ -54,7 +54,7 @@
   <h2 id="titre-limites">Ce que Concorde ne fait pas</h2>
   <ul>
     <li>Il <strong>n'estime pas</strong> la valeur d'un bien et ne produit aucune tarification.</li>
-    <li>Il ne conclut pas quand un diagnostic n'a pas pu etre rapproche&nbsp;: il le dit.</li>
+    <li>Il ne conclut pas quand un diagnostic n'a pas pu etre rapproché&nbsp;: il le dit.</li>
     <li>
       Il ne generalise pas au parc francais&nbsp;: la base DPE de l'ADEME n'en est pas
       un echantillon representatif, et l'agence demande explicitement une lecture prudente.

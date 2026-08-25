@@ -3,7 +3,7 @@
 La demonstration ne doit pas dependre d'une saisie manuelle reussie du premier
 coup devant un jury. Ces cas sont choisis **dans la table des rapprochements**
 produite par la chaine, pas inventes : ils illustrent chacun un comportement
-distinct du systeme.
+distinct du système.
 """
 
 from __future__ import annotations
@@ -18,11 +18,11 @@ from concorde.clean.rapprochement import SORTIE as TABLE
 
 #: Ce que chaque cas doit demontrer.
 INTENTIONS: dict[str, str] = {
-    "coherent": "Rapprochement coherent, confiance elevee",
+    "coherent": "Rapprochement cohérent, confiance élevée",
     "ecart_surface": "Surfaces DVF et DPE incompatibles",
-    "dpe_posterieur": "DPE etabli apres la mutation",
-    "parcelle_ambigue": "Plusieurs DPE sur la meme parcelle",
-    "sans_dpe": "Aucun DPE rapproche : le systeme ne conclut pas",
+    "dpe_posterieur": "DPE établi après la mutation",
+    "parcelle_ambigue": "Plusieurs DPE sur la même parcelle",
+    "sans_dpe": "Aucun DPE rapproché : le système ne conclut pas",
 }
 
 

@@ -244,7 +244,7 @@ def _ecrire_rapports(
     RAPPORT_JSON.write_text(json.dumps(charge, ensure_ascii=False, indent=2), encoding="utf-8")
 
     md = ["# Nettoyage et rapprochement — tableau avant / apres", "",
-          "Genere par `python -m concorde.clean`. Ne pas editer a la main.", ""]
+          "Généré par `python -m concorde.clean`. Ne pas éditer à la main.", ""]
     md += [r.en_markdown() + "\n" for r in rapports]
     md += [
         "### Rapprochement DVF+ x DPE",

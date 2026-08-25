@@ -1,13 +1,13 @@
-"""Couche de coherence explicite : des regles metier, pas un modele. (C9)
+"""Couche de cohérence explicite : des règles metier, pas un modèle. (C9)
 
 Un detecteur d'anomalie statistique dit « cette ligne est atypique ». Il ne dit
 jamais **pourquoi**. Pour un produit dont la these est « je rends visibles les
 hypotheses et les inconnues », c'est insuffisant : l'utilisateur a besoin du
 motif, pas du score.
 
-D'ou cette couche, volontairement anterieure au modele appris : des regles
+D'ou cette couche, volontairement anterieure au modèle appris : des règles
 nommees, seuillees, justifiees, qui produisent des motifs lisibles. Le detecteur
-statistique vient ensuite, pour attraper ce que les regles ne prevoient pas.
+statistique vient ensuite, pour attraper ce que les règles ne prevoient pas.
 
 Chaque seuil est defendable a l'oral. Il est ecrit ici, une seule fois.
 """
@@ -57,62 +57,62 @@ SEUIL_PRIX_BAS = -0.70
 REGLES: tuple[RegleCoherence, ...] = (
     RegleCoherence(
         identifiant="COH-01",
-        libelle="ecart de surface entre DVF et DPE",
+        libelle="écart de surface entre DVF et DPE",
         gravite="majeur",
-        seuil=f"|ecart| / max(surfaces) > {SEUIL_ECART_SURFACE:.0%}",
+        seuil=f"|écart| / max(surfaces) > {SEUIL_ECART_SURFACE:.0%}",
         justification=(
-            "La surface reelle batie (DVF+) et la surface habitable (DPE) ne mesurent pas "
-            "la meme chose : un ecart modere est attendu. Un ecart superieur au seuil "
-            "signale plus probablement deux logements differents qu'une difference de "
+            "La surface réelle bâtie (DVF+) et la surface habitable (DPE) ne mesurent pas "
+            "la même chose : un écart modéré est attendu. Un écart supérieur au seuil "
+            "signale plus probablement deux logements différents qu'une différence de "
             "convention de mesure."
         ),
         predicat=lambda v: _fini(v.get("ecart_surface_rel")) > SEUIL_ECART_SURFACE,
         message=lambda v: (
             f"La surface DVF et la surface habitable du DPE different de "
             f"{v['ecart_surface_rel']:.0%} : le rapprochement peut porter sur deux logements "
-            f"distincts de la meme parcelle."
+            f"distincts de la même parcelle."
         ),
     ),
     RegleCoherence(
         identifiant="COH-02",
-        libelle="desaccord sur le type de logement",
+        libelle="désaccord sur le type de logement",
         gravite="majeur",
         seuil="type_local (DVF) != type_batiment (DPE)",
         justification=(
             "DVF+ et l'ADEME qualifient tous deux le bien en maison ou appartement. "
-            "Un desaccord sur cette qualification n'est pas une nuance de vocabulaire : "
-            "l'un des deux enregistrements ne decrit pas le bien attendu."
+            "Un désaccord sur cette qualification n'est pas une nuance de vocabulaire : "
+            "l'un des deux enregistrements ne décrit pas le bien attendu."
         ),
         predicat=lambda v: _fini(v.get("desaccord_type_local")) >= 1.0,
         message=lambda v: (
-            "Le type de logement declare dans DVF+ ne correspond pas a celui du DPE."
+            "Le type de logement déclaré dans DVF+ ne correspond pas à celui du DPE."
         ),
     ),
     RegleCoherence(
         identifiant="COH-03",
-        libelle="DPE etabli apres la mutation",
+        libelle="DPE établi après la mutation",
         gravite="mineur",
         seuil="date_DPE > date_mutation",
         justification=(
-            "Un DPE posterieur a la vente ne decrit pas le bien tel qu'il a ete vendu. "
-            "Ce n'est pas une erreur (le nouveau proprietaire peut faire refaire le "
-            "diagnostic) mais toute lecture energetique de la transaction devient "
+            "Un DPE postérieur à la vente ne décrit pas le bien tel qu'il a été vendu. "
+            "Ce n'est pas une erreur (le nouveau propriétaire peut faire refaire le "
+            "diagnostic) mais toute lecture énergétique de la transaction devient "
             "anachronique."
         ),
         predicat=lambda v: _fini(v.get("dpe_posterieur_mutation")) >= 1.0,
         message=lambda v: (
-            f"Le DPE a ete etabli apres la mutation ({v.get('ecart_temporel_annees', 0):.1f} an(s) "
-            "plus tard) : il ne decrit pas l'etat du bien au moment de la vente."
+            f"Le DPE a été établi après la mutation ({v.get('ecart_temporel_annees', 0):.1f} an(s) "
+            "plus tard) : il ne décrit pas l'etat du bien au moment de la vente."
         ),
     ),
     RegleCoherence(
         identifiant="COH-04",
-        libelle="DPE anterieur de plus de 10 ans",
+        libelle="DPE antérieur de plus de 10 ans",
         gravite="mineur",
-        seuil=f"ecart temporel > {SEUIL_ANCIENNETE_DPE_ANNEES:.0f} ans",
+        seuil=f"écart temporel > {SEUIL_ANCIENNETE_DPE_ANNEES:.0f} ans",
         justification=(
-            "Duree de validite reglementaire d'un DPE. Au-dela, des travaux ont pu "
-            "modifier la performance du logement sans que le diagnostic le reflete."
+            "Duree de validité réglementaire d'un DPE. Au-delà, des travaux ont pu "
+            "modifier la performance du logement sans que le diagnostic le reflète."
         ),
         predicat=lambda v: (
             _fini(v.get("dpe_posterieur_mutation")) < 1.0
@@ -120,26 +120,26 @@ REGLES: tuple[RegleCoherence, ...] = (
         ),
         message=lambda v: (
             f"Le DPE date de {v.get('ecart_temporel_annees', 0):.1f} ans avant la mutation, "
-            "au-dela de sa duree de validite reglementaire."
+            "au-dela de sa durée de validité réglementaire."
         ),
     ),
     RegleCoherence(
         identifiant="COH-05",
-        libelle="prix au m2 tres eloigne de la mediane communale",
+        libelle="prix au m2 tres eloigne de la médiane communale",
         gravite="mineur",
-        seuil=f"ecart relatif > +{SEUIL_PRIX_HAUT:.0%} ou < {SEUIL_PRIX_BAS:.0%}",
+        seuil=f"écart relatif > +{SEUIL_PRIX_HAUT:.0%} ou < {SEUIL_PRIX_BAS:.0%}",
         justification=(
-            "Le prix n'est pas predit : il sert uniquement de signal de coherence. "
-            "Un ecart extreme a la mediane communale signale generalement une mutation "
-            "qui n'est pas une vente ordinaire (viager, demembrement, vente entre "
-            "proches, lot mal decoupe) plutot qu'un bien exceptionnel."
+            "Le prix n'est pas prédit : il sert uniquement de signal de cohérence. "
+            "Un écart extrême à la médiane communale signale généralement une mutation "
+            "qui n'est pas une vente ordinaire (viager, démembrement, vente entre "
+            "proches, lot mal découpé) plutôt qu'un bien exceptionnel."
         ),
         predicat=lambda v: (
             _fini(v.get("ecart_prix_m2_commune")) > SEUIL_PRIX_HAUT
             or _fini(v.get("ecart_prix_m2_commune")) < SEUIL_PRIX_BAS
         ),
         message=lambda v: (
-            f"Le prix au m2 s'ecarte de {v['ecart_prix_m2_commune']:+.0%} de la mediane "
+            f"Le prix au m² s'écarte de {v['ecart_prix_m2_commune']:+.0%} de la médiane "
             "communale : la mutation n'est probablement pas une vente ordinaire."
         ),
     ),
@@ -147,7 +147,7 @@ REGLES: tuple[RegleCoherence, ...] = (
 
 
 def _fini(valeur: Any) -> float:
-    """Convertit en flottant en traitant NaN et None comme 0 (regle non declenchee)."""
+    """Convertit en flottant en traitant NaN et None comme 0 (règle non declenchee)."""
     try:
         f = float(valeur)
     except (TypeError, ValueError):
@@ -157,7 +157,7 @@ def _fini(valeur: Any) -> float:
 
 @dataclass(frozen=True, slots=True)
 class Motif:
-    """Un motif de non-coherence, destine a l'utilisateur final."""
+    """Un motif de non-cohérence, destiné à l'utilisateur final."""
 
     identifiant: str
     libelle: str
@@ -174,10 +174,10 @@ class Motif:
 
 
 def evaluer(variables: dict[str, Any]) -> tuple[float, list[Motif]]:
-    """Applique les regles de coherence a un rapprochement.
+    """Applique les règles de cohérence à un rapprochement.
 
     Returns:
-        Le score de coherence dans [0, 1] (1 = aucune contradiction detectee)
+        Le score de cohérence dans [0, 1] (1 = aucune contradiction détectée)
         et la liste des motifs declenches.
     """
     motifs: list[Motif] = []
@@ -197,7 +197,7 @@ def evaluer(variables: dict[str, Any]) -> tuple[float, list[Motif]]:
 
 
 def catalogue() -> list[dict[str, str]]:
-    """Renvoie le catalogue documente des regles, expose par l'API et l'application."""
+    """Renvoie le catalogue documente des règles, expose par l'API et l'application."""
     return [
         {
             "identifiant": r.identifiant,

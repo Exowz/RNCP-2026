@@ -1,24 +1,24 @@
 {% extends "base.html" %}
-{% block titre %}Modele et regles{% endblock %}
+{% block titre %}Modele et règles{% endblock %}
 {% block contenu %}
 <h1>Comment Concorde decide</h1>
 <p class="chapeau">
-  Toutes les regles appliquees sont publiees ici, avec leur seuil et leur justification.
-  Ces informations proviennent de l'API du modele, pas d'une page redigee a part&nbsp;:
+  Toutes les règles appliquees sont publiees ici, avec leur seuil et leur justification.
+  Ces informations proviennent de l'API du modèle, pas d'une page redigee a part&nbsp;:
   elles ne peuvent donc pas diverger du code reellement execute.
 </p>
 
 <section aria-labelledby="titre-fiche">
-  <h2 id="titre-fiche">Fiche du modele</h2>
+  <h2 id="titre-fiche">Fiche du modèle</h2>
   <table>
-    <caption>Identite du modele actuellement servi</caption>
+    <caption>Identite du modèle actuellement servi</caption>
     <tbody>
       <tr><th scope="row">Version</th><td><code>{{ fiche.version }}</code></td></tr>
       <tr><th scope="row">Entraine le</th><td>{{ fiche.entraine_le[:19] }}</td></tr>
       <tr><th scope="row">Commit Git</th><td><code>{{ fiche.commit_git }}</code></td></tr>
       <tr><th scope="row">Graine aleatoire</th><td><code>{{ fiche.graine }}</code></td></tr>
-      <tr><th scope="row">Lignes d'entrainement</th><td>{{ fiche.nb_lignes_entrainement }}</td></tr>
-      <tr><th scope="row">Empreinte des donnees</th><td><code>{{ fiche.empreinte_donnees[:24] }}…</code></td></tr>
+      <tr><th scope="row">Lignes d'entraînement</th><td>{{ fiche.nb_lignes_entrainement }}</td></tr>
+      <tr><th scope="row">Empreinte des données</th><td><code>{{ fiche.empreinte_donnees[:24] }}…</code></td></tr>
     </tbody>
   </table>
 </section>
@@ -31,9 +31,9 @@
 </section>
 
 <section aria-labelledby="titre-regles">
-  <h2 id="titre-regles">Regles de coherence</h2>
+  <h2 id="titre-regles">Regles de cohérence</h2>
   <table>
-    <caption>Chaque regle, son seuil et la raison de ce seuil</caption>
+    <caption>Chaque règle, son seuil et la raison de ce seuil</caption>
     <thead>
       <tr>
         <th scope="col">Identifiant</th>

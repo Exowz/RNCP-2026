@@ -7,8 +7,8 @@ Document genere par `python -m concorde.model.entrainement`. Ne pas editer a la 
 | Champ | Valeur |
 |---|---|
 | Version | `0.1.0` |
-| Entraine le | 2026-08-24T19:10:18.399502+00:00 |
-| Commit Git | `02b6229` |
+| Entraine le | 2026-08-25T12:49:10.666546+00:00 |
+| Commit Git | `5beb29a` |
 | Graine aleatoire | `20260824` |
 | Empreinte du jeu d'entrainement | `a987ffdce586ad1f9961e4123bf468fd...` |
 | Lignes d'entrainement / validation | 499 / 109 |
@@ -48,11 +48,11 @@ Le modele **ne predit ni prix ni valeur**. Il qualifie la fiabilite d'un rapproc
 
 ## Limites assumees
 
-- Le detecteur est non supervise : aucune etiquette « rapprochement faux » n'existe dans les donnees publiques.
-- Les regles de coherence et les anomalies du jeu de demonstration relevent des memes familles de contradictions : le rappel des regles est circulaire et n'est pas une mesure de performance.
+- Le detecteur est non supervise : aucune etiquette « rapprochement faux » n'existe dans les données publiques.
+- Les règles de cohérence et les anomalies du jeu de démonstration relèvent des mêmes familles de contradictions : le rappel des règles est circulaire et n'est pas une mesure de performance.
 - La base DPE de l'ADEME n'est pas representative du parc francais ; aucune generalisation a l'echelle nationale n'est possible.
-- Le rapprochement s'appuie sur la parcelle cadastrale : il est ambigu en copropriete, ce que le systeme signale sans le resoudre.
-- Le modele ne predit ni prix ni valeur : il qualifie la fiabilite d'un rapprochement.
+- Le rapprochement s'appuie sur la parcelle cadastrale : il est ambigu en copropriete, ce que le système signale sans le résoudre.
+- Le modèle ne prédit ni prix ni valeur : il qualifie la fiabilité d'un rapprochement.
 
 ## Reproduction
 

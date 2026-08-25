@@ -67,18 +67,18 @@ gabarits.env.filters["pourcent"] = lambda v: "—" if v is None else f"{float(v)
 PROFILS = {"particulier": "Particulier", "analyste": "Analyste credit"}
 
 LIBELLES_NIVEAU_ANOMALIE = {
-    "normal": ("Conforme a ce qui est attendu", "ok"),
-    "a_verifier": ("A verifier", "attention"),
+    "normal": ("Conforme à ce qui est attendu", "ok"),
+    "a_verifier": ("À vérifier", "attention"),
     "atypique": ("Atypique", "alerte"),
-    "non_evaluable": ("Non evaluable", "neutre"),
+    "non_evaluable": ("Non évaluable", "neutre"),
 }
 LIBELLES_CONFIANCE = {
-    "eleve": ("Confiance elevee", "ok"),
+    "eleve": ("Confiance élevée", "ok"),
     "moyen": ("Confiance moyenne", "attention"),
     "faible": ("Confiance faible", "alerte"),
     "insuffisant": ("Information insuffisante", "neutre"),
 }
-LIBELLES_ALEA = {0: "Nul", 1: "Tres faible", 2: "Faible", 3: "Moyen", 4: "Fort"}
+LIBELLES_ALEA = {0: "Nul", 1: "Très faible", 2: "Faible", 3: "Moyen", 4: "Fort"}
 
 
 def _liens_profil(request: Request, params_extra: dict[str, str] | None = None) -> dict[str, str]:
@@ -171,7 +171,7 @@ def _rendre_evaluation(request: Request, profil: str, cas: str) -> HTMLResponse:
         )
         metriques.incrementer("evaluations_degradees")
         contexte |= {
-            "erreur_titre": "Evaluation impossible",
+            "erreur_titre": "Évaluation impossible",
             "erreur_message": exc.message_utilisateur,
         }
         return gabarits.TemplateResponse(request, "erreur.html", contexte, status_code=503)
