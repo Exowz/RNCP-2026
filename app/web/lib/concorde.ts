@@ -59,6 +59,16 @@ export type Verdict = {
   modele: { version: string; entraine_le: string };
 };
 
+export type Explication = {
+  texte: string;
+  source: "modele_local" | "texte_assemble";
+};
+
+type ProjectionExplication = Pick<
+  Verdict,
+  "statut" | "niveau_anomalie" | "score_coherence" | "motifs" | "confiance" | "explication"
+>;
+
 export type Regle = { identifiant: string; libelle: string; gravite: "majeur" | "mineur"; seuil: string; justification: string };
 export type FicheModele = { version?: string; entraine_le?: string; limites?: string[] };
 
@@ -96,6 +106,19 @@ export function obtenirDetail(idMutation: string): Promise<DetailRapprochement> 
 
 export function evaluer(donnees: EntreePrediction): Promise<Verdict> {
   return appel(modelApi, "/predict", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(donnees) });
+}
+
+function projeterExplication(verdict: Verdict): ProjectionExplication {
+  const { statut, niveau_anomalie, score_coherence, motifs, confiance, explication } = verdict;
+  return { statut, niveau_anomalie, score_coherence, motifs, confiance, explication };
+}
+
+export function expliquer(verdict: Verdict): Promise<Explication> {
+  return appel(modelApi, "/expliquer", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(projeterExplication(verdict)),
+  });
 }
 
 export function obtenirRegles(): Promise<Regle[]> { return appel(modelApi, "/regles"); }

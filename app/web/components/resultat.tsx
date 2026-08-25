@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 import { EchelleDpe } from "@/components/dpe-scale";
-import type { DetailRapprochement, Verdict } from "@/lib/concorde";
+import type { DetailRapprochement, Explication, Verdict } from "@/lib/concorde";
 import { libelleAlea, libelleAnomalie, libelleConfiance } from "@/lib/libelles";
 
 const lectureConfiance = {
@@ -26,7 +26,7 @@ function pourcentage(score: number | null): string {
   return score === null ? "Non calculé" : `${Math.round(score * 100)} %`;
 }
 
-export function Resultat({ detail, profil, verdict }: { detail: DetailRapprochement; profil: "particulier" | "analyste"; verdict: Verdict }) {
+export function Resultat({ detail, profil, verdict, explication }: { detail: DetailRapprochement; profil: "particulier" | "analyste"; verdict: Verdict; explication?: Explication }) {
   const presentation = detail.presentation;
   const autreProfil = profil === "particulier" ? "analyste" : "particulier";
   const lienProfil = `/resultat/${encodeURIComponent(presentation.id_mutation)}?profil=${autreProfil}`;
@@ -48,6 +48,8 @@ export function Resultat({ detail, profil, verdict }: { detail: DetailRapprochem
         <article className="axis axis-confiance"><h3>Confiance dans cette lecture</h3><p className="score">{libelleConfiance[verdict.confiance.niveau]}</p><p>{lectureConfiance[verdict.confiance.niveau]}</p></article>
       </div>
     </section>
+
+    {profil === "particulier" && explication ? <section className="evidence-section" aria-labelledby="reformulation-heading"><h2 id="reformulation-heading">En mots simples</h2><p>{explication.texte}</p><p><small>Provenance : {explication.source === "modele_local" ? "reformulation par le modèle local" : "texte assemblé par Concorde"}. Cette aide ne modifie pas le résultat calculé.</small></p></section> : null}
 
     <section className="result-details" aria-label="Éléments de lecture">
       <div><h2>Diagnostic énergétique</h2>{presentation.etiquette_dpe ? <><p>Étiquette DPE : <strong>{presentation.etiquette_dpe}</strong>, sur une échelle de A à G.</p><EchelleDpe etiquette={presentation.etiquette_dpe} /></> : <p>Aucune étiquette : sans diagnostic rapproché, Concorde refuse de calculer un score.</p>}</div>
