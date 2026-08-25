@@ -1,12 +1,12 @@
 # Tableau de conformité Secure MLOps
 
-Généré le 2026-08-25T17:15:03.665357+00:00. Ce fichier est produit par `python scripts/conformite.py`; ne pas l'éditer à la main.
+Généré le 2026-08-25T21:46:33.157617+00:00. Ce fichier est produit par `python scripts/conformite.py`; ne pas l'éditer à la main.
 
 **Verdict global : CONFORME**
 
 | ID | Axe | Critère | Seuil | Valeur mesurée | Verdict | Justification du seuil |
 | --- | --- | --- | --- | --- | --- | --- |
-| qualite.couverture_tests | qualité | Tests automatisés et couverture | suite verte et couverture >= 75 % | 86% | conforme | 75 % est le plancher annoncé pour le projet de substitution; la suite doit aussi rester verte. |
+| qualite.couverture_tests | qualité | Tests automatisés et couverture | suite verte et couverture >= 75 % | 85% | conforme | 75 % est le plancher annoncé pour le projet de substitution; la suite doit aussi rester verte. |
 | qualite.auc_autoencodeur | qualité | Pouvoir discriminant de l'autoencodeur | AUC >= 0,80 | AUC 0.9095 | conforme | 0,80 constitue le minimum documenté pour distinguer utilement les cas atypiques des cas ordinaires. |
 | qualite.artefact_et_contrat | qualité | Artefact PyTorch et contrat des variables | artefact présent, chargeable et variables attendues à l'identique | présent (concorde_moteur.pt), chargeable, contrat conforme | conforme | Un modèle non chargeable ou dont les variables diffèrent ne peut pas produire une prédiction reproductible. |
 | qualite.chaine_entrainement | qualite | Chaine d'entrainement rejouable | `entrainer_et_geler` s'execute sans erreur, journalisation MLflow comprise | chaine rejouee sans erreur | conforme | Un artefact valide sur le disque ne prouve pas que la chaine qui l'a produit fonctionne encore. Sans ce controle, une dependance retiree casse l'entrainement sans que la porte le voie. |

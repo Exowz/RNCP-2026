@@ -7,14 +7,14 @@ Le projet est réalisé par une seule personne en trois jours. Il ne simule ni
 éléments ci-dessous démontrent une conduite de travail personnelle ; ils ne
 couvrent donc que partiellement l'aspect collectif de C16.
 
-## Tableau de pilotage au 24 août 2026
+## Tableau de pilotage au 25 août 2026
 
 | État | Carte | Preuve de sortie |
 |---|---|---|
 | Fait | Socle, tranche verticale et Bloc 1 C1–C5 | Scripts, APIs, Spark, PostgreSQL, matrice verte. |
 | Fait | Bloc 2 C6–C11 et API modèle C9 | Veille, benchmark, LM Studio local, Evidently, OpenAPI. |
-| En cours | C12–C13 | Tests et CI exécutés ; packaging/livraison d'artefact à compléter. |
-| En cours | Bloc 3 C14–C20 | Spécifications, architecture, sécurité et livraison applicative à consolider. |
+| Fait | C12–C13 | Tests, CI, packaging et livraison d'artefact vérifiés. |
+| Fait | Bloc 3 C14–C20 | Spécifications, architecture, sécurité et livraison applicative vérifiées. |
 | Fait | Incident C21 | Deux causes CI, correctifs et non-régression GitHub dans `docs/incident.md`. |
 
 La matrice `reports/rncp/matrice-preuves.md` est le tableau de bord de

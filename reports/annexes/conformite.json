@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-08-25T17:15:03.665357+00:00",
+  "genere_le": "2026-08-25T21:46:33.157617+00:00",
   "verdict_global": "conforme",
   "criteres": [
     {
@@ -7,7 +7,7 @@
       "axe": "qualité",
       "libelle": "Tests automatisés et couverture",
       "seuil": "suite verte et couverture >= 75 %",
-      "valeur_mesuree": "86%",
+      "valeur_mesuree": "85%",
       "verdict": "conforme",
       "justification_seuil": "75 % est le plancher annoncé pour le projet de substitution; la suite doit aussi rester verte.",
       "bloquant": true

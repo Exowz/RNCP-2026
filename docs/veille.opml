@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Concorde — veille C6</title>
+    <dateCreated>Mon, 25 Aug 2026 12:00:00 +0200</dateCreated>
+    <ownerName>Candidat RNCP</ownerName>
+  </head>
+  <body>
+    <outline text="Données et réglementation">
+      <outline type="rss" text="ADEME — Bâtiment" title="ADEME — Bâtiment" xmlUrl="https://librairie.ademe.fr/rss/3153-thematique-batiment.xml" htmlUrl="https://librairie.ademe.fr/" />
+      <outline type="rss" text="CNIL — actualités" title="CNIL — actualités" xmlUrl="https://www.cnil.fr/fr/rss.xml" htmlUrl="https://www.cnil.fr/" />
+      <outline text="data.gouv.fr — DVF (consultation manuelle, aucun RSS stable)" title="data.gouv.fr — DVF" htmlUrl="https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres/" />
+      <outline text="Géorisques — bases (consultation manuelle, aucun RSS stable)" title="Géorisques — bases" htmlUrl="https://www.georisques.gouv.fr/donnees/bases-de-donnees" />
+    </outline>
+    <outline text="Dépendances critiques">
+      <outline type="rss" text="PyPI — mises à jour" title="PyPI — mises à jour" xmlUrl="https://pypi.org/rss/updates.xml" htmlUrl="https://pypi.org/" />
+      <outline type="rss" text="DVC — releases" title="DVC — releases" xmlUrl="https://github.com/iterative/dvc/releases.atom" htmlUrl="https://github.com/iterative/dvc/releases" />
+      <outline type="rss" text="MLflow — releases" title="MLflow — releases" xmlUrl="https://github.com/mlflow/mlflow/releases.atom" htmlUrl="https://github.com/mlflow/mlflow/releases" />
+      <outline type="rss" text="PyTorch — releases" title="PyTorch — releases" xmlUrl="https://github.com/pytorch/pytorch/releases.atom" htmlUrl="https://github.com/pytorch/pytorch/releases" />
+    </outline>
+  </body>
+</opml>

@@ -74,3 +74,13 @@ actif distant : tout est servi en local, ce qui satisfait la contrainte hors lig
 2026-08-25 16:00 | Les dependances directes sans usage (`requests`, `rich`, `tenacity`, `duckdb`) sont retirees | Les conserver par precaution | Une dependance non justifiee augmente la surface d'attaque, le temps de resolution et le bruit d'audit sans apporter de capacite au projet.
 
 2026-08-25 19:10 | Le second client Next.js adopte un atlas cadastral local pour expliquer la convergence DVF+/DPE | Carte distante, imagerie satellite ou dashboard de scores | Des traits abstraits rendent le rapprochement compréhensible sans prétendre localiser un logement. La composition reste intégralement disponible hors ligne et les valeurs demeurent servies par les APIs.
+
+2026-08-25 21:15 | LM Studio reformule une projection minimale du verdict sur `/expliquer`, hors de `/predict` | Confier la production du verdict au LLM ou intégrer l'appel à la prédiction | Le moteur demeure l'unique autorité de calcul. Le texte local est borné, identifié, échappé par React et remplaçable par l'explication assemblée si le service est absent.
+
+2026-08-25 21:15 | La veille est distribuée dans un OPML local avec pages manuelles explicites quand un flux RSS n'existe pas | Service d'agrégation cloud ou faux flux RSS | La démonstration doit rester hors ligne et vérifiable. Les flux ADEME, CNIL, PyPI et GitHub sont importables; data.gouv.fr et Géorisques sont conservés comme consultations officielles sans promettre un flux inexistant.
+
+2026-08-25 21:35 | Le LLM reçoit une consigne de rédaction déterminée par le code, pas le verdict à reformuler | Envoyer scores, motifs et réserves au modèle local | Gemma 4/MLX a produit une chaîne de raisonnement instable et a inversé une conclusion lors d'un essai long. Le code conserve donc tout sens métier et ne laisse au modèle qu'une phrase courte, contrôlée et réversible.
+
+2026-08-25 21:35 | Les réponses LM Studio hors délai, incomplètes ou contenant du raisonnement deviennent des replis mesurés | Augmenter le délai jusqu'à obtenir une réponse ou afficher le texte non fiable | Le délai de 3 secondes protège la restitution; le taux de repli est une preuve de fiabilité et le texte assemblé demeure la référence.
+
+2026-08-25 21:35 | Le prévol charge Gemma avec TTL d'une heure puis contrôle `lms ps` | S'appuyer sur un modèle potentiellement froid ou sur la seule sonde HTTP | Les latences observées varient de 18,9 s à 0,34 s à froid; l'état du serveur ne suffit pas à garantir que le modèle attendu est prêt.
