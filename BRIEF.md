@@ -152,29 +152,32 @@ substitution n'a pas à mentionner le RNCP.
 
 ## Matrice de preuves — état de soutenance
 
-| Comp. | Preuve visée | Emplacement | Slide | Fait |
-|---|---|---|---|---|
-| C1 | Script de collecte 5 sources + logs + arborescence `data/raw/` | `src/collect/` | | ✅ |
-| C2 | Requêtes SQL PostgreSQL **et** Spark SQL, documentées (jointures, filtres, optimisations) | `docs/queries.md` | | ✅ |
-| C3 | Script d'agrégation, tableau avant/après, règles de nettoyage, dataset versionné | `src/clean/` | | ✅ |
-| C4 | MCD + MPD, script d'import, registre RGPD, procédure d'installation | `docs/data-model.md` | | ✅ |
-| C5 | API data REST : routes, auth, OpenAPI, exemples | `api/data/` | | ✅ |
-| C6 | Journal de veille daté, sources qualifiées, synthèse, preuve de partage | `docs/veille.md` | | 🟡 limite assumée |
-| C7 | Benchmark services IA : retenus **et écartés**, critères dont éco-responsabilité | `docs/benchmark.md` | | ✅ |
-| C8 | Installation + configuration + accès + monitorage du service retenu | `docs/service-ia.md` | | ✅ |
-| C9 | `/predict` : auth, validation des entrées, OpenAPI, tests | `api/model/` | | ✅ |
-| C10 | L'app appelle réellement l'API ; erreurs gérées ; accessibilité | `app/` | | ✅ |
-| C11 | Evidently : performance, dérive, latence, erreurs + alertes | `monitoring/model/` | | ✅ |
-| C12 | Tests format, preprocessing, prédiction, seuil, endpoints + couverture | `tests/` | | ✅ |
-| C13 | Pipeline exécuté : tests → entraînement/éval → rapport → packaging → livraison | `.github/workflows/` | | ✅ |
-| C14 | Personas, user stories, critères d'acceptation, exigences WCAG/RGAA | `docs/specs-fonctionnelles.md` | | ✅ |
-| C15 | Architecture, flux de données, dépendances, services externes, POC | `docs/architecture.md` | | ✅ |
-| C16 | Kanban, backlog, journal de décisions daté, rétrospective — **limite assumée** | `docs/pilotage.md` | | 🟡 limite assumée |
-| C17 | Droits et accès, OWASP, validation entrées, journalisation, accessibilité | `app/`, `docs/securite.md` | | ✅ |
-| C18 | Capture d'**exécution réussie** du workflow CI | `.github/workflows/` | | ✅ |
-| C19 | Build/image Docker, packaging, livraison préproduction locale, procédure | `docs/livraison.md` | | ✅ |
-| C20 | Logs applicatifs, métriques, seuils, alertes, dashboard | `monitoring/app/` | | ✅ |
-| C21 | Incident **réel** : ticket, log, reproduction, diagnostic, commit correctif, test avant/après | `docs/incident.md` | | ✅ |
+| Comp. | Preuve | Emplacement / commande | Fait |
+|---|---|---|---|
+| C1 | 5 types de sources + manifeste SHA-256 + logs | `python -m concorde.collect` → `data/raw/_manifest.json` | ☑ |
+| C2 | Jointure PostgreSQL **et** agrégation Spark SQL, testées | `docs/queries.md`, `tests/data/test_requetes_sql.py` | ☑ |
+| C3 | 10 règles comptées, tableau avant/après généré, dataset **DVC** | `python -m concorde.clean`, `*.dvc` | ☑ |
+| C4 | MCD/MPD, PostgreSQL 17, import idempotent, RGPD **testé** | `docs/data-model.md`, `docs/rgpd.md` | ☑ |
+| C5 | API data REST : 4 routes, auth par rôle, OpenAPI | `api/data/`, `tests/api/test_api_data.py` | ☑ |
+| C6 | Veille datée, sources qualifiées — **collectif non simulé** | `docs/veille.md` | 🟡 |
+| C7 | Benchmark services IA retenus **et écartés**, sobriété | `docs/benchmark.md` | ☑ |
+| C8 | LM Studio local, `gemma-4-e4b` 6,4 Go sur disque, monitoré | `docs/service-ia.md` | ☑ |
+| C9 | `/predict` : auth, validation stricte, OpenAPI, 3 axes séparés | `api/model/` | ☑ |
+| C10 | **Deux clients** HTTP réels : Jinja `:8000` + Next.js `:3000` | `app/`, `app/web/` | ☑ |
+| C11 | Evidently dérive + latence/erreurs par route + alertes | `scripts/monitor_model.py`, `monitoring/` | ☑ |
+| C12 | **49 tests**, couverture **86 %**, dont robustesse du modèle | `pytest -m "not local_service"` | ☑ |
+| C13 | Chaîne CI complète exécutée, entraînement compris | [run 32857959387](https://github.com/Exowz/RNCP-2026/actions/runs/32857959387) | ☑ |
+| C14 | Personas, user stories, critères, WCAG/RGAA, 2 profils | `docs/specs-fonctionnelles.md` | ☑ |
+| C15 | Architecture, flux, dépendances, contrainte hors ligne | `docs/architecture.md` | ☑ |
+| C16 | Kanban, journal daté, DoD, rétro — **collectif partiel**, MLOps complet | `docs/pilotage.md` | 🟡 |
+| C17 | Rôles, OWASP, contrastes ≥ 4,5:1, clé jamais côté navigateur | `docs/securite.md` | ☑ |
+| C18 | CI verte + **Bandit** + **pip-audit** intégrés | `.github/workflows/verify.yml` | ☑ |
+| C19 | Image Docker, Compose `--no-build`, **porte bloque le build** | `docs/livraison.md`, `scripts/conformite.py` | ☑ |
+| C20 | Logs JSONL pseudonymisés, `X-Request-ID`, seuils, `/exploitation` | `docs/monitoring-app.md` | ☑ |
+| C21 | **5 incidents réels**, non-régression vérifiée dans les deux sens | `docs/incident.md` | ☑ |
+
+**19 compétences prouvées · 2 partielles assumées (C6, C16) · 0 non traitée.**
+Détail complet et chiffres : `reports/rncp/matrice-preuves.md`.
 
 ## Structure des 5 rapports (identique pour chacun)
 

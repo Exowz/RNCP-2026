@@ -6,6 +6,12 @@ Concorde est une usine MLOps locale qui valide un moteur PyTorch d'anomalie, de 
 
 ## Périmètre et critères de conformité
 
+Le tableau ci-dessous décrit les axes couverts. Le **verdict**, lui, n'est pas rédigé : il est
+**calculé**. `python scripts/conformite.py` évalue 12 critères sur ces trois axes, écrit
+[`reports/annexes/conformite.md`](../annexes/conformite.md) — daté, généré, jamais édité à la main —
+et **sort en code non nul** si un critère bloquant échoue. La CI l'exécute **avant** `uv build` :
+aucun paquet n'est construit sur une chaîne non conforme.
+
 | Axe | Contrôle automatisé | Preuve |
 |---|---|---|
 | Qualité données | Collecte, nettoyage, Spark SQL, PostgreSQL, tests de formats. | `tests/data/`, annexes avant/après. |
@@ -13,7 +19,7 @@ Concorde est une usine MLOps locale qui valide un moteur PyTorch d'anomalie, de 
 | Robustesse | Stabilité sous perturbation, bornes, champs optionnels, déterminisme et refus d'artefact absent. | `tests/model/test_robustesse.py`, tableau généré. |
 | Sécurité | Clés par rôle, comparaison constante, CSP, secrets hors Git, audit Bandit et dépendances. | `docs/securite.md`, tableau généré. |
 | Dérive | Rapport Evidently local sur variables DPE. | `scripts/monitor_model.py`, `docs/monitoring-modele.md`. |
-| Livraison | CI GitHub, build roue/sdist, artefact modèle, image Docker locale. | [run 32777689828](https://github.com/Exowz/RNCP-2026/actions/runs/32777689828), `docs/livraison.md`. |
+| Livraison | **Porte de conformité bloquante avant build** (12 critères), CI GitHub, build roue/sdist, artefact modèle, image Docker locale. | [run 32857959387](https://github.com/Exowz/RNCP-2026/actions/runs/32857959387), `docs/livraison.md`. |
 
 ## Chaîne de validation
 
@@ -33,7 +39,7 @@ La CI reproduit ces étapes sur Ubuntu, Java 17 et PostgreSQL éphémère. La po
 
 ## Gestion des incidents et décisions
 
-Un incident CI réel a révélé l'ordre erroné d'initialisation PostgreSQL, puis une omission de packaging des modules API/app. Les correctifs et la non-régression sont documentés dans [docs/incident.md](../../docs/incident.md).
+**Cinq incidents réels** sont documentés dans [docs/incident.md](../../docs/incident.md), chacun avec reproduction, diagnostic, correctif minimal et non-régression vérifiée **dans les deux sens** — le correctif est retiré pour confirmer que le test échoue bien. Le dernier, `SEC-2026-08-25-bis`, porte sur la porte de conformité elle-même : elle déclarait conforme une chaîne d'entraînement cassée, parce qu'elle inspectait l'artefact sans rejouer le processus qui le produit. Un artefact valide ne prouve que le passé.
 
 Le choix architectural essentiel est l'autonomie hors ligne : données, artefact, service IA, dépendances de démonstration et image Docker sont présents localement avant l'exécution. Le verrou socket rend toute sortie non locale bruyante.
 
