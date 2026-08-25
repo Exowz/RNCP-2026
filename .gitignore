@@ -57,3 +57,10 @@ models/*.joblib
 spark-warehouse/
 metastore_db/
 derby.log
+
+# --- Supports de coaching et convocation : NON VERSIONNES ---
+# Le depot est public. Ces fichiers contiennent (a) des donnees personnelles
+# du candidat et (b) des supports de cours de K. Kadri / Simplon / ECE dont la
+# republication porterait atteinte au droit d'auteur. Ils restent disponibles
+# en local pour toute session de travail.
+docs/coaching-source/
