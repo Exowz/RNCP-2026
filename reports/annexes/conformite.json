@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-08-25T13:52:29.277162+00:00",
+  "genere_le": "2026-08-25T14:10:19.343314+00:00",
   "verdict_global": "conforme",
   "criteres": [
     {
@@ -33,11 +33,21 @@
       "bloquant": true
     },
     {
+      "identifiant": "qualite.chaine_entrainement",
+      "axe": "qualite",
+      "libelle": "Chaine d'entrainement rejouable",
+      "seuil": "`entrainer_et_geler` s'execute sans erreur, journalisation MLflow comprise",
+      "valeur_mesuree": "chaine rejouee sans erreur",
+      "verdict": "conforme",
+      "justification_seuil": "Un artefact valide sur le disque ne prouve pas que la chaine qui l'a produit fonctionne encore. Sans ce controle, une dependance retiree casse l'entrainement sans que la porte le voie.",
+      "bloquant": true
+    },
+    {
       "identifiant": "robustesse.perturbation",
       "axe": "robustesse",
       "libelle": "Stabilité, bornes et champs optionnels",
       "seuil": "au plus 10 % de bascules sur 10 cas, bruit de 1 %; bornes et absences sans exception",
-      "valeur_mesuree": "code retour 0 — ............                                                             [100%]",
+      "valeur_mesuree": "12 test(s) reussi(s)",
       "verdict": "conforme",
       "justification_seuil": "Un bruit de mesure réaliste ne doit pas modifier massivement une décision; les limites et absences doivent rester explicites et sûres.",
       "bloquant": true
@@ -47,7 +57,7 @@
       "axe": "robustesse",
       "libelle": "Déterminisme de l'inférence",
       "seuil": "deux appels identiques donnent exactement le même résultat",
-      "valeur_mesuree": "code retour 0 — .                                                                        [100%]",
+      "valeur_mesuree": "1 test(s) reussi(s)",
       "verdict": "conforme",
       "justification_seuil": "Un score instable empêcherait toute analyse et toute reproductibilité de la décision.",
       "bloquant": true
@@ -57,7 +67,7 @@
       "axe": "robustesse",
       "libelle": "Refus propre d'un artefact manquant",
       "seuil": "FileNotFoundError explicite, sans prédiction dégradée silencieuse",
-      "valeur_mesuree": "code retour 0 — .                                                                        [100%]",
+      "valeur_mesuree": "1 test(s) reussi(s)",
       "verdict": "conforme",
       "justification_seuil": "Un moteur sans artefact ne doit jamais simuler un résultat ni échouer de façon ambiguë.",
       "bloquant": true

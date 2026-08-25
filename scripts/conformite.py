@@ -60,6 +60,31 @@ def executer(*commande: str) -> subprocess.CompletedProcess[str]:
     )
 
 
+#: Ligne de bilan de pytest (« 3 passed in 0.42s »), plus informative que la
+#: ligne de progression qui la precede et que l'on ramassait auparavant.
+_BILAN_PYTEST = re.compile(r"^\d+ (passed|failed|error)", re.MULTILINE)
+
+
+def resume_sortie(resultat: subprocess.CompletedProcess[str]) -> str:
+    """Resume l'execution d'un controle en une valeur lisible par un humain.
+
+    Prendre betement la derniere ligne de sortie donnait, pour pytest, la ligne
+    de points de progression (« ...... [100%] ») : le tableau de conformite
+    affichait alors du bruit de terminal la ou le jury attend une mesure. On
+    cherche donc d'abord la ligne de bilan, et l'on ne retombe sur la derniere
+    ligne qu'a defaut.
+    """
+    sortie = (resultat.stdout + resultat.stderr).strip()
+    if not sortie:
+        return f"code retour {resultat.returncode}, aucune sortie"
+    bilan = _BILAN_PYTEST.search(sortie)
+    if bilan:
+        return bilan.group(0).replace("passed", "test(s) reussi(s)").replace(
+            "failed", "test(s) en echec").replace("error", "erreur(s)")
+    derniere = sortie.splitlines()[-1].strip()
+    return f"code retour {resultat.returncode} — {derniere[:90]}"
+
+
 def critere_commande(
     identifiant: str,
     axe: str,
@@ -69,14 +94,12 @@ def critere_commande(
     *commande: str,
 ) -> Critere:
     resultat = executer(*commande)
-    sortie = (resultat.stdout + resultat.stderr).strip()
-    extrait = sortie.splitlines()[-1] if sortie else "aucune sortie"
     return Critere(
         identifiant=identifiant,
         axe=axe,
         libelle=libelle,
         seuil=seuil,
-        valeur_mesuree=f"code retour {resultat.returncode} — {extrait}",
+        valeur_mesuree=resume_sortie(resultat),
         verdict=Verdict.CONFORME if resultat.returncode == 0 else Verdict.NON_CONFORME,
         justification_seuil=justification,
     )
@@ -348,17 +371,62 @@ def mesurer_robustesse() -> list[Critere]:
             sys.executable,
             "-m",
             "pytest",
-            "-q",
+            # Pas de `-q` ici : `addopts` en fournit deja un dans pyproject.toml,
+            # et un second (`-qq`) supprime la ligne de bilan « N passed », qui
+            # est precisement la mesure que le tableau doit afficher.
             test,
         )
         for identifiant, libelle, seuil, justification, test in mesures
     ]
 
 
+def mesurer_chaine_entrainement() -> Critere:
+    """Verifie que la chaine d'entrainement s'execute encore de bout en bout.
+
+    Angle mort corrige le 25 aout 2026. La porte inspectait l'artefact — present,
+    chargeable, contrat conforme — sans jamais rejouer la chaine qui le produit.
+    Le remplacement de `mlflow` par `mlflow-skinny` a casse la journalisation
+    MLflow (`ModuleNotFoundError: alembic`) : l'entrainement echouait, et la
+    porte affichait pourtant « CONFORME », parce qu'un artefact valide restait
+    sur le disque depuis le passage precedent.
+
+    Un artefact valide ne prouve que le passe. Ce critere prouve le present.
+
+    L'entrainement ecrit dans un repertoire temporaire : la porte ne doit jamais
+    modifier l'artefact suivi par DVC, sous peine de rendre `dvc status` sale a
+    chaque controle.
+    """
+    programme = (
+        "import pathlib, tempfile;"
+        "from concorde.model.entrainement import entrainer_et_geler;"
+        "entrainer_et_geler("
+        "chemin_artefact=pathlib.Path(tempfile.mkdtemp()) / 'controle.pt')"
+    )
+    resultat = executer(sys.executable, "-c", programme)
+    return Critere(
+        identifiant="qualite.chaine_entrainement",
+        axe="qualite",
+        libelle="Chaine d'entrainement rejouable",
+        seuil="`entrainer_et_geler` s'execute sans erreur, journalisation MLflow comprise",
+        valeur_mesuree=(
+            "chaine rejouee sans erreur"
+            if resultat.returncode == 0
+            else resume_sortie(resultat)
+        ),
+        verdict=Verdict.CONFORME if resultat.returncode == 0 else Verdict.NON_CONFORME,
+        justification_seuil=(
+            "Un artefact valide sur le disque ne prouve pas que la chaine qui l'a produit "
+            "fonctionne encore. Sans ce controle, une dependance retiree casse "
+            "l'entrainement sans que la porte le voie."
+        ),
+    )
+
+
 def mesurer_criteres(hors_ligne: bool) -> list[Critere]:
     """Calcule toutes les mesures qui composent la décision de livraison."""
 
     criteres = [mesurer_couverture(), mesurer_auc(), mesurer_artefact()]
+    criteres.append(mesurer_chaine_entrainement())
     criteres.extend(mesurer_robustesse())
     criteres.extend([mesurer_bandit(), mesurer_pip_audit(hors_ligne), mesurer_secrets()])
     criteres.extend(mesurer_authentification_et_entetes())

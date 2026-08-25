@@ -270,3 +270,88 @@ contrôle doit être exécuté, pouvoir bloquer le build et distinguer clairemen
 une exception assumée d'un résultat conforme. Hors ligne, pip-audit devient
 « non évalué » : la démonstration continue, mais le rapport ne prétend jamais
 que la sécurité a été mesurée.
+
+---
+
+# Incident SEC-2026-08-25-bis — la porte de conformité déclarait conforme une chaîne cassée
+
+## Contexte et impact
+
+C'est l'incident le plus instructif du projet, parce qu'il porte sur l'outil de
+contrôle lui-même.
+
+Pour lever le plafond `cryptography<50` imposé par la distribution complète de
+MLflow — plafond qui empêchait de corriger `PYSEC-2026-3552` — `mlflow` a été
+remplacé par `mlflow-skinny`. Le raisonnement était juste : le projet n'utilise
+ni le serveur ni l'interface de MLflow.
+
+Mais `mlflow-skinny` n'embarque pas les dépendances du magasin SQL. Or Concorde
+journalise dans `sqlite:///mlflow.db` — MLflow 3 ayant déprécié le magasin
+fichier — et applique des migrations de schéma à l'ouverture.
+
+```
+python -m concorde.model.entrainement
+ModuleNotFoundError: No module named 'alembic'
+code de sortie : 1
+```
+
+**La chaîne d'entraînement ne fonctionnait plus.** C'est C13, et c'est l'étape
+que la CI exécute : elle serait passée au rouge.
+
+## Ce qui rend cet incident intéressant
+
+Trois filets de sécurité l'ont laissé passer.
+
+1. **Les tests ne le voyaient pas.** `tests/model/test_entrainement.py`
+   neutralise la journalisation :
+   `monkeypatch.setattr(entrainement, "_journaliser_mlflow", lambda *args: None)`.
+   Le chemin cassé n'était jamais exercé.
+2. **La porte de conformité non plus** — et elle affichait « CONFORME ». Elle
+   vérifiait que l'artefact existait, se chargeait et respectait son contrat de
+   variables. Les trois étaient vrais : l'artefact valide était resté sur le
+   disque depuis le passage précédent. **Un artefact valide ne prouve que le
+   passé.**
+3. **La documentation affirmait le contraire.** `docs/securite.md` écrivait que
+   `mlflow-skinny` « couvre le tracking SQLite réellement utilisé par
+   Concorde ». C'était précisément ce qui ne fonctionnait pas — et c'était la
+   justification du remplacement.
+
+## Correctif
+
+1. Verrou explicite `alembic>=1.13`, déclaré comme la **contrepartie assumée**
+   du passage à l'édition skinny, avec la raison en commentaire dans
+   `pyproject.toml`.
+2. Nouveau critère bloquant `qualite.chaine_entrainement` : il **rejoue**
+   `entrainer_et_geler`, journalisation MLflow comprise, dans un répertoire
+   temporaire — la porte ne doit jamais modifier l'artefact suivi par DVC.
+3. Correction de l'affirmation fausse dans `docs/securite.md`.
+
+## Non-régression, vérifiée dans les deux sens
+
+```bash
+# 1. Panne recréée à l'identique
+pip uninstall -y alembic && python scripts/conformite.py
+#   → NON CONFORME (12 critères), code de sortie 1
+#   → critère qualite.chaine_entrainement : non conforme
+
+# 2. Dépendance restaurée
+uv sync --extra dev && python scripts/conformite.py
+#   → CONFORME (12 critères), code de sortie 0
+```
+
+## REX
+
+Un contrôle qui inspecte un **résultat** ne prouve pas que le **processus** qui
+l'a produit fonctionne encore. La porte examinait un artefact ; il fallait
+qu'elle rejoue la chaîne.
+
+Corollaire sur les doublures de test : neutraliser une dépendance dans un test
+est légitime — nous l'avons fait à bon droit pour le transport HTTP dans
+`CI-2026-08-25` — mais chaque doublure crée une zone que plus rien ne couvre.
+Elle doit être compensée ailleurs, ici par un critère de porte qui exécute pour
+de vrai.
+
+Enfin, motif récurrent, désormais rencontré quatre fois sur cinq incidents :
+**la documentation affirmait ce que le code ne faisait pas.** Registre RGPD,
+versionnement DVC, tracking MLflow. À chaque fois la correction a consisté à
+rendre l'affirmation vraie *et* à la faire vérifier par un test ou un critère.

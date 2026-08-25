@@ -42,9 +42,16 @@ dependencies = [
     "scikit-learn>=1.5",
     "joblib>=1.4",
     # --- MLOps / monitoring (C11, C13, C20) ---
-    # Le suivi local n'utilise ni serveur de déploiement ni UI : l'édition
-    # skinny garde l'API de tracking et évite le plafond cryptography de mlflow.
+    # Le suivi local n'utilise ni serveur de deploiement ni UI : l'edition
+    # skinny garde l'API de tracking et evite le plafond cryptography de mlflow.
     "mlflow-skinny>=3.15.1",
+    # `mlflow-skinny` n'embarque PAS les dependances du magasin SQL. Or le suivi
+    # est configure sur `sqlite:///mlflow.db` (MLflow 3 a deprecie le magasin
+    # fichier), et MLflow applique des migrations de schema a l'ouverture.
+    # Sans alembic, `python -m concorde.model.entrainement` echoue au
+    # journalisation. Cette ligne est donc la contrepartie explicite du passage
+    # a l'edition skinny, pas une dependance decorative.
+    "alembic>=1.13",
     "dvc>=3.58",
     "evidently>=0.5",
 ]

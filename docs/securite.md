@@ -54,8 +54,20 @@ La porte `scripts/conformite.py` et la CI exécutent Bandit ainsi que
 (`PYSEC-2026-3552`) et `diskcache 5.6.3` (`PYSEC-2026-2447`). Le premier avis
 est corrigé par le verrou `cryptography 50.0.0`. La distribution complète de
 MLflow plafonnait toutefois `cryptography<50` ; elle est remplacée par
-`mlflow-skinny 3.15.1`, qui couvre le tracking SQLite réellement utilisé par
-Concorde sans embarquer le serveur et l'UI inutilisés.
+`mlflow-skinny 3.15.1`, qui expose l'API de suivi sans embarquer le serveur ni
+l'interface, tous deux inutilisés ici.
+
+**Contrepartie assumée de ce remplacement.** `mlflow-skinny` n'embarque pas les
+dépendances du magasin SQL. Or Concorde journalise dans `sqlite:///mlflow.db` —
+MLflow 3 ayant déprécié le magasin fichier — et applique des migrations de
+schéma à l'ouverture. Le remplacement a donc cassé
+`python -m concorde.model.entrainement` (`ModuleNotFoundError: alembic`) avant
+d'être complété par un verrou `alembic>=1.13` explicite. Lever un plafond de
+version en changeant de distribution déplace le problème tant que l'on n'a pas
+verifié que le chemin réellement emprunté fonctionne encore : c'est l'objet de
+l'incident [SEC-2026-08-25-bis](incident.md) et du critère de conformité
+`qualite.chaine_entrainement`, qui exécute désormais la chaîne au lieu de se
+contenter d'inspecter son résultat.
 
 `diskcache` est une dépendance transitive de `dvc-data`, elle-même requise par
 DVC 3.67.1. L'avis ne liste aucun correctif. L'exception

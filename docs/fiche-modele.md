@@ -7,8 +7,8 @@ Document genere par `python -m concorde.model.entrainement`. Ne pas editer a la 
 | Champ | Valeur |
 |---|---|
 | Version | `0.1.0` |
-| Entraine le | 2026-08-25T12:49:10.666546+00:00 |
-| Commit Git | `5beb29a` |
+| Entraine le | 2026-08-25T14:10:10.968932+00:00 |
+| Commit Git | `9a13bf7` |
 | Graine aleatoire | `20260824` |
 | Empreinte du jeu d'entrainement | `a987ffdce586ad1f9961e4123bf468fd...` |
 | Lignes d'entrainement / validation | 499 / 109 |
@@ -37,7 +37,7 @@ Le modele **ne predit ni prix ni valeur**. Il qualifie la fiabilite d'un rapproc
 | `nb_test` | 108 | Taille du jeu de test. |
 | `taux_signalement_atypique` | 0.1204 | Part du jeu de test signalee comme atypique. |
 | `auc_autoencodeur` | 0.9095 | **Informatif.** Pouvoir de tri de l'auto-encodeur seul, qui n'a vu ni les regles ni les etiquettes. |
-| `average_precision_autoencodeur` | 0.8427 | **Informatif.** Precision moyenne, robuste au desequilibre des classes. |
+| `average_precision_autoencodeur` | 0.8427 | **Informatif.** Précision moyenne, robuste au desequilibre des classes. |
 | `taux_base_anomalies` | 0.2407 | Proportion d'anomalies dans le jeu de test (reference). |
 | `regles_precision_circulaire` | 0.8824 | **Circulaire.** Les regles visent les memes familles de contradictions que celles plantees. |
 | `regles_rappel_circulaire` | 0.5769 | **Circulaire.** A ne pas presenter comme une performance. |
