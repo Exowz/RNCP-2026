@@ -1,0 +1,5 @@
+outs:
+- md5: 6939c25b52f64eba01f365f5fe86a011
+  size: 11709
+  hash: md5
+  path: concorde_moteur.pt

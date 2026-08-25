@@ -212,3 +212,61 @@ Regle retenue : **un test doit declarer ce dont il depend**. Ce qui n'est pas
 l'objet du test se remplace par une doublure, et l'on verifie que la doublure
 n'a pas supprime le pouvoir de detection. La CI n'est pas un obstacle a franchir,
 c'est le seul environnement qui ne ment pas sur les dependances.
+
+---
+
+# Incident SEC-2026-08-25 — la porte de conformité détectait deux dépendances vulnérables
+
+## Contexte et impact
+
+Le projet de substitution n°21 revendique une validation sécurité avant
+déploiement. Le 25 août, le premier passage de `scripts/conformite.py` est
+rouge : `pip-audit` signale `cryptography 49.0.0` (`PYSEC-2026-3552`, correctif
+50.0.0) et `diskcache 5.6.3` (`PYSEC-2026-2447`, aucun correctif listé).
+L'impact est direct : un paquet aurait pu être construit alors que son graphe
+de dépendances contenait au moins une vulnérabilité corrigeable.
+
+## Reproduction et diagnostic
+
+```bash
+.venv/bin/pip-audit
+# Found 2 known vulnerabilities in 2 packages
+```
+
+La porte appelait le même audit et renvoyait un code non nul. L'inspection du
+graphe a établi `concorde -> dvc -> dvc-data -> diskcache`. `cryptography`
+n'était pas contraint explicitement par le projet et le verrou retenait 49.0.0.
+Le second avis est transitif à la brique DVC imposée et ne propose, à cette
+date, aucune version de correction.
+
+## Correctifs minimaux
+
+1. Ajout de `cryptography>=50.0.0` dans `pyproject.toml`, puis régénération de
+   `uv.lock` : l'environnement utilise désormais 50.0.0. La distribution
+   complète de MLflow exigeant encore `cryptography<50`, elle est remplacée par
+   `mlflow-skinny`, suffisant pour le tracking SQLite local utilisé par le code.
+2. Initialisation réelle de DVC avec un remote local ; l'exception
+   `PYSEC-2026-2447` est limitée à `diskcache`, datée et documentée dans
+   `docs/securite.md`. Elle ne masque aucune autre vulnérabilité et sera revue
+   au plus tard le 2026-09-25.
+3. Ajout de Bandit, de pip-audit et de la porte avant `uv build` dans la CI.
+
+## Non-regression et retour d'experience
+
+```bash
+.venv/bin/pip-audit --ignore-vuln PYSEC-2026-2447
+.venv/bin/bandit -c pyproject.toml -r src api app
+source scripts/spark-env.sh
+.venv/bin/python scripts/conformite.py
+```
+
+Ces commandes ne laissent plus de vulnérabilité non acceptée, ni finding Bandit
+HIGH ou MEDIUM. La vérification forcée
+`python scripts/conformite.py --forcer-echec qualite.auc_autoencodeur` reste
+non nulle : le vert n'est donc pas une exception silencieuse.
+
+**REX.** Une liste de dépendances déclarée ne constitue pas un contrôle. Le
+contrôle doit être exécuté, pouvoir bloquer le build et distinguer clairement
+une exception assumée d'un résultat conforme. Hors ligne, pip-audit devient
+« non évalué » : la démonstration continue, mais le rapport ne prétend jamais
+que la sécurité a été mesurée.

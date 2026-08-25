@@ -12,6 +12,10 @@ Les fixtures, le parquet traité et `models/concorde_moteur.pt` sont copiés dan
 l'image au build. Le démarrage ne collecte pas, n'entraîne pas et ne télécharge
 aucun modèle.
 
+Avant le build, les deux livrables lourds sont suivis par DVC avec le remote
+local `.dvc-local-remote/`. La commande `dvc status` permet de vérifier leur
+cohérence sans réseau ; le remote ne fait appel à aucun service distant.
+
 Cette première image autonome reprend le graphe de dépendances verrouillé de la
 chaîne, y compris les outils MLOps. C'est volontairement plus lourd qu'une
 image de serving minimaliste, mais garantit ce soir l'identité entre CI et

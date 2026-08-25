@@ -1,0 +1,5 @@
+outs:
+- md5: 8abac5c3a3a8827bb7fb087abf0b04a5
+  size: 126185
+  hash: md5
+  path: rapprochements.parquet

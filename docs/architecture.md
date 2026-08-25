@@ -12,9 +12,11 @@ flowchart LR
     subgraph Local[Poste local — démonstration hors ligne]
       S[Fixtures versionnées\nDVF+ · DPE · Géorisques · BAN] --> C[Collecte et nettoyage\nPython + Spark]
       P[(PostgreSQL\nréférences communales)] --> C
-      C --> D[(Parquet rapproché)]
+      C --> D[(Parquet rapproché\nsuivi par DVC local)]
       D --> T[Entraînement\nPyTorch + MLflow]
-      T --> M[(Artefact local\nconcorde_moteur.pt)]
+      T --> M[(Artefact local\nconcorde_moteur.pt, DVC)]
+      D -. contenu .-> V[(Remote DVC local\n.dvc-local-remote)]
+      M -. contenu .-> V
       M --> A[API modèle FastAPI :8002\nauth, validation, OpenAPI]
       U[Application Jinja2 :8000] -->|HTTP local + X-API-Key\nX-Request-ID| A
       U --> L[Logs JSONL + métriques locales]
@@ -53,6 +55,12 @@ Les outils sont volontairement peu nombreux : Python 3.12, PyTorch, Spark 3.5
 sur Java 17, PostgreSQL 17, FastAPI/Jinja2, MLflow, DVC, Evidently, Docker et
 GitHub Actions. Aucun cloud, CDN ou registre d'images n'est nécessaire pour
 exécuter la démo préparée localement.
+
+DVC est réellement initialisé : les métadonnées
+`data/processed/rapprochements.parquet.dvc` et `models/concorde_moteur.pt.dvc`
+sont versionnées dans Git, tandis que leur contenu est copié dans le remote
+strictement local `.dvc-local-remote/`. Il ne s'agit donc ni d'une promesse de
+versionnement ni d'un stockage distant.
 
 ## POC et reproductibilité
 

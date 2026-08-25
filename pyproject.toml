@@ -23,7 +23,7 @@ dependencies = [
     # --- Donnees / stockage (C2, C3, C4) ---
     "pandas>=2.2",
     "numpy>=1.26",
-    "pyarrow>=18.0",
+    "pyarrow>=25.0.1",
     "duckdb>=1.1",
     "SQLAlchemy>=2.0",
     "psycopg[binary]>=3.2",
@@ -35,12 +35,16 @@ dependencies = [
     "jinja2>=3.1",
     "python-multipart>=0.0.20",
     "slowapi>=0.1.9",
+    # --- Sécurité des échanges et de l'artefact ---
+    "cryptography>=50.0.0",
     # --- Modele (C9, C12, C13) ---
     "torch>=2.5",
     "scikit-learn>=1.5",
     "joblib>=1.4",
     # --- MLOps / monitoring (C11, C13, C20) ---
-    "mlflow>=2.19",
+    # Le suivi local n'utilise ni serveur de déploiement ni UI : l'édition
+    # skinny garde l'API de tracking et évite le plafond cryptography de mlflow.
+    "mlflow-skinny>=3.15.1",
     "dvc>=3.58",
     "evidently>=0.5",
 ]

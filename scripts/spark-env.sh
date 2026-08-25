@@ -31,4 +31,7 @@ if [ -z "${JAVA_HOME:-}" ]; then
 fi
 
 export PATH="$JAVA_HOME/bin:$PATH"
+# Spark tente sinon de publier l'adresse mDNS du poste, indisponible lorsque la
+# démonstration est hors ligne. La chaîne est locale : la boucle locale suffit.
+export SPARK_LOCAL_IP="${SPARK_LOCAL_IP:-127.0.0.1}"
 java -version 2>&1 | head -n 1

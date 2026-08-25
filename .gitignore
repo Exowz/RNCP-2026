@@ -17,7 +17,7 @@ htmlcov/
 *.pem
 secrets/
 
-# --- Donnees volumineuses : versionnees par DVC, pas par Git (C3) ---
+# --- Donnees volumineuses : suivies par DVC local, pas par Git (C3) ---
 data/raw/*
 data/processed/*
 data/external/*
@@ -33,6 +33,7 @@ mlartifacts/
 mlflow.db
 .dvc/cache/
 .dvc/tmp/
+.dvc-local-remote/
 
 # --- Monitoring : les logs sont generes, pas versionnes (C20) ---
 monitoring/logs/*
@@ -42,7 +43,7 @@ monitoring/app/*.json
 monitoring/model/*.html
 monitoring/model/*.json
 
-# --- Artefacts de modele : versionnes par DVC (voir models/) ---
+# --- Artefacts de modele : suivis par DVC local (voir models/) ---
 models/*.pt
 models/*.joblib
 

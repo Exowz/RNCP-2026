@@ -62,3 +62,11 @@ actif distant : tout est servi en local, ce qui satisfait la contrainte hors lig
 2026-08-25 12:20 | L'API data expose une presentation lisible distincte de la charge `donnees` validable par `/predict` | Ajouter des champs d'affichage au contrat strict de prediction | Les noms de commune, l'adresse BAN et l'etiquette DPE sont accessibles sans introduire de champs inconnus dans le POST de prediction.
 
 2026-08-25 12:20 | Le niveau de confiance de la liste reutilise les variables et la regle du moteur | Approximation propre a l'API data | Un filtre de liste ne doit pas annoncer une confiance differente du verdict obtenu ensuite pour le meme rapprochement.
+
+2026-08-25 15:40 | La livraison est bloquee par une porte de conformite executable generant JSON et Markdown | Tableau Markdown saisi manuellement | Un rapport date doit etre la consequence des mesures qualite, robustesse et securite, et non une declaration invérifiable.
+
+2026-08-25 15:40 | DVC suit le parquet rapproche et l'artefact PyTorch avec un remote dans `.dvc-local-remote/` | Retirer DVC de la pile ou configurer un remote distant | DVC est une brique imposee du projet de substitution et le stockage local conserve la demonstration hors ligne.
+
+2026-08-25 15:40 | `PYSEC-2026-2447` est une exception temporaire et documentee | Masquer l'audit ou supprimer DVC sans trace | `diskcache` est transitive a DVC et ne dispose pas de correctif liste; toute autre vulnerabilite reste bloquante.
+
+2026-08-25 15:50 | `mlflow-skinny` remplace la distribution MLflow complete | Conserver `mlflow` et bloquer cryptography sous 50 | Le projet n'utilise que le tracking SQLite; l'edition skinny garde cette API et permet de corriger `PYSEC-2026-3552`.

@@ -1,0 +1,116 @@
+{
+  "genere_le": "2026-08-25T13:52:29.277162+00:00",
+  "verdict_global": "conforme",
+  "criteres": [
+    {
+      "identifiant": "qualite.couverture_tests",
+      "axe": "qualité",
+      "libelle": "Tests automatisés et couverture",
+      "seuil": "suite verte et couverture >= 75 %",
+      "valeur_mesuree": "86%",
+      "verdict": "conforme",
+      "justification_seuil": "75 % est le plancher annoncé pour le projet de substitution; la suite doit aussi rester verte.",
+      "bloquant": true
+    },
+    {
+      "identifiant": "qualite.auc_autoencodeur",
+      "axe": "qualité",
+      "libelle": "Pouvoir discriminant de l'autoencodeur",
+      "seuil": "AUC >= 0,80",
+      "valeur_mesuree": "AUC 0.9095",
+      "verdict": "conforme",
+      "justification_seuil": "0,80 constitue le minimum documenté pour distinguer utilement les cas atypiques des cas ordinaires.",
+      "bloquant": true
+    },
+    {
+      "identifiant": "qualite.artefact_et_contrat",
+      "axe": "qualité",
+      "libelle": "Artefact PyTorch et contrat des variables",
+      "seuil": "artefact présent, chargeable et variables attendues à l'identique",
+      "valeur_mesuree": "présent (concorde_moteur.pt), chargeable, contrat conforme",
+      "verdict": "conforme",
+      "justification_seuil": "Un modèle non chargeable ou dont les variables diffèrent ne peut pas produire une prédiction reproductible.",
+      "bloquant": true
+    },
+    {
+      "identifiant": "robustesse.perturbation",
+      "axe": "robustesse",
+      "libelle": "Stabilité, bornes et champs optionnels",
+      "seuil": "au plus 10 % de bascules sur 10 cas, bruit de 1 %; bornes et absences sans exception",
+      "valeur_mesuree": "code retour 0 — ............                                                             [100%]",
+      "verdict": "conforme",
+      "justification_seuil": "Un bruit de mesure réaliste ne doit pas modifier massivement une décision; les limites et absences doivent rester explicites et sûres.",
+      "bloquant": true
+    },
+    {
+      "identifiant": "robustesse.determinisme",
+      "axe": "robustesse",
+      "libelle": "Déterminisme de l'inférence",
+      "seuil": "deux appels identiques donnent exactement le même résultat",
+      "valeur_mesuree": "code retour 0 — .                                                                        [100%]",
+      "verdict": "conforme",
+      "justification_seuil": "Un score instable empêcherait toute analyse et toute reproductibilité de la décision.",
+      "bloquant": true
+    },
+    {
+      "identifiant": "robustesse.artefact_absent",
+      "axe": "robustesse",
+      "libelle": "Refus propre d'un artefact manquant",
+      "seuil": "FileNotFoundError explicite, sans prédiction dégradée silencieuse",
+      "valeur_mesuree": "code retour 0 — .                                                                        [100%]",
+      "verdict": "conforme",
+      "justification_seuil": "Un moteur sans artefact ne doit jamais simuler un résultat ni échouer de façon ambiguë.",
+      "bloquant": true
+    },
+    {
+      "identifiant": "securite.bandit",
+      "axe": "sécurité",
+      "libelle": "Analyse statique Bandit",
+      "seuil": "0 finding HIGH et 0 finding MEDIUM",
+      "valeur_mesuree": "0 finding(s) HIGH/MEDIUM",
+      "verdict": "conforme",
+      "justification_seuil": "Les sévérités HIGH et MEDIUM représentent un risque exploitable ou à traiter avant livraison; les LOW restent visibles dans le rapport Bandit.",
+      "bloquant": true
+    },
+    {
+      "identifiant": "securite.pip_audit",
+      "axe": "sécurité",
+      "libelle": "Audit des dépendances Python",
+      "seuil": "0 vulnérabilité non acceptée",
+      "valeur_mesuree": "0 vulnérabilité non acceptée (exception documentée: PYSEC-2026-2447)",
+      "verdict": "conforme",
+      "justification_seuil": "L'avis sans correctif de diskcache est une exception temporaire et tracée dans docs/securite.md; toute autre vulnérabilité bloque la livraison.",
+      "bloquant": true
+    },
+    {
+      "identifiant": "securite.secrets_versionnes",
+      "axe": "sécurité",
+      "libelle": "Absence de secret en clair versionné",
+      "seuil": "aucun .env réel, secret/, .pem ou .key suivi par Git",
+      "valeur_mesuree": "aucun fichier sensible suivi",
+      "verdict": "conforme",
+      "justification_seuil": "Une clé versionnée reste récupérable même après révocation; les exemples sans secret réel restent autorisés.",
+      "bloquant": true
+    },
+    {
+      "identifiant": "securite.401_sans_cle",
+      "axe": "sécurité",
+      "libelle": "Refus sans clé d'API",
+      "seuil": "POST /predict sans X-API-Key retourne 401",
+      "valeur_mesuree": "HTTP 401 sans clé",
+      "verdict": "conforme",
+      "justification_seuil": "L'absence d'authentification ne doit jamais donner accès au moteur de prédiction.",
+      "bloquant": true
+    },
+    {
+      "identifiant": "securite.entetes_owasp",
+      "axe": "sécurité",
+      "libelle": "En-têtes HTTP de durcissement",
+      "seuil": "CSP, anti-clickjacking, nosniff et referrer policy présents",
+      "valeur_mesuree": "4/4 en-têtes attendus",
+      "verdict": "conforme",
+      "justification_seuil": "Ces quatre en-têtes couvrent les protections web minimales revendiquées par l'application.",
+      "bloquant": true
+    }
+  ]
+}

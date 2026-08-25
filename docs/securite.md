@@ -46,3 +46,21 @@ TLS, rotation et stockage dédié des secrets, limitation de débit persistante,
 authentification utilisateur, journal d'audit protégé et revue de sécurité.
 Ces absences sont assumées car elles dépassent le périmètre de la démo hors
 ligne ; elles ne sont pas cachées derrière les clés API de développement.
+
+## Audit des dépendances — 2026-08-25
+
+La porte `scripts/conformite.py` et la CI exécutent Bandit ainsi que
+`pip-audit`. Le 25 août, l'audit a trouvé `cryptography 49.0.0`
+(`PYSEC-2026-3552`) et `diskcache 5.6.3` (`PYSEC-2026-2447`). Le premier avis
+est corrigé par le verrou `cryptography 50.0.0`. La distribution complète de
+MLflow plafonnait toutefois `cryptography<50` ; elle est remplacée par
+`mlflow-skinny 3.15.1`, qui couvre le tracking SQLite réellement utilisé par
+Concorde sans embarquer le serveur et l'UI inutilisés.
+
+`diskcache` est une dépendance transitive de `dvc-data`, elle-même requise par
+DVC 3.67.1. L'avis ne liste aucun correctif. L'exception
+`PYSEC-2026-2447` est donc temporairement explicitée et limitée à cette seule
+référence dans la commande d'audit ; toute autre vulnérabilité reste bloquante.
+Elle sera réexaminée à chaque mise à jour DVC et au plus tard le 2026-09-25.
+Cette exception ne change ni le rapport brut de `pip-audit`, ni le fait que le
+critère de conformité compte **zéro vulnérabilité non acceptée**.

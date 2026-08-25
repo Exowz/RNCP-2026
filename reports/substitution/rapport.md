@@ -10,8 +10,8 @@ Concorde est une usine MLOps locale qui valide un moteur PyTorch d'anomalie, de 
 |---|---|---|
 | Qualité données | Collecte, nettoyage, Spark SQL, PostgreSQL, tests de formats. | `tests/data/`, annexes avant/après. |
 | Qualité modèle | Découpage train/val/test, métriques, test d'entraînement et rechargement. | `tests/model/test_entrainement.py`, fiche modèle. |
-| Robustesse | Entrées Pydantic strictes, artefact local, refus explicite si absent. | API `/predict`, tests 422/503. |
-| Sécurité | Clés par rôle, comparaison constante, CSP, secrets hors Git, logs pseudonymisés. | `docs/securite.md`, tests API. |
+| Robustesse | Stabilité sous perturbation, bornes, champs optionnels, déterminisme et refus d'artefact absent. | `tests/model/test_robustesse.py`, tableau généré. |
+| Sécurité | Clés par rôle, comparaison constante, CSP, secrets hors Git, audit Bandit et dépendances. | `docs/securite.md`, tableau généré. |
 | Dérive | Rapport Evidently local sur variables DPE. | `scripts/monitor_model.py`, `docs/monitoring-modele.md`. |
 | Livraison | CI GitHub, build roue/sdist, artefact modèle, image Docker locale. | [run 32777689828](https://github.com/Exowz/RNCP-2026/actions/runs/32777689828), `docs/livraison.md`. |
 
@@ -25,10 +25,11 @@ uv run python -m concorde.clean
 uv run python -m concorde.model.entrainement
 uv run pytest -m "not local_service"
 uv run python scripts/monitor_model.py
+uv run python scripts/conformite.py
 uv build
 ```
 
-La CI reproduit ces étapes sur Ubuntu, Java 17 et PostgreSQL éphémère. Elle publie une roue, une archive source, le modèle gelé, sa fiche et ses métriques. Le test LM Studio est délibérément local : la CI ne télécharge pas de poids et ne simule pas le service du poste de démonstration.
+La CI reproduit ces étapes sur Ubuntu, Java 17 et PostgreSQL éphémère. La porte produite dans `reports/annexes/conformite.{json,md}` décide avant le build ; elle n'est pas un tableau recopié à la main. La CI publie une roue, une archive source, le modèle gelé, sa fiche et ses métriques. Le test LM Studio est délibérément local : la CI ne télécharge pas de poids et ne simule pas le service du poste de démonstration.
 
 ## Gestion des incidents et décisions
 
