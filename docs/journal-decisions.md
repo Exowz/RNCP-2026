@@ -54,3 +54,11 @@ risque de CDN, temps).
 *Raison* : C14 et C17 exigent des preuves d'accessibilite WCAG/RGAA — reperes ARIA, ordre de
 tabulation, contrastes, libelles de formulaire. Cela suppose de maitriser le HTML produit. Aucun
 actif distant : tout est servi en local, ce qui satisfait la contrainte hors ligne.
+
+## 2026-08-25 — Jour 2 : second client API
+
+2026-08-25 12:20 | Le front Next.js lit les APIs Concorde uniquement depuis des Server Components avec une cle `CONCORDE_API_KEY` non publique | Appel direct depuis le navigateur ou cle `NEXT_PUBLIC_` | La cle reste dans l'environnement du serveur, le navigateur ne parle jamais aux ports Python et aucun CORS n'est necessaire.
+
+2026-08-25 12:20 | L'API data expose une presentation lisible distincte de la charge `donnees` validable par `/predict` | Ajouter des champs d'affichage au contrat strict de prediction | Les noms de commune, l'adresse BAN et l'etiquette DPE sont accessibles sans introduire de champs inconnus dans le POST de prediction.
+
+2026-08-25 12:20 | Le niveau de confiance de la liste reutilise les variables et la regle du moteur | Approximation propre a l'API data | Un filtre de liste ne doit pas annoncer une confiance differente du verdict obtenu ensuite pour le meme rapprochement.
