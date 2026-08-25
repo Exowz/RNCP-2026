@@ -4,10 +4,10 @@ import "./globals.css";
 /**
  * Aucune police distante.
  *
- * Le squelette Next.js importe par defaut `next/font/google`. Ces polices sont
+ * Le squelette Next.js importe par defaut une police Google integree. Ces polices sont
  * telechargees **au moment du build** puis auto-hebergees : le rendu final est
  * hors ligne, mais la construction, elle, exige un reseau. Un `bun run build`
- * relance sans connexion echouerait — exactement le scenario du jour de la
+ * relance sans connexion echouerait, exactement le scenario du jour de la
  * soutenance.
  *
  * On utilise donc une pile de polices systeme : rien a telecharger, ni au build
@@ -22,7 +22,7 @@ const PILE_MONO =
   'ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace';
 
 export const metadata: Metadata = {
-  title: "Concorde — fiabilité des rapprochements DVF+ × DPE",
+  title: "Concorde - fiabilité des rapprochements DVF+ et DPE",
   description:
     "Concorde évalue si le rapprochement entre une vente immobilière et un diagnostic énergétique est fiable. Il n'estime aucun prix.",
 };
