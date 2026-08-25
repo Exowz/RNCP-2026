@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "border-bottom:3px solid",
+        "createdAt": "2026-08-25T15:06:28.518Z",
+        "reason": "Codex: bordure basse de navigation sans rayon, repere de page courant; pas une carte ni un accent lateral."
+      }
+    ]
+  }
+}

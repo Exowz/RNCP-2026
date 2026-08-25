@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 
 export default function CommentCaMarche() {
   return <SiteShell page="/comment-ca-marche">
-    <section className="page-intro"><p className="eyebrow">Méthode</p><h1>Une chaîne qui conserve ses incertitudes</h1><p>Concorde ne cherche pas à faire disparaître les ambiguïtés du croisement des données. Il les compte, les explique et refuse de conclure lorsqu'un DPE manque.</p></section>
+    <section className="page-intro"><h1>Une chaîne qui conserve ses incertitudes</h1><p>Concorde ne cherche pas à faire disparaître les ambiguïtés du croisement des données. Il les compte, les explique et refuse de conclure lorsqu&apos;un DPE manque.</p></section>
     <ol className="pipeline" aria-label="Chaîne de traitement Concorde">
       <li><strong>1 735 lignes brutes</strong><span>DVF+, DPE et informations d'exposition aux aléas sont collectés depuis des sources publiques.</span></li>
       <li><strong>922 rapprochements</strong><span>Les ventes et diagnostics sont rapprochés par parcelle, sans prétendre que cette clé est parfaite.</span></li>
