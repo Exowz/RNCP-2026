@@ -70,3 +70,5 @@ actif distant : tout est servi en local, ce qui satisfait la contrainte hors lig
 2026-08-25 15:40 | `PYSEC-2026-2447` est une exception temporaire et documentee | Masquer l'audit ou supprimer DVC sans trace | `diskcache` est transitive a DVC et ne dispose pas de correctif liste; toute autre vulnerabilite reste bloquante.
 
 2026-08-25 15:50 | `mlflow-skinny` remplace la distribution MLflow complete | Conserver `mlflow` et bloquer cryptography sous 50 | Le projet n'utilise que le tracking SQLite; l'edition skinny garde cette API et permet de corriger `PYSEC-2026-3552`.
+
+2026-08-25 16:00 | Les dependances directes sans usage (`requests`, `rich`, `tenacity`, `duckdb`) sont retirees | Les conserver par precaution | Une dependance non justifiee augmente la surface d'attaque, le temps de resolution et le bruit d'audit sans apporter de capacite au projet.

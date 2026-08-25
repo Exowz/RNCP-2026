@@ -13,18 +13,14 @@ dependencies = [
     "pydantic-settings>=2.6",
     "python-dotenv>=1.0",
     "typer>=0.15",
-    "rich>=13.9",
     # --- Collecte (C1) ---
     "httpx>=0.28",
-    "requests>=2.32",
     "beautifulsoup4>=4.12",
     "lxml>=5.3",
-    "tenacity>=9.0",
     # --- Donnees / stockage (C2, C3, C4) ---
     "pandas>=2.2",
     "numpy>=1.26",
     "pyarrow>=25.0.1",
-    "duckdb>=1.1",
     "SQLAlchemy>=2.0",
     "psycopg[binary]>=3.2",
     # --- Big data (C1, C2) ---
