@@ -138,3 +138,77 @@ rien ne le signale. Regle retenue : **aucune URL n'est fabriquee dans un
 gabarit** ; elles sont construites cote serveur, ou le jeu de routes est connu.
 Un test de parcours suivant les liens de navigation aurait attrape le defaut
 avant la demonstration — c'est desormais le cas.
+
+---
+
+# Incident CI-2026-08-25 — des tests verts en local, rouges en integration continue
+
+## Contexte et impact
+
+Les six tests de non-regression ecrits pour l'incident `APP-2026-08-25`
+passaient sur le poste de developpement et faisaient echouer la CI. Impact
+direct : la chaine de livraison etait bloquee, et la preuve C18 — une execution
+verte — perdue, alors que le code applicatif etait correct.
+
+Le symptome ecartait d'emblee l'hypothese d'une regression du correctif : les
+tests echouaient en `503 Service Unavailable`, pas en `405 Method Not Allowed`.
+Ce n'etait donc pas le bug d'origine qui reapparaissait.
+
+| Execution | Commit | Symptome |
+|---|---|---|
+| [32850513335](https://github.com/Exowz/RNCP-2026/actions/runs/32850513335) | `6a2ac96` | `4 failed, 30 passed` — `assert 503 == 200` |
+
+## Diagnostic
+
+`503` est le code que l'application Jinja renvoie lorsqu'elle ne parvient pas a
+joindre l'API modele. Les tests instanciaient l'application, qui appelle son
+amont en HTTP sur `127.0.0.1:8002`.
+
+Cette API tourne en permanence sur le poste de developpement, jamais sur un
+runner GitHub. Les tests portaient donc une **dependance d'environnement
+implicite** : ils ne verifiaient pas seulement le routage, ils exigeaient un
+service tiers demarre. Le poste de developpement masquait la dependance
+exactement comme il avait masque, la veille, une erreur de packaging.
+
+La cause n'est ni le code applicatif ni la CI : c'est le **perimetre des tests**,
+plus large que leur intention.
+
+## Correctif
+
+Une fixture `autouse` remplace le transport HTTP par un appel direct au moteur.
+Le **vrai moteur** est conserve — seul le saut reseau est retire — parce que ces
+tests portent sur le routage et le rendu, pas sur le transport.
+
+L'appel HTTP reel n'est pas pour autant sans preuve : il reste couvert par la
+sonde `/sante` de l'application, qui interroge son amont et rapporte son etat,
+et par la demonstration elle-meme.
+
+## Verification, dans les deux sens
+
+Un test rendu hermetique peut avoir perdu son pouvoir de detection. Les deux
+sens ont donc ete controles :
+
+```bash
+# 1. Condition de la CI reproduite : toutes les APIs arretees
+pytest -m "not local_service"        # 34 passed
+
+# 2. Correctif du 405 retire : les tests doivent echouer
+pytest tests/app/test_bascule_profil.py   # 6 failed, "GET /evaluer -> 405" journalise
+```
+
+Execution verte confirmee :
+[32850978029](https://github.com/Exowz/RNCP-2026/actions/runs/32850978029) sur
+`7b0c9e7` — fixtures, PostgreSQL, collecte, nettoyage, entrainement, tests,
+lint, build et artefact.
+
+## REX
+
+Un test qui reussit sur le poste de developpement et echoue en CI ne signale pas
+un probleme de CI : il signale que le poste fournissait silencieusement quelque
+chose. Deux incidents sur trois ont eu cette forme — un paquet expose par le
+repertoire courant, puis un service deja demarre.
+
+Regle retenue : **un test doit declarer ce dont il depend**. Ce qui n'est pas
+l'objet du test se remplace par une doublure, et l'on verifie que la doublure
+n'a pas supprime le pouvoir de detection. La CI n'est pas un obstacle a franchir,
+c'est le seul environnement qui ne ment pas sur les dependances.
