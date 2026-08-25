@@ -6,6 +6,8 @@ from concorde.demo import (
     PrevolDemoErreur,
     choisir_java_17,
     environnement_java_17,
+    modele_lm_studio_a_charger,
+    modele_lm_studio_charge,
     verifier_lm_studio,
 )
 from concorde.service.lm_studio import ServiceIADisponible
@@ -46,3 +48,16 @@ def test_verifier_lm_studio_refuse_un_service_indisponible() -> None:
 
     with pytest.raises(PrevolDemoErreur, match="LM Studio"):
         verifier_lm_studio(ServiceAbsent())
+
+
+def test_modele_lm_studio_charge_reconnait_le_modele_pret() -> None:
+    """Evite un prevol vert quand le serveur est lance sans le modele utile."""
+    etats = [
+        {"identifier": "autre-modele", "status": "idle"},
+        {"identifier": "google/gemma-4-e4b", "status": "idle"},
+    ]
+
+    assert modele_lm_studio_charge(etats, "google/gemma-4-e4b") is True
+    assert modele_lm_studio_charge(etats, "modele-absent") is False
+    assert modele_lm_studio_a_charger(etats, "google/gemma-4-e4b") is False
+    assert modele_lm_studio_a_charger(etats, "modele-absent") is True

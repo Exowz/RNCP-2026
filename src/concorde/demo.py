@@ -2,14 +2,18 @@
 
 from __future__ import annotations
 
+import json
 import os
 import re
 import subprocess
 import sys
 from collections.abc import Callable, Iterable, Mapping
+from pathlib import Path
 from typing import Any
 
 from concorde.service.lm_studio import ClientLMStudio, ServiceIADisponible
+
+CHEMIN_LMS = str(Path("~/.lmstudio/bin/lms").expanduser())
 
 
 class PrevolDemoErreur(RuntimeError):
@@ -87,6 +91,48 @@ def verifier_lm_studio(client: Any | None = None) -> None:
         ) from exc
 
 
+def modele_lm_studio_charge(etats: Iterable[Mapping[str, object]], modele: str) -> bool:
+    """Verifie que `lms ps` contient le modele local dans un etat utilisable."""
+    return any(
+        etat.get("identifier") == modele and etat.get("status") in {"idle", "predicting"}
+        for etat in etats
+    )
+
+
+def modele_lm_studio_a_charger(etats: Iterable[Mapping[str, object]], modele: str) -> bool:
+    """Evite un second chargement du modele deja pret en memoire."""
+    return not modele_lm_studio_charge(etats, modele)
+
+
+def _lister_modeles_lm_studio(environnement: Mapping[str, str]) -> list[Mapping[str, object]]:
+    try:
+        resultat = subprocess.run(  # noqa: S603 - CLI LM Studio local, arguments internes fixes
+            [CHEMIN_LMS, "ps", "--json"],
+            check=True,
+            capture_output=True,
+            text=True,
+            env=environnement,
+        )
+        etats = json.loads(resultat.stdout)
+    except (FileNotFoundError, json.JSONDecodeError, subprocess.CalledProcessError) as exc:
+        raise PrevolDemoErreur("Le controle `lms ps` de LM Studio a echoue.") from exc
+    if not isinstance(etats, list) or not all(isinstance(etat, dict) for etat in etats):
+        raise PrevolDemoErreur("La sortie de `lms ps` est invalide.")
+    return etats
+
+
+def preparer_lm_studio(environnement: Mapping[str, str]) -> None:
+    """Charge le modele pour la demo et controle l'etat expose par le CLI."""
+    modele = ClientLMStudio().modele
+    _executer([CHEMIN_LMS, "server", "start"], environnement)
+    etats = _lister_modeles_lm_studio(environnement)
+    if modele_lm_studio_a_charger(etats, modele):
+        _executer([CHEMIN_LMS, "load", modele, "--ttl", "3600", "-y"], environnement)
+        etats = _lister_modeles_lm_studio(environnement)
+    if not modele_lm_studio_charge(etats, modele):
+        raise PrevolDemoErreur(f"Le modele LM Studio attendu n'est pas charge : {modele}.")
+
+
 def _executer(commande: list[str], environnement: Mapping[str, str]) -> None:
     try:
         subprocess.run(commande, check=True, env=environnement)  # noqa: S603 - liste interne fermee
@@ -101,6 +147,7 @@ def lancer_prevol(ouvrir_lm_studio: bool = False, executer_tests: bool = True) -
         _executer(["open", "-a", "LM Studio"], environnement)
     _executer(["docker", "compose", "up", "-d", "--wait", "postgres"], environnement)
     _executer([sys.executable, "scripts/import_postgres.py"], environnement)
+    preparer_lm_studio(environnement)
     verifier_lm_studio()
     if executer_tests:
         _executer([sys.executable, "-m", "pytest", "-q"], environnement)
