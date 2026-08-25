@@ -150,31 +150,31 @@ les **livrables**, parce qu'ils s'adressent à deux lecteurs qui lisent le même
 Rien à déclarer de part et d'autre : le candidat choisit librement son sujet de RNCP, et le projet de
 substitution n'a pas à mentionner le RNCP.
 
-## Matrice de preuves — à remplir au fil de l'eau
+## Matrice de preuves — état de soutenance
 
 | Comp. | Preuve visée | Emplacement | Slide | Fait |
 |---|---|---|---|---|
-| C1 | Script de collecte 5 sources + logs + arborescence `data/raw/` | `src/collect/` | | ☐ |
-| C2 | Requêtes SQL PostgreSQL **et** Spark SQL, documentées (jointures, filtres, optimisations) | `docs/queries.md` | | ☐ |
-| C3 | Script d'agrégation, tableau avant/après, règles de nettoyage, dataset versionné | `src/clean/` | | ☐ |
-| C4 | MCD + MPD, script d'import, registre RGPD, procédure d'installation | `docs/data-model.md` | | ☐ |
-| C5 | API data REST : routes, auth, OpenAPI, exemples | `api/data/` | | ☐ |
-| C6 | Journal de veille daté, sources qualifiées, synthèse, preuve de partage | `docs/veille.md` | | ☐ |
-| C7 | Benchmark services IA : retenus **et écartés**, critères dont éco-responsabilité | `docs/benchmark.md` | | ☐ |
-| C8 | Installation + configuration + accès + monitorage du service retenu | `docs/service-ia.md` | | ☐ |
-| C9 | `/predict` : auth, validation des entrées, OpenAPI, tests | `api/model/` | | ☐ |
-| C10 | L'app appelle réellement l'API ; erreurs gérées ; accessibilité | `app/` | | ☐ |
-| C11 | Evidently : performance, dérive, latence, erreurs + alertes | `monitoring/model/` | | ☐ |
-| C12 | Tests format, preprocessing, prédiction, seuil, endpoints + couverture | `tests/` | | ☐ |
-| C13 | Pipeline exécuté : tests → entraînement/éval → rapport → packaging → livraison | `.github/workflows/` | | ☐ |
-| C14 | Personas, user stories, critères d'acceptation, exigences WCAG/RGAA | `docs/specs-fonctionnelles.md` | | ☐ |
-| C15 | Architecture, flux de données, dépendances, services externes, POC | `docs/architecture.md` | | ☐ |
-| C16 | Kanban, backlog, journal de décisions daté, rétrospective — **limite assumée** | `docs/pilotage.md` | | ☐ |
-| C17 | Droits et accès, OWASP, validation entrées, journalisation, accessibilité | `app/`, `docs/securite.md` | | ☐ |
-| C18 | Capture d'**exécution réussie** du workflow CI | `.github/workflows/` | | ☐ |
-| C19 | Build/image Docker, packaging, livraison préproduction locale, procédure | `docs/livraison.md` | | ☐ |
-| C20 | Logs applicatifs, métriques, seuils, alertes, dashboard | `monitoring/app/` | | ☐ |
-| C21 | Incident **réel** : ticket, log, reproduction, diagnostic, commit correctif, test avant/après | `docs/incident.md` | | ☐ |
+| C1 | Script de collecte 5 sources + logs + arborescence `data/raw/` | `src/collect/` | | ✅ |
+| C2 | Requêtes SQL PostgreSQL **et** Spark SQL, documentées (jointures, filtres, optimisations) | `docs/queries.md` | | ✅ |
+| C3 | Script d'agrégation, tableau avant/après, règles de nettoyage, dataset versionné | `src/clean/` | | ✅ |
+| C4 | MCD + MPD, script d'import, registre RGPD, procédure d'installation | `docs/data-model.md` | | ✅ |
+| C5 | API data REST : routes, auth, OpenAPI, exemples | `api/data/` | | ✅ |
+| C6 | Journal de veille daté, sources qualifiées, synthèse, preuve de partage | `docs/veille.md` | | 🟡 limite assumée |
+| C7 | Benchmark services IA : retenus **et écartés**, critères dont éco-responsabilité | `docs/benchmark.md` | | ✅ |
+| C8 | Installation + configuration + accès + monitorage du service retenu | `docs/service-ia.md` | | ✅ |
+| C9 | `/predict` : auth, validation des entrées, OpenAPI, tests | `api/model/` | | ✅ |
+| C10 | L'app appelle réellement l'API ; erreurs gérées ; accessibilité | `app/` | | ✅ |
+| C11 | Evidently : performance, dérive, latence, erreurs + alertes | `monitoring/model/` | | ✅ |
+| C12 | Tests format, preprocessing, prédiction, seuil, endpoints + couverture | `tests/` | | ✅ |
+| C13 | Pipeline exécuté : tests → entraînement/éval → rapport → packaging → livraison | `.github/workflows/` | | ✅ |
+| C14 | Personas, user stories, critères d'acceptation, exigences WCAG/RGAA | `docs/specs-fonctionnelles.md` | | ✅ |
+| C15 | Architecture, flux de données, dépendances, services externes, POC | `docs/architecture.md` | | ✅ |
+| C16 | Kanban, backlog, journal de décisions daté, rétrospective — **limite assumée** | `docs/pilotage.md` | | 🟡 limite assumée |
+| C17 | Droits et accès, OWASP, validation entrées, journalisation, accessibilité | `app/`, `docs/securite.md` | | ✅ |
+| C18 | Capture d'**exécution réussie** du workflow CI | `.github/workflows/` | | ✅ |
+| C19 | Build/image Docker, packaging, livraison préproduction locale, procédure | `docs/livraison.md` | | ✅ |
+| C20 | Logs applicatifs, métriques, seuils, alertes, dashboard | `monitoring/app/` | | ✅ |
+| C21 | Incident **réel** : ticket, log, reproduction, diagnostic, commit correctif, test avant/après | `docs/incident.md` | | ✅ |
 
 ## Structure des 5 rapports (identique pour chacun)
 

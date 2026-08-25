@@ -15,8 +15,12 @@ La tranche demonstrable utilise uniquement les fixtures versionnees dans
 de modele, CDN ou appel d'API externe n'est necessaire.
 
 ```bash
-# Dans le depot, avec les dependances deja installees dans .venv/
-source scripts/spark-env.sh  # Java 17 local, requis uniquement par le DPE Spark
+# Dans le depot, avec les dependances deja installees dans .venv/.
+# Java 17, PostgreSQL, l'import local, LM Studio et la suite complete sont verifies
+# dans le meme environnement. LM Studio doit exposer google/gemma-4-e4b.
+uv run python scripts/demarrer_demo.py
+
+# La chaine peut ensuite etre montree separement.
 .venv/bin/python -m concorde.collect
 .venv/bin/python -m concorde.clean
 .venv/bin/python -m concorde.model.entrainement
@@ -28,10 +32,12 @@ source scripts/spark-env.sh  # Java 17 local, requis uniquement par le DPE Spark
 .venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000
 
 # Terminal 3 : preuve automatique et logs structures
-.venv/bin/python -m pytest -q
 curl --fail http://127.0.0.1:8000/sante
 tail -n 5 monitoring/logs/app.jsonl
 ```
+
+`demarrer_demo.py --ouvrir-lm-studio` ouvre LM Studio avant le controle ; le
+modele reste a charger dans l'application si son serveur n'est pas deja pret.
 
 Le garde-fou `CONCORDE_OFFLINE=true` est actif au demarrage de l'API et de
 l'application : les connexions vers Internet echouent, mais `127.0.0.1` reste
@@ -62,3 +68,5 @@ autorise pour l'appel reel application → API. Les tests `tests/api/` et
   `reports/annexes/metriques_modele.json` : sorties regenerables de la chaine.
 - [Execution Spark DPE](docs/spark.md) : Java 17 epingle et preuve de lecture
   Spark locale.
+- [Captures de soutenance](reports/captures/README.md) : ecrans d'accueil,
+  evaluation et transparence obtenus sur l'application locale.

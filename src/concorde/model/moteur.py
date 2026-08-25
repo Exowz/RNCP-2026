@@ -224,12 +224,12 @@ class Moteur:
                     "dim_cachee": self.modele.encodeur[0].out_features,
                     "dim_latente": self.modele.encodeur[2].out_features,
                 },
-                "moyennes": self.moyennes,
-                "ecarts_types": self.ecarts_types,
+                "moyennes": self.moyennes.tolist(),
+                "ecarts_types": self.ecarts_types.tolist(),
                 "medianes_imputation": self.medianes_imputation,
                 "references_medianes": self.references.medianes,
                 "references_globale": self.references.mediane_globale,
-                "grille_calibration": self.grille_calibration,
+                "grille_calibration": self.grille_calibration.tolist(),
                 "table_aleas": self.table_aleas,
                 "fiche": self.fiche.en_dict(),
                 "variables": list(VARIABLES_COMPARAISON),
@@ -246,7 +246,20 @@ class Moteur:
                 f"Artefact de modele introuvable : {chemin}. "
                 "Executer `python -m concorde.model.entrainement` pour le produire."
             )
-        etat = torch.load(chemin, map_location="cpu", weights_only=False)
+        # L'artefact Concorde ne contient que tenseurs et types primitifs ; ne jamais
+        # deserialiser du code Python arbitraire depuis un fichier modele.
+        # Compatibilite avec l'artefact local produit avant le format 1.1 : les
+        # seuls objets historiques autorises sont les tableaux NumPy de donnees.
+        # Aucun callable applicatif n'est autorise par cette liste fermee.
+        numpy_historiques = [
+            np._core.multiarray._reconstruct,
+            np.ndarray,
+            np.dtype,
+            type(np.dtype(np.float32)),
+            type(np.dtype(np.float64)),
+        ]
+        with torch.serialization.safe_globals(numpy_historiques):
+            etat = torch.load(chemin, map_location="cpu", weights_only=True)
 
         variables_artefact = tuple(etat["variables"])
         if variables_artefact != VARIABLES_COMPARAISON:

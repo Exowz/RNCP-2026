@@ -27,7 +27,7 @@ esperee.
 **J1-03 — JDK 17 installe explicitement pour Spark.**
 La machine ne portait qu'un JDK 26. Spark 3.5 ne supporte officiellement que Java 8/11/17.
 *Raison* : la panne serait apparue au pire moment (C1 « systeme big data », C2 « Spark SQL »).
-`JAVA_HOME` est fige dans `scripts/env.sh` et non laisse au hasard de la machine.
+`JAVA_HOME` est fige dans `scripts/spark-env.sh` et non laisse au hasard de la machine.
 
 **J1-04 — Gestionnaire de paquets `uv`, verrou `uv.lock` versionne.**
 *Ecarte* : `pip` + `requirements.txt` (resolution non deterministe), Poetry (plus lent).

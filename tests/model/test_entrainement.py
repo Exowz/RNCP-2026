@@ -3,10 +3,23 @@
 from pathlib import Path
 
 import pytest
+import torch
 
 from concorde.clean.rapprochement import SORTIE
 from concorde.model.entrainement import entrainer_et_geler
 from concorde.model.moteur import Moteur
+
+
+def _creer_marqueur(chemin: str) -> None:
+    Path(chemin).touch()
+
+
+class ArtefactPyTorchMalveillant:
+    def __init__(self, marqueur: Path) -> None:
+        self.marqueur = marqueur
+
+    def __reduce__(self):
+        return _creer_marqueur, (str(self.marqueur),)
 
 
 @pytest.mark.model
@@ -29,3 +42,15 @@ def test_entrainement_evalue_et_produit_un_artefact_rechargeable(
     assert metriques["nb_test"] > 0
     assert 0 <= metriques["taux_signalement_atypique"] <= 1
     assert Moteur.charger(artefact).fiche.empreinte_donnees == moteur.fiche.empreinte_donnees
+
+
+def test_chargement_refuse_un_artefact_pytorch_executable(tmp_path: Path) -> None:
+    """Detecte la deserialisation d'un objet arbitraire lors du chargement modele."""
+    artefact = tmp_path / "artefact-malvaillant.pt"
+    marqueur = tmp_path / "execution-interdite"
+    torch.save(ArtefactPyTorchMalveillant(marqueur), artefact)
+
+    with pytest.raises(Exception):
+        Moteur.charger(artefact)
+
+    assert not marqueur.exists()
