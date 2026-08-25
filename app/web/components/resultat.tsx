@@ -41,7 +41,7 @@ export function Resultat({ detail, profil, verdict }: { detail: DetailRapprochem
     </section>
 
     <section aria-live="polite" aria-labelledby="verdict-heading" className="result-live">
-      <h2 id="verdict-heading">Conclusion de Concorde</h2><p className="verdict-summary">{verdict.explication}</p>
+      <h2 id="verdict-heading">Conclusion de Concorde</h2><div className="result-convergence" aria-hidden="true"><span /><span /><span /></div><p className="verdict-summary">{verdict.explication}</p>
       <div className="axis-grid">
         <article className="axis axis-coherence"><h3>Cohérence des deux sources</h3><p className="score">{pourcentage(verdict.score_coherence)}</p><p>100 % signifie qu'aucune contradiction connue n'a été détectée. Ce score ne mesure pas le prix du logement.</p></article>
         <article className="axis axis-anomalie"><h3>Ressemblance avec les autres cas</h3><p className="score">{libelleAnomalie[verdict.niveau_anomalie]}</p><p>{lectureAnomalie[verdict.niveau_anomalie]}</p></article>

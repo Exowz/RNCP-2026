@@ -1,46 +1,63 @@
-# Design system — Concorde web
+# Design system - Concorde web
 
-## Direction
+## Lecture du produit
 
-Le front est un **dossier d'expertise publique** : il donne à lire une
-conclusion, ses preuves et ses limites, plutôt qu'un tableau de bord qui
-mettrait des scores en scène. La surface doit pouvoir être comprise par une
-personne qui ne connaît ni DVF+ ni le modèle.
+Second client Next.js d'un service public de données : Concorde indique si une
+vente DVF+ et un DPE peuvent raisonnablement décrire le même logement. Il ne
+vend pas de bien, n'estime aucun prix et rend l'incertitude lisible avant toute
+conclusion.
 
-## Principes visuels
+## Direction : Atlas cadastral de preuve
 
-- Papier chaud, encre vert très sombre, lignes de dossier et une seule couleur
-  d'état à la fois ; la couleur ne porte jamais seule le sens.
-- Titres en sérif éditoriale (pile locale Georgia), texte et données en pile
-  système ; les identifiants techniques restent en monospace seulement quand
-  ils sont réellement des données.
-- Les informations s'alignent sur des règles horizontales. Les cartes et les
-  icônes décoratives sont absentes : une ligne représente un cas, une règle ou
-  un constat.
-- L'accueil pose immédiatement l'hypothèse vérifiée et la limite « aucune
-  estimation de prix ». Le résultat présente les axes comme des conclusions
-  accompagnées de leur interprétation.
+L'interface n'est ni un tableau de bord ni un dossier administratif. C'est un
+atlas de lecture : deux trajectoires de sources convergent vers une emprise
+abstraite, puis la conclusion est annotée par ses motifs, ses réserves et ses
+limites. Les schémas sont des repères visuels locaux ; ils ne représentent jamais
+une parcelle réelle ni une géolocalisation de l'utilisateur.
 
-## Composition
+Réglages retenus : variance 4/10, mouvement 3/10, densité 5/10. Le contexte
+public, réglementé et accessible limite volontairement les effets expressifs.
 
-- En-tête sobre : nom, sous-titre factuel, navigation avec soulignement du
-  contexte courant.
-- Accueil en deux colonnes : thèse et appel à l'action à gauche, limite
-  explicite à droite ; la liste de cas est une série de dossiers ouvrables.
-- Méthode : chaîne ordonnée en quatre étapes, les chiffres réels étant des
-  preuves de parcours et non des métriques décoratives.
-- Transparence : chaque règle occupe une ligne avec son identifiant, son seuil,
-  sa gravité et sa justification.
+## Couleurs
 
-## Interaction et accessibilité
+- Terre minérale `#f4f5f0` : fond clair et grille de lecture.
+- Encre atlas `#10202c` : titres et texte principal.
+- Eau profonde `#183a4d` : action et liaison de source.
+- Bleu topographique `#315f7a` : information secondaire.
+- Marqueur de vérification `#a86417` : cible, focus et appel à la prudence.
+- Alerte `#8f332e` : indisponibilité lisible avec un libellé explicite.
 
-Le focus ocre, le lien d'évitement, les repères HTML, les annonces de résultat
-et les états d'erreur restent visibles. Les seuls mouvements sont le léger
-décalage des lignes de dossier et les transitions de lien ; ils sont désactivés
-par `prefers-reduced-motion`. À 52 rem puis 20 rem, toutes les grilles passent
-en une colonne sans défilement horizontal.
+Le mode sombre respecte la préférence système avec les mêmes rôles. L'ambre est
+le seul accent, mais aucun statut ne dépend de la couleur seule.
 
-## Contraintes
+## Typographie et composition
 
-Aucun actif distant, aucune police téléchargée et aucun appel API navigateur.
-La palette et la typographie sont entièrement disponibles hors ligne.
+- Titres : pile sérif locale `Georgia, Times New Roman, serif`, réservée au
+  raisonnement et aux conclusions ; aucun téléchargement de police.
+- Texte : pile système disponible hors ligne ; données techniques en monospace
+  système.
+- Chaque page utilise une grille asymétrique seulement lorsque celle-ci exprime
+  une convergence. Les listes de cas et de règles passent en colonne à 52 rem,
+  puis restent sans débordement à 20 rem.
+- Les cartes décoratives, badges, ombres et grilles de métriques sont écartés.
+  Une ligne, un point ou un trait ne sert qu'à organiser une information réelle.
+
+## Composants et interaction
+
+- Le repère de marque est une construction CSS locale : deux champs et un point
+  de rapprochement, sans logo externe ni SVG décoratif.
+- Les schémas de convergence sont `aria-hidden`; les explications DVF+, DPE,
+  rapprochement et refus d'estimation sont toujours présentes dans le texte.
+- Les boutons sont rectangulaires, contrastés et donnent un retour tactile à
+  l'activation. Le focus ambre est visible partout.
+- Les lignes de source s'étendent légèrement au survol quand le mouvement est
+  autorisé. Elles restent immobiles sous `prefers-reduced-motion` et ne portent
+  jamais seules le sens.
+
+## Garde-fous
+
+Conserver `lang="fr"`, le lien d'évitement, les repères sémantiques, le résultat
+en `aria-live="polite"`, les erreurs `role="alert"` et les appels API côté
+serveur. Ne pas introduire de CDN, police distante, image distante, `next/font/google`,
+clé `NEXT_PUBLIC_*`, animation infinie, gradient marketing, carte réelle, chiffre
+inventé, bouton arrondi, ou changement d'IA.

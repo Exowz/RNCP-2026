@@ -72,3 +72,5 @@ actif distant : tout est servi en local, ce qui satisfait la contrainte hors lig
 2026-08-25 15:50 | `mlflow-skinny` remplace la distribution MLflow complete | Conserver `mlflow` et bloquer cryptography sous 50 | Le projet n'utilise que le tracking SQLite; l'edition skinny garde cette API et permet de corriger `PYSEC-2026-3552`.
 
 2026-08-25 16:00 | Les dependances directes sans usage (`requests`, `rich`, `tenacity`, `duckdb`) sont retirees | Les conserver par precaution | Une dependance non justifiee augmente la surface d'attaque, le temps de resolution et le bruit d'audit sans apporter de capacite au projet.
+
+2026-08-25 19:10 | Le second client Next.js adopte un atlas cadastral local pour expliquer la convergence DVF+/DPE | Carte distante, imagerie satellite ou dashboard de scores | Des traits abstraits rendent le rapprochement compréhensible sans prétendre localiser un logement. La composition reste intégralement disponible hors ligne et les valeurs demeurent servies par les APIs.
