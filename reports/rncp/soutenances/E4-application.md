@@ -192,7 +192,116 @@ for cle_connue, role in table.items():
 
 ---
 
-## Slide 7 — C18 : les tests automatisés au versionnement · 1 min 15
+## Slide 7 — C15 : le hors-ligne, prouvé et non promis · 1 min 30
+
+**Sur la slide**
+```python
+def enable_offline_guard(force: bool = False) -> bool:
+    """Installe un verrou au niveau socket. Toute sortie non locale leve une erreur."""
+    def guarded_connect(self, address):
+        _check(address, "connect")      # 127.0.0.0/8, ::1, localhost : autorises
+        return _original_connect(self, address)
+    socket.socket.connect    = guarded_connect
+    socket.getaddrinfo       = guarded_getaddrinfo
+```
+```python
+with pytest.raises(OfflineViolation, match="Sortie reseau bloquee"):
+    socket.getaddrinfo("example.org", 443)      # le test le prouve
+```
+> Couper le Wi-Fi ne **prouve** rien : une dépendance oubliée ne se révèle qu'au pire moment.
+> Ici, elle devient une **erreur explicite et localisée**, au développement.
+> Aucun CDN · aucune police distante · image Docker déjà construite · modèle déjà sur disque.
+
+**Script**
+> Je reviens sur la contrainte hors ligne, parce que c'est celle qui a le plus structuré
+> l'architecture, et parce que la manière dont je la traite dit quelque chose de ma méthode.
+>
+> J'aurais pu me contenter de couper le Wi-Fi le jour de la démonstration. Mais couper le réseau ne
+> **prouve** rien : cela ne révèle une dépendance cachée qu'au pire moment, devant vous.
+>
+> J'ai donc installé un verrou au niveau de la couche socket. Toute tentative de connexion vers
+> autre chose que la boucle locale lève immédiatement une exception nommée, qui indique l'hôte visé.
+> Une dépendance réseau oubliée devient une erreur bruyante pendant le développement, pas une
+> surprise en soutenance.
+>
+> Et ce verrou est lui-même couvert par un test : le test désactive le garde-fou, démarre
+> l'application, vérifie que le démarrage l'a bien réarmé, puis vérifie qu'une résolution DNS
+> externe échoue. Si quelqu'un retire cette protection, le test tombe.
+
+---
+
+## Slide 8 — C17 : intégrer un service d'IA sans lui donner autorité · 2 min
+
+**Sur la slide**
+> **Rôle du service IA local** : reformuler en langage courant une explication **déjà calculée**.
+> Route dédiée `POST /expliquer` — **hors de `/predict`**, qui reste rapide et déterministe.
+>
+> ```
+> verdict calculé ──► le CODE choisit la consigne ──► LM Studio reformule ──► {texte, source}
+>                                                             │
+>                          échec, délai > 3 s, sortie vide ───┴──► texte assemblé (source: "texte_assemble")
+> ```
+> **Le LLM ne voit jamais les données brutes et ne produit aucun score.**
+> Les chiffres et les motifs restent affichés **à côté**, inchangés : toute divergence se voit.
+>
+> Sortie **bornée, échappée, jamais rendue en HTML** — un modèle local reste une source non maîtrisée.
+
+**Script**
+> L'épreuve porte sur une application intégrant un service d'intelligence artificielle. Voici
+> comment je l'ai intégré, et surtout où j'ai mis la frontière.
+>
+> Le service local reformule en langage courant une explication **déjà calculée**. Il reçoit une
+> **instruction de rédaction** choisie par le code en fonction du verdict — pas le verdict à
+> interpréter. Il ne voit jamais les données brutes, ne produit aucun score, ne modifie aucun
+> chiffre.
+>
+> Cette frontière n'est pas théorique, et je peux vous dire précisément pourquoi je l'ai posée là.
+> En expérimentant, j'ai donné au modèle un verdict à reformuler : cohérence 60 %, contradiction
+> majeure. Il a répondu que « le rapprochement est jugé cohérent malgré cette anomalie ». **Il avait
+> inversé le sens.**
+>
+> C'est la démonstration expérimentale du principe que le projet applique partout : le composant qui
+> explique n'a pas autorité sur ce qu'il explique. Les scores et les motifs restent affichés à côté
+> du texte reformulé, donc toute divergence est visible immédiatement.
+>
+> Enfin, la route est isolée de `/predict`, avec un délai de trois secondes et un repli garanti sur
+> le texte assemblé. La prédiction n'est jamais ralentie ni mise en danger par le service IA.
+
+---
+
+## Slide 9 — C19 : ce que contient la livraison · 1 min 15
+
+**Sur la slide**
+> **Image Docker locale** `concorde:local` — **déjà construite**, démarrage `docker compose --no-build`
+> → la démonstration ne télécharge rien, ne construit rien, et fonctionne réseau coupé.
+>
+> **Paquet Python** publié comme artefact de CI :
+> — la roue et l'archive source
+> — **le modèle gelé** `concorde_moteur.pt`
+> — **sa fiche** : version, graine, empreinte du jeu d'entraînement, commit Git
+> — **ses métriques** d'évaluation
+>
+> Un artefact livré sans sa fiche est un binaire dont personne ne sait ce qu'il contient.
+
+**Script**
+> Sur le contenu de la livraison, un point de méthode.
+>
+> L'image Docker est construite à l'avance et présente localement. Le démarrage se fait avec
+> l'option qui interdit toute reconstruction : la démonstration ne télécharge rien, ne compile
+> rien, et fonctionne réseau coupé.
+>
+> Et le paquet publié par la chaîne ne contient pas que du code. Il embarque le modèle gelé, **sa
+> fiche d'identité** — version, graine aléatoire, empreinte du jeu d'entraînement, commit Git — et
+> ses métriques d'évaluation.
+>
+> C'est délibéré : un artefact de modèle livré sans sa fiche est un binaire dont personne ne sait
+> ce qu'il contient ni sur quoi il a été entraîné. En les livrant ensemble, n'importe qui peut
+> vérifier six mois plus tard quel modèle tournait en production et avec quelles performances
+> mesurées.
+
+---
+
+## Slide 10 — C18 : les tests automatisés au versionnement · 1 min 15
 
 **Sur la slide** — capture `reports/captures/04-ci-github-verte.png`
 > Déclenchée à **chaque poussée**. 17 étapes, dont :
@@ -217,7 +326,7 @@ for cle_connue, role in table.items():
 
 ---
 
-## Slide 8 — C19 : la livraison, conditionnelle · 1 min 30
+## Slide 11 — C19 : la livraison, conditionnelle · 1 min 30
 
 **Sur la slide**
 > ```
@@ -244,7 +353,7 @@ for cle_connue, role in table.items():
 
 ---
 
-## Slide 9 — Transition vers la démonstration · 30 s
+## Slide 12 — Transition vers la démonstration · 30 s
 
 **Sur la slide**
 > **Démonstration — le parcours utilisateur complet, et ce qui se passe quand ça casse**
@@ -312,7 +421,7 @@ for cle_connue, role in table.items():
 
 ---
 
-## Slide 10 — Récapitulatif E4 · 45 s
+## Slide 13 — Récapitulatif E4 · 45 s
 
 **Sur la slide**
 
