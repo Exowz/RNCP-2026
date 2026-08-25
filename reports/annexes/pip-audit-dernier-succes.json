@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-25T14:21:40.637256+00:00",
+  "date": "2026-08-25T14:35:19.216588+00:00",
   "commande": "pip-audit --ignore-vuln PYSEC-2026-2447",
   "exception_documentee": "PYSEC-2026-2447"
 }
