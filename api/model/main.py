@@ -20,6 +20,8 @@ from fastapi import Depends, FastAPI, HTTPException, Request, status
 from fastapi.responses import JSONResponse
 
 from api.model.schemas import (
+    ExplicationEntree,
+    ExplicationSortie,
     LotEntree,
     LotSortie,
     RapprochementEntree,
@@ -32,6 +34,7 @@ from concorde.common.offline import enable_offline_guard
 from concorde.common.paths import MONITORING_MODEL
 from concorde.model import regles_coherence
 from concorde.model.moteur import Moteur
+from concorde.service.lm_studio import ClientLMStudio, ServiceIADisponible
 from concorde.service.observabilite import Metriques, ObservabiliteMiddleware
 from concorde.service.securite import (
     NOM_ENTETE,
@@ -86,7 +89,7 @@ distinctes, volontairement jamais fusionnees en une note unique :
 ## Authentification
 
 Toutes les routes metier exigent l'en-tete `{NOM_ENTETE}`.
-Roles : `reader` (prediction), `analyst` (metriques et lots), `admin`.
+Roles : `reader` (prediction et explication), `analyst` (metriques et lots), `admin`.
 
 ## Fonctionnement hors ligne
 
@@ -101,6 +104,7 @@ app = FastAPI(
     lifespan=cycle_de_vie,
     openapi_tags=[
         {"name": "prediction", "description": "Evaluation d'un ou plusieurs rapprochements."},
+        {"name": "explication", "description": "Reformulation locale optionnelle d'un verdict deja calcule."},
         {"name": "transparence", "description": "Fiche du modele et catalogue des regles."},
         {"name": "exploitation", "description": "Sante et metriques du service."},
     ],
@@ -170,6 +174,28 @@ def catalogue_regles(
 
 
 # ----------------------------------------------------------------- prediction
+
+
+@app.post(
+    "/expliquer",
+    response_model=ExplicationSortie,
+    tags=["explication"],
+    summary="Reformuler un verdict deja calcule",
+    responses={
+        401: {"description": f"En-tete {NOM_ENTETE} absent ou cle invalide."},
+        422: {"description": "Projection de verdict invalide."},
+    },
+)
+def expliquer(
+    verdict: ExplicationEntree,
+    identite: Annotated[Identite, Depends(exige_role("reader"))],
+) -> ExplicationSortie:
+    """Ameliore la lisibilite sans recalculer ni modifier le verdict recu."""
+    try:
+        texte = ClientLMStudio().reformuler_verdict(verdict.model_dump())
+    except ServiceIADisponible:
+        return ExplicationSortie(texte=verdict.explication, source="texte_assemble")
+    return ExplicationSortie(texte=texte, source="modele_local")
 
 
 @app.post(

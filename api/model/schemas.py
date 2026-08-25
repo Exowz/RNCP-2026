@@ -182,6 +182,31 @@ class VerdictSortie(BaseModel):
     modele: ReferenceModele
 
 
+class ExplicationEntree(BaseModel):
+    """Projection publique d'un verdict deja calcule, sans donnee source.
+
+    Ce contrat borne explicitement ce qu'un service de reformulation local peut
+    voir. Les identifiants de mutation, parcelle, adresse et variables brutes ne
+    font pas partie de cette charge utile.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    statut: Literal["evalue", "non_evaluable"]
+    niveau_anomalie: Literal["normal", "a_verifier", "atypique", "non_evaluable"]
+    score_coherence: float | None = Field(default=None, ge=0, le=1)
+    motifs: list[MotifSortie] = Field(default_factory=list)
+    confiance: ConfianceSortie
+    explication: str = Field(min_length=1, max_length=1000)
+
+
+class ExplicationSortie(BaseModel):
+    """Texte de lecture optionnel, sans effet sur le verdict calcule."""
+
+    texte: str = Field(min_length=1, max_length=1000)
+    source: Literal["modele_local", "texte_assemble"]
+
+
 class LotSortie(BaseModel):
     resultats: list[VerdictSortie]
     nb_evalues: int
