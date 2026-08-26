@@ -4,6 +4,8 @@
 
 ## La présentation
 
+**→ https://gamma.app/docs/nb44m1c50r5e438**
+
 **Un seul document Gamma**, cinq sections annoncées — pas cinq documents.
 En distanciel, jongler entre plusieurs onglets pendant un partage d'écran est un risque inutile :
 un document unique donne au jury le même découpage, et ne te demande aucune manipulation.
