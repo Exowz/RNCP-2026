@@ -64,7 +64,7 @@ app.mount("/static", StaticFiles(directory=BASE / "static"), name="static")
 gabarits = Jinja2Templates(directory=str(BASE / "templates"))
 gabarits.env.filters["pourcent"] = lambda v: "—" if v is None else f"{float(v) * 100:.0f} %"
 
-PROFILS = {"particulier": "Particulier", "analyste": "Analyste credit"}
+PROFILS = {"particulier": "Particulier", "analyste": "Analyste crédit"}
 
 LIBELLES_NIVEAU_ANOMALIE = {
     "normal": ("Conforme à ce qui est attendu", "ok"),

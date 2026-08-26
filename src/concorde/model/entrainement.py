@@ -182,14 +182,14 @@ def entrainer_et_geler(
     metriques = _evaluer(moteur, parts, historique)
     fiche.metriques = {k: v for k, v in metriques.items() if isinstance(v, (int, float))}
     fiche.limites = [
-        "Le detecteur est non supervise : aucune etiquette « rapprochement faux » n'existe "
+        "Le détecteur est non supervisé : aucune étiquette « rapprochement faux » n'existe "
         "dans les données publiques.",
         "Les règles de cohérence et les anomalies du jeu de démonstration relèvent des mêmes "
         "familles de contradictions : le rappel des règles est circulaire et n'est pas une "
         "mesure de performance.",
-        "La base DPE de l'ADEME n'est pas representative du parc francais ; aucune "
-        "generalisation a l'echelle nationale n'est possible.",
-        "Le rapprochement s'appuie sur la parcelle cadastrale : il est ambigu en copropriete, "
+        "La base DPE de l'ADEME n'est pas représentative du parc français ; aucune "
+        "généralisation à l'échelle nationale n'est possible.",
+        "Le rapprochement s'appuie sur la parcelle cadastrale : il est ambigu en copropriété, "
         "ce que le système signale sans le résoudre.",
         "Le modèle ne prédit ni prix ni valeur : il qualifie la fiabilité d'un rapprochement.",
     ]

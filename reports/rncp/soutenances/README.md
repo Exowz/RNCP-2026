@@ -40,8 +40,8 @@ Elles sont dans `reports/captures/`. Glisser-déposer, puis supprimer la ligne d
 | 4 — Le terrain | `12-web-accueil-atlas-schema-dvf-dpe.jpg` |
 | 26 — C10 deux clients | `09-web-degradation-api-indisponible.jpg` |
 | 29 — C13 chaîne de livraison | `04-ci-github-verte.png` |
-| 31 — Démonstration modèle | `08-web-resultat-echelles-expliquees.jpg` |
-| 44 — Démonstration application | `07-web-accueil-le-pourquoi-et-glossaire.jpg` |
+| 31 — Démonstration modèle | `08-web-resultat-trois-axes-jamais-fusionnes.jpg` |
+| 44 — Démonstration application | `07-web-accueil-glossaire-et-cas-reels.jpg` |
 | 58 — C20 seuils et alertes | `04-surveillance-locale-seuils-alertes.jpg` |
 | 60 — C21 l'incident 405 | `06-bascule-profil-corrigee.jpg` |
 

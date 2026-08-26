@@ -231,6 +231,18 @@ case "${1:-start}" in
   api-model)
     # Apres la demonstration D4 de E4, ou l'on arrete volontairement l'API.
     titre "Relance de l'API modele"
+    # Supprimer le PID ne suffit pas : si un uvicorn ecoute encore sur 8002, le
+    # nouveau ne peut pas se lier au port, meurt aussitot, et `attendre` valide
+    # l'ANCIEN processus. On arrete donc reellement ce qui occupe le port.
+    if [ -f "$PIDS/api-model" ]; then
+      kill "$(cat "$PIDS/api-model")" 2>/dev/null || true
+    fi
+    occupant=$(lsof -ti tcp:8002 2>/dev/null || true)
+    [ -n "$occupant" ] && kill $occupant 2>/dev/null || true
+    for _ in 1 2 3 4 5 6 7 8 9 10; do
+      lsof -ti tcp:8002 >/dev/null 2>&1 || break
+      sleep 0.5
+    done
     rm -f "$PIDS/api-model"
     servir api-model "$VENV/uvicorn" api.model.main:app --host 127.0.0.1 --port 8002
     attendre http://127.0.0.1:8002/sante 45 "API modele   :8002"

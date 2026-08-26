@@ -69,16 +69,16 @@ class ClientModele:
             log.error(f"API modele injoignable : {exc}",
                       extra={"event": "api_injoignable", "url": url})
             raise ErreurService(
-                "Le service d'evaluation est momentanement indisponible. "
-                "Aucun resultat ne peut etre affiche : plutot qu'une reponse approximative, "
-                "l'application prefere ne rien avancer.",
+                "Le service d'évaluation est momentanément indisponible. "
+                "Aucun résultat ne peut être affiché : plutôt qu'une réponse approximative, "
+                "l'application préfère ne rien avancer.",
                 f"ConnectError sur {url}: {exc}",
             ) from exc
         except httpx.TimeoutException as exc:
             log.error(f"API modele hors delai : {exc}",
                       extra={"event": "api_timeout", "url": url})
             raise ErreurService(
-                "Le service d'evaluation met trop de temps a repondre. Reessayez dans un instant.",
+                "Le service d'évaluation met trop de temps à répondre. Réessayez dans un instant.",
                 f"Timeout sur {url}: {exc}",
             ) from exc
 
@@ -89,14 +89,14 @@ class ClientModele:
             )
             raise ErreurService(
                 f"Les informations saisies ne sont pas valides ({champs}). Corrigez-les et "
-                "relancez l'evaluation.",
+                "relancez l'évaluation.",
                 f"422 sur {url}: {detail}",
                 statut=422,
             )
         if reponse.status_code == 503:
             raise ErreurService(
-                "Le modele d'evaluation n'est pas charge sur le serveur. "
-                "L'application ne peut pas produire de resultat.",
+                "Le modèle d'évaluation n'est pas chargé sur le serveur. "
+                "L'application ne peut pas produire de résultat.",
                 f"503 sur {url}: {reponse.text[:200]}",
                 statut=503,
             )
@@ -104,7 +104,7 @@ class ClientModele:
             log.error(f"Reponse {reponse.status_code} de l'API modele",
                       extra={"event": "api_erreur", "statut": reponse.status_code, "url": url})
             raise ErreurService(
-                "Le service d'evaluation a rencontre une erreur. L'incident est journalise.",
+                "Le service d'évaluation a rencontré une erreur. L'incident est journalisé.",
                 f"{reponse.status_code} sur {url}: {reponse.text[:200]}",
                 statut=reponse.status_code,
             )

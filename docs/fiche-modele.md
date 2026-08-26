@@ -7,8 +7,8 @@ Document genere par `python -m concorde.model.entrainement`. Ne pas editer a la 
 | Champ | Valeur |
 |---|---|
 | Version | `0.1.0` |
-| Entraine le | 2026-08-25T21:46:19.498475+00:00 |
-| Commit Git | `2f3df47` |
+| Entraine le | 2026-08-26T20:06:33.446411+00:00 |
+| Commit Git | `7006e2c` |
 | Graine aleatoire | `20260824` |
 | Empreinte du jeu d'entrainement | `a987ffdce586ad1f9961e4123bf468fd...` |
 | Lignes d'entrainement / validation | 499 / 109 |
@@ -48,10 +48,10 @@ Le modele **ne predit ni prix ni valeur**. Il qualifie la fiabilite d'un rapproc
 
 ## Limites assumees
 
-- Le detecteur est non supervise : aucune etiquette « rapprochement faux » n'existe dans les données publiques.
+- Le détecteur est non supervisé : aucune étiquette « rapprochement faux » n'existe dans les données publiques.
 - Les règles de cohérence et les anomalies du jeu de démonstration relèvent des mêmes familles de contradictions : le rappel des règles est circulaire et n'est pas une mesure de performance.
-- La base DPE de l'ADEME n'est pas representative du parc francais ; aucune generalisation a l'echelle nationale n'est possible.
-- Le rapprochement s'appuie sur la parcelle cadastrale : il est ambigu en copropriete, ce que le système signale sans le résoudre.
+- La base DPE de l'ADEME n'est pas représentative du parc français ; aucune généralisation à l'échelle nationale n'est possible.
+- Le rapprochement s'appuie sur la parcelle cadastrale : il est ambigu en copropriété, ce que le système signale sans le résoudre.
 - Le modèle ne prédit ni prix ni valeur : il qualifie la fiabilité d'un rapprochement.
 
 ## Reproduction

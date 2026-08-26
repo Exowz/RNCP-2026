@@ -102,7 +102,7 @@ REGLES: tuple[RegleCoherence, ...] = (
         predicat=lambda v: _fini(v.get("dpe_posterieur_mutation")) >= 1.0,
         message=lambda v: (
             f"Le DPE a été établi après la mutation ({v.get('ecart_temporel_annees', 0):.1f} an(s) "
-            "plus tard) : il ne décrit pas l'etat du bien au moment de la vente."
+            "plus tard) : il ne décrit pas l'état du bien au moment de la vente."
         ),
     ),
     RegleCoherence(
@@ -111,7 +111,7 @@ REGLES: tuple[RegleCoherence, ...] = (
         gravite="mineur",
         seuil=f"écart temporel > {SEUIL_ANCIENNETE_DPE_ANNEES:.0f} ans",
         justification=(
-            "Duree de validité réglementaire d'un DPE. Au-delà, des travaux ont pu "
+            "Durée de validité réglementaire d'un DPE. Au-delà, des travaux ont pu "
             "modifier la performance du logement sans que le diagnostic le reflète."
         ),
         predicat=lambda v: (
@@ -120,12 +120,12 @@ REGLES: tuple[RegleCoherence, ...] = (
         ),
         message=lambda v: (
             f"Le DPE date de {v.get('ecart_temporel_annees', 0):.1f} ans avant la mutation, "
-            "au-dela de sa durée de validité réglementaire."
+            "au-delà de sa durée de validité réglementaire."
         ),
     ),
     RegleCoherence(
         identifiant="COH-05",
-        libelle="prix au m2 tres eloigne de la médiane communale",
+        libelle="prix au m² très éloigné de la médiane communale",
         gravite="mineur",
         seuil=f"écart relatif > +{SEUIL_PRIX_HAUT:.0%} ou < {SEUIL_PRIX_BAS:.0%}",
         justification=(

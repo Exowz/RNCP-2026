@@ -75,7 +75,7 @@ lu en profil « particulier » puis en profil « analyste credit ». C'est la
 demonstration centrale du produit — le calcul ne change pas, seule la
 restitution change.
 
-Depuis la page de resultat, un clic sur « Analyste credit » affichait
+Depuis la page de resultat, un clic sur « Analyste crédit » affichait
 `{"detail":"Method Not Allowed"}` en JSON brut. Impact : le parcours casse
 exactement a l'etape qui doit convaincre, et sur un ecran technique illisible
 pour un utilisateur.
@@ -86,7 +86,7 @@ Deterministe, en deux gestes :
 
 ```bash
 .venv/bin/uvicorn app.main:app --port 8000    # + API modele sur 8002
-# Ouvrir /, choisir un cas, « Evaluer », puis cliquer « Analyste credit »
+# Ouvrir /, choisir un cas, « Evaluer », puis cliquer « Analyste crédit »
 ```
 
 Ou directement : `curl -i "http://127.0.0.1:8000/evaluer?profil=analyste"` →

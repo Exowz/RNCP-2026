@@ -1,6 +1,6 @@
 # Tableau de conformité Secure MLOps
 
-Généré le 2026-08-25T21:46:33.157617+00:00. Ce fichier est produit par `python scripts/conformite.py`; ne pas l'éditer à la main.
+Généré le 2026-08-26T20:06:42.371080+00:00. Ce fichier est produit par `python scripts/conformite.py`; ne pas l'éditer à la main.
 
 **Verdict global : CONFORME**
 

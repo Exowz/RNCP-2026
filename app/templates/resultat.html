@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block titre %}Résultat de l'evaluation{% endblock %}
+{% block titre %}Résultat de l'évaluation{% endblock %}
 {% block contenu %}
 
 <nav aria-label="Fil d'Ariane" class="fil">
@@ -25,7 +25,7 @@
 
   <!-- Le sens n'est jamais porte par la couleur seule : chaque carte porte un
        symbole textuel et un libelle explicite. Critere RGAA 3.1. -->
-  <section class="cartes" aria-label="Synthese de l'evaluation">
+  <section class="cartes" aria-label="Synthèse de l'évaluation">
 
     <article class="carte carte--{{ 'ok' if verdict.score_coherence == 1 else 'alerte' }}">
       <h2>Cohérence</h2>
@@ -45,7 +45,7 @@
     </article>
 
     <article class="carte carte--{{ libelle_anomalie[1] }}">
-      <h2>Atypicite</h2>
+      <h2>Atypicité</h2>
       <p class="carte__valeur">
         <span aria-hidden="true">{{ '•' if verdict.score_anomalie is none else '◆' }}</span>
         {{ libelle_anomalie[0] }}
@@ -66,7 +66,7 @@
         {{ libelle_confiance[0] }}
       </p>
       <p class="carte__legende">
-        {{ verdict.confiance.reserves | length }} réserve(s) sur la qualite de l'information
+        {{ verdict.confiance.reserves | length }} réserve(s) sur la qualité de l'information
       </p>
     </article>
 
@@ -111,15 +111,15 @@
   {% endif %}
 
   <section aria-labelledby="titre-aleas">
-    <h2 id="titre-aleas">Exposition aux aleas naturels</h2>
+    <h2 id="titre-aleas">Exposition aux aléas naturels</h2>
     <p>
-      Niveau maximal releve sur la commune&nbsp;: <strong>{{ libelle_alea }}</strong>
-      ({{ verdict.exposition_aleas.nb_aleas_significatifs }} alea(s) de niveau
-      significatif). Source&nbsp;: Georisques (BRGM).
+      Niveau maximal relevé sur la commune&nbsp;: <strong>{{ libelle_alea }}</strong>
+      ({{ verdict.exposition_aleas.nb_aleas_significatifs }} aléa(s) de niveau
+      significatif). Source&nbsp;: Géorisques (BRGM).
     </p>
     <p class="aide">
       Cette exposition est communale, pas parcellaire&nbsp;: elle situe un contexte,
-      elle ne caracterise pas le bien.
+      elle ne caractérise pas le bien.
     </p>
   </section>
 
@@ -127,8 +127,8 @@
   <section aria-labelledby="titre-variables">
     <h2 id="titre-variables">Décomposition de l'écart</h2>
     <p class="aide">
-      Part de l'erreur de reconstruction portee par chaque variable&nbsp;: c'est la reponse
-      a &laquo;&nbsp;pourquoi cette ligne est-elle signalee&nbsp;?&nbsp;&raquo;.
+      Part de l'erreur de reconstruction portée par chaque variable&nbsp;: c'est la réponse
+      à &laquo;&nbsp;pourquoi cette ligne est-elle signalée&nbsp;?&nbsp;&raquo;.
     </p>
     <table>
       <caption>Variables contribuant le plus a l'atypicité</caption>
@@ -159,5 +159,5 @@
 
 </div>
 
-<p><a class="bouton bouton--secondaire" href="/?profil={{ profil }}">Evaluer un autre rapprochement</a></p>
+<p><a class="bouton bouton--secondaire" href="/?profil={{ profil }}">Évaluer un autre rapprochement</a></p>
 {% endblock %}

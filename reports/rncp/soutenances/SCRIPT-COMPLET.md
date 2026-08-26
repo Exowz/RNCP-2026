@@ -622,7 +622,7 @@ Il fallait que la porte prouve le présent.
 
 ## 31. DÉMONSTRATION — le modèle en service
 
-`Épreuve E3` · 📷 **capture : `08-web-resultat-echelles-expliquees.jpg`**
+`Épreuve E3` · 📷 **capture : `08-web-resultat-trois-axes-jamais-fusionnes.jpg`**
 
 Je passe à la démonstration de l'application. Je vais montrer le parcours d'un particulier, la
 bascule vers la lecture analyste, l'accessibilité au clavier, et enfin le comportement quand le
@@ -942,7 +942,7 @@ est calculé, pas rédigé.
 
 ## 44. DÉMONSTRATION — l'application
 
-`Épreuve E4` · 📷 **capture : `07-web-accueil-le-pourquoi-et-glossaire.jpg`**
+`Épreuve E4` · 📷 **capture : `07-web-accueil-glossaire-et-cas-reels.jpg`**
 
 Je passe à la démonstration de l'application. Je vais montrer le parcours d'un particulier, la
 bascule vers la lecture analyste, l'accessibilité au clavier, et enfin le comportement quand le
