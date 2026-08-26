@@ -289,6 +289,41 @@ curl http://127.0.0.1:1234/v1/models         # vérification du modèle exact
 
 ---
 
+## Slide 8 bis — C8 : le service est surveillé, pas seulement branché · 1 min 30
+
+**Sur la slide**
+> Avant **tout** appel : `ClientLMStudio.verifier_service()` exige **le modèle exact**,
+> pas seulement un serveur qui répond.
+>
+> Écrit à chaque vérification :
+> — un événement JSON Lines `service_ia_verifie`
+> — `monitoring/model/metriques_lm_studio.json` : appels · erreurs · latence · **taux de repli**
+>
+> Si le serveur ou le modèle manque → **erreur explicite**, jamais un appel silencieux vers le vide.
+>
+> **Ce qui est monitoré est ce qu'on peut défendre.** Un service dont on ne mesure rien ne se
+> distingue pas d'un service qui ne marche pas.
+
+**Script**
+> Dernier volet de C8 : le monitorage du service, parce que l'installer ne suffit pas.
+>
+> Avant tout appel, un contrôle vérifie non pas qu'un serveur répond, mais que **le modèle exact
+> attendu** est exposé. C'est une distinction qui compte : LM Studio peut très bien tourner avec un
+> autre modèle chargé, et mes consignes sont calibrées pour celui-ci. Un serveur qui répond n'est
+> pas une garantie.
+>
+> Chaque vérification écrit un événement dans les journaux structurés, et un fichier de métriques
+> qui accumule les appels, les erreurs, la latence et le taux de repli.
+>
+> Ce taux de repli est l'indicateur que je regarde. Il ne cache pas la fragilité du modèle, il la
+> chiffre. Et c'est ce qui me permet de dire aujourd'hui « deux réponses acceptées sur trois en
+> mesure à chaud » plutôt que « ça marche généralement ».
+>
+> Enfin, en cas d'absence du serveur ou du modèle, l'erreur est explicite et nommée. Il n'y a jamais
+> d'appel silencieux vers le vide, ni de résultat vaguement dégradé sans que personne ne le sache.
+
+---
+
 ## Slide 9 — Récapitulatif E2 · 45 s
 
 **Sur la slide**

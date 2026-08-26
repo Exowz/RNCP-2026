@@ -5,6 +5,11 @@
 Bandeau : `Compétences prouvées : Cx`. Rythme visé ~135 mots/minute.
 **C'est la dernière chose que le jury entendra avant ses questions.** Finir sur les incidents.
 
+> ⏱ **Marge serrée : 9,6 min mesurées sur 10.** Si tu es en retard en arrivant ici, **saute la
+> slide 5 bis** (« quand le poste ment »). Elle est excellente mais c'est la seule dont l'absence
+> ne coûte rien : les deux incidents détaillés restent, et la slide 4 les mentionne tous les cinq.
+> **Ne sacrifie jamais la slide 7** — c'est ta conclusion.
+
 ---
 
 ## Slide 1 — C20 : ce que je journalise, et ce que je refuse de journaliser · 1 min 30
@@ -169,6 +174,46 @@ class RgpdRedactionFilter(logging.Filter):
 > Correctif en deux temps : un gestionnaire GET qui partage la même fonction de rendu, et des liens
 > construits côté serveur. Six tests de non-régression, et je les ai vérifiés dans les deux sens :
 > j'ai retiré le correctif pour confirmer qu'ils échouaient bien, avec le 405 dans le journal.
+
+---
+
+## Slide 5 bis — C21 : quand le poste ment · 1 min 15
+
+**Sur la slide**
+> **`CI-2026-08-25`** — six tests **verts en local**, **rouges en CI**. Et pas avec l'erreur attendue.
+>
+> ```
+> assert 503 == 200          # pas 405 : ce n'était donc PAS le bug d'origine
+> ```
+>
+> **Diagnostic** : les tests instanciaient l'application, qui joint l'API modèle en HTTP sur le
+> port 8002. Cette API tourne en permanence sur le poste de développement — **jamais** sur un
+> runner GitHub. Les tests portaient une **dépendance d'environnement implicite**.
+>
+> **Correctif** : une doublure remplace le transport HTTP. Le **vrai moteur** est conservé ; seul
+> le saut réseau est retiré, car ces tests portent sur le routage, pas sur le transport.
+>
+> **Puis on vérifie que la doublure n'a pas neutralisé les tests** : correctif du 405 retiré → les
+> six échouent à nouveau.
+
+**Script**
+> Un troisième, très court, parce que sa leçon est différente des deux autres.
+>
+> Six tests que je venais d'écrire passaient sur ma machine et échouaient en intégration continue.
+> Le symptôme était instructif : ils échouaient en 503, pas en 405. Ce n'était donc pas le bug
+> d'origine qui réapparaissait.
+>
+> Le 503 est le code que mon application renvoie quand elle ne joint pas l'API modèle. Or mes tests
+> instanciaient l'application, qui appelle son amont en HTTP. Cette API tourne en permanence sur mon
+> poste, et jamais sur un runner GitHub. Mes tests exigeaient donc silencieusement un service
+> démarré — exactement le défaut qu'ils étaient censés empêcher chez les autres.
+>
+> J'ai remplacé le transport par une doublure, en conservant le vrai moteur. Et j'ai ensuite vérifié
+> que cette doublure ne les avait pas rendus aveugles, en retirant le correctif du 405 : les six
+> échouent bien.
+>
+> La règle que j'en tire : **un test qui réussit en local et échoue en CI ne signale pas un problème
+> de CI. Il signale que le poste fournissait silencieusement quelque chose.**
 
 ---
 

@@ -128,6 +128,44 @@ class AutoEncodeur(nn.Module):
 
 ---
 
+## Slide 4 bis — Les cinq règles, et d'où viennent leurs seuils · 1 min 45
+
+**Sur la slide**
+
+| ID | Règle | Gravité | Seuil | Fondement du seuil |
+|---|---|---|---|---|
+| `COH-01` | écart de surface DVF / DPE | **majeur** | > **20 %** | surface réelle bâtie ≠ surface habitable : un écart modéré est attendu |
+| `COH-02` | désaccord sur le type de logement | **majeur** | maison ≠ appartement | les deux sources qualifient le bien ; un désaccord n'est pas une nuance |
+| `COH-03` | DPE établi **après** la mutation | mineur | `date_DPE > date_vente` | le diagnostic ne décrit pas le bien tel qu'il a été vendu |
+| `COH-04` | DPE antérieur de plus de 10 ans | mineur | > **10 ans** | **durée de validité réglementaire** d'un DPE |
+| `COH-05` | prix au m² très éloigné de la médiane | mineur | **> +200 %** ou **< −70 %** | signale une vente non ordinaire : viager, démembrement, lot mal découpé |
+
+> Majeur : −0,40 sur la cohérence · mineur : −0,15. **Aucun seuil n'est arbitraire.**
+
+**Script**
+> Je veux détailler les règles, parce que « seuillé » ne veut rien dire si les seuils sortent de
+> nulle part.
+>
+> La première tolère 20 % d'écart entre la surface déclarée à la vente et la surface habitable du
+> diagnostic. Pourquoi 20 ? Parce que ces deux notions ne mesurent pas la même chose : les combles,
+> les sous-sols et les annexes comptent dans l'une et pas dans l'autre. Un écart modéré est donc
+> **attendu**. Au-delà du seuil, l'explication la plus probable n'est plus une convention de mesure,
+> c'est que les deux enregistrements décrivent deux logements différents.
+>
+> La quatrième est la plus facile à défendre : dix ans, c'est la durée de validité réglementaire
+> d'un DPE. Le seuil n'est pas un choix, c'est le droit.
+>
+> La cinquième est celle qui touche au prix, et je précise immédiatement : le prix n'est **pas
+> prédit**. Il sert uniquement de signal de cohérence. Un écart extrême à la médiane communale
+> signale généralement une mutation qui n'est pas une vente ordinaire — un viager, un démembrement,
+> une vente entre proches — plutôt qu'un bien exceptionnel.
+>
+> Enfin, les pondérations. Un motif majeur retire 0,40 à la cohérence, un mineur 0,15. Deux motifs
+> majeurs suffisent donc à faire tomber le score à 20 %. C'est délibéré : deux contradictions
+> sérieuses ne se compensent pas, elles s'additionnent.
+
+---
+
 ## Slide 5 — L'artefact gelé : la frontière entre les deux équipes · 1 min 15
 
 **Sur la slide**

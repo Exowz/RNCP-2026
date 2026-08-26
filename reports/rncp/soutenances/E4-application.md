@@ -121,6 +121,46 @@ Bandeau : `Compétences prouvées : Cx`. Rythme visé ~135 mots/minute.
 
 ---
 
+## Slide 4 bis — C16 : à quoi ressemble une décision tracée · 1 min 45
+
+**Sur la slide**
+> Chaque entrée du journal porte trois choses : **la décision · l'alternative écartée · la raison.**
+>
+> **J1-05 — Garde-fou hors ligne applicatif**
+> *Écarté* : « couper le Wi-Fi le jour J ».
+> *Raison* : couper le réseau ne **prouve** rien et ne révèle une dépendance cachée qu'en soutenance.
+>
+> **J1-07 — FastAPI + Jinja plutôt que Streamlit**
+> *Écarté* : Streamlit (DOM généré, accessibilité non maîtrisable) ; React seul (chaîne npm, risque de CDN).
+> *Raison* : C14 et C17 exigent des preuves d'accessibilité — repères ARIA, ordre de tabulation,
+> contrastes. Cela suppose de maîtriser le HTML produit.
+>
+> **25/08 — Le front Next.js lit les APIs depuis des Server Components**
+> *Écarté* : appel direct depuis le navigateur, ou clé `NEXT_PUBLIC_`.
+> *Raison* : la clé reste côté serveur, le navigateur ne parle jamais aux ports Python, aucun CORS.
+
+**Script**
+> Je veux montrer concrètement à quoi ressemble une décision tracée, parce que « journal de
+> décisions » peut vouloir dire n'importe quoi.
+>
+> Chaque entrée porte trois choses : la décision, l'alternative que j'ai écartée, et la raison. La
+> deuxième est la plus importante — c'est elle qui distingue un journal d'une liste de choses faites.
+>
+> Trois exemples. Le garde-fou hors ligne : j'ai écarté l'option évidente, couper le Wi-Fi le jour J,
+> parce qu'elle ne prouve rien et ne révèle une dépendance cachée qu'au pire moment.
+>
+> Le choix du framework applicatif : j'ai écarté Streamlit, qui aurait été bien plus rapide, parce
+> que son DOM est généré et que je n'aurais pas pu garantir l'accessibilité que C14 et C17 exigent.
+>
+> Et le plus récent : faire lire les APIs par des composants serveur plutôt que par le navigateur.
+> L'alternative — une clé publique dans le bundle — aurait fonctionné, et aurait fait fuiter le
+> secret.
+>
+> À chaque fois, ce que je consigne n'est pas ce que j'ai fait : c'est **pourquoi je n'ai pas fait
+> l'autre chose.** C'est ce qui rend une décision défendable six mois plus tard.
+
+---
+
 ## Slide 5 — C17 : accessibilité, mesurée et non déclarée · 1 min 45
 
 **Sur la slide**
