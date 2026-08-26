@@ -2,23 +2,34 @@
 
 **27 août 2026, 14h00–16h30, distanciel.** Présence 30 min avant, avec pièce d'identité et convocation.
 
-## Ordre de passage et liens Gamma
+## La présentation
 
-| Ordre | Épreuve | Durée | Script mesuré | Slides Gamma |
-|---|---|---:|---:|---|
-| 1 | **E1** — Données (C1–C5) | 15 min | 13,7 | https://gamma.app/docs/rzi5n6cuczl0hbl |
-| 2 | **E3** — Modèle et MLOps (C9–C13) · *démo* | 20 min | 17,9 | https://gamma.app/generations/SvS7eOLCN6cD68t2iy2V4 |
-| 3 | **E4** — Application (C14–C19) · *démo* | 20 min | 16,8 | https://gamma.app/docs/48qtur4yuu5oqfg |
-| 4 | **E2** — Service IA (C6–C8) | 15 min | 12,8 | https://gamma.app/docs/fwho0dhqwubdksc |
-| 5 | **E5** — Monitorage et incident (C20–C21) | 10 min | 9,6 | https://gamma.app/docs/x66pe71fi2w0apu |
+**Un seul document Gamma**, cinq sections annoncées — pas cinq documents.
+En distanciel, jongler entre plusieurs onglets pendant un partage d'écran est un risque inutile :
+un document unique donne au jury le même découpage, et ne te demande aucune manipulation.
+
+Thème **Petrol** — bleu de Prusse et écru, géométrique. La palette des plans cadastraux,
+et un fond clair sur lequel tes captures d'application sombre ressortent nettement.
+
+## Ordre de passage et minutage
+
+| Ordre | Épreuve | Compétences | Durée | Script mesuré |
+|---|---|---|---:|---:|
+| 1 | **E1** — Données | C1–C5 | 15 min | 13,7 |
+| 2 | **E3** — Modèle et MLOps · *démo* | C9–C13 | 20 min | 17,9 |
+| 3 | **E4** — Application · *démo* | C14–C19 | 20 min | 16,8 |
+| 4 | **E2** — Service IA | C6–C8 | 15 min | 12,8 |
+| 5 | **E5** — Monitorage et incident | C20–C21 | 10 min | 9,6 |
 
 **Total parole : 70,8 min sur 80.** La marge réelle est plus faible sur E3 et E4, dont les
 démonstrations consomment du temps d'interaction non compté ici.
 
 ## Comment utiliser ces fichiers
 
-Les fichiers `E*.md` contiennent **le script à lire**, slide par slide. Les Gammas ne contiennent
-que **le contenu des slides** : garde le markdown sur un second écran ou imprimé.
+Les fichiers `E*.md` contiennent **le script à lire**, slide par slide. La présentation Gamma ne
+porte que **le contenu à projeter** : garde le markdown sur un second écran ou imprimé.
+
+La slide doit se suffire à elle-même ; le script ajoute le détail et confirme la compréhension.
 
 ## Avant de te connecter
 
@@ -26,7 +37,7 @@ que **le contenu des slides** : garde le markdown sur un second écran ou imprim
 ./scripts/soutenance.sh start      # code de sortie 0 = tout est prêt
 ```
 
-Et pendant E4, après la démonstration où tu arrêtes volontairement l'API :
+Pendant E4, après la démonstration où tu arrêtes volontairement l'API :
 
 ```bash
 ./scripts/soutenance.sh api-model
@@ -34,13 +45,13 @@ Et pendant E4, après la démonstration où tu arrêtes volontairement l'API :
 
 ## Captures à insérer dans Gamma
 
-Elles sont dans `reports/captures/`. Les principales :
+Elles sont dans `reports/captures/`.
 
-| Capture | Où l'insérer |
+| Capture | Section |
 |---|---|
-| `12-web-accueil-atlas-schema-dvf-dpe.jpg` | E1 slide « Le terrain » |
-| `04-ci-github-verte.png` | E3 « chaîne de livraison », E4 « C18 » |
-| `08-web-resultat-echelles-expliquees.jpg` | E3 démonstration |
-| `09-web-degradation-api-indisponible.jpg` | E3 « C10 », E4 démonstration |
-| `04-surveillance-locale-seuils-alertes.jpg` | E5 « seuils et alertes » |
-| `03-resultat-analyste-decomposition-ecart.jpg` | E3 « vue analyste » |
+| `12-web-accueil-atlas-schema-dvf-dpe.jpg` | E1 — « Le terrain » |
+| `04-ci-github-verte.png` | E3 — « chaîne de livraison » · E4 — « C18 » |
+| `08-web-resultat-echelles-expliquees.jpg` | E3 — démonstration |
+| `09-web-degradation-api-indisponible.jpg` | E3 — « C10 » · E4 — démonstration |
+| `03-resultat-analyste-decomposition-ecart.jpg` | E3 — « vue analyste » |
+| `04-surveillance-locale-seuils-alertes.jpg` | E5 — « seuils et alertes » |
