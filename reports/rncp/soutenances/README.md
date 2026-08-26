@@ -1,59 +1,53 @@
-# Les cinq soutenances
+# Soutenance RNCP — Concorde
 
 **27 août 2026, 14h00–16h30, distanciel.** Présence 30 min avant, avec pièce d'identité et convocation.
 
 ## La présentation
 
-**→ https://gamma.app/docs/nb44m1c50r5e438**
+**→ https://gamma.app/docs/pxfmkp5lbgesf25**
 
-**Un seul document Gamma**, cinq sections annoncées — pas cinq documents.
+**Un seul document**, 64 slides, cinq sections annoncées. Thème **Stratos** — bleu nuit,
+indigo, fort contraste, typographie Geist.
+
 En distanciel, jongler entre plusieurs onglets pendant un partage d'écran est un risque inutile :
-un document unique donne au jury le même découpage, et ne te demande aucune manipulation.
+un document unique donne au jury le même découpage, sans aucune manipulation.
 
-Thème **Petrol** — bleu de Prusse et écru, géométrique. La palette des plans cadastraux,
-et un fond clair sur lequel tes captures d'application sombre ressortent nettement.
+## Le script
 
-## Ordre de passage et minutage
+**→ `SCRIPT-COMPLET.md`** — 64 slides, numérotation **alignée 1:1 sur le deck**.
 
-| Ordre | Épreuve | Compétences | Durée | Script mesuré |
-|---|---|---|---:|---:|
-| 1 | **E1** — Données | C1–C5 | 15 min | 13,7 |
-| 2 | **E3** — Modèle et MLOps · *démo* | C9–C13 | 20 min | 17,9 |
-| 3 | **E4** — Application · *démo* | C14–C19 | 20 min | 16,8 |
-| 4 | **E2** — Service IA | C6–C8 | 15 min | 12,8 |
-| 5 | **E5** — Monitorage et incident | C20–C21 | 10 min | 9,6 |
+Les fichiers `E1` à `E5` restent comme sources détaillées, mais **leur numérotation ne correspond
+plus** au deck consolidé. C'est `SCRIPT-COMPLET.md` qu'on lit le jour J, sur un second écran.
 
-**Total parole : 70,8 min sur 80.** La marge réelle est plus faible sur E3 et E4, dont les
-démonstrations consomment du temps d'interaction non compté ici.
+**~9 900 mots → ~73 minutes** à 135 mots/minute, sur 80 disponibles.
 
-## Comment utiliser ces fichiers
+| Section | Slides | Compétences | Durée cible |
+|---|---|---|---:|
+| Ouverture | 1 → 6 | cadrage | — |
+| **Données** | 7 → 18 | C1–C5 | 15 min |
+| **Modèle et MLOps** | 19 → 31 | C9–C13 · *démo* | 20 min |
+| **Application** | 32 → 44 | C14–C19 · *démo* | 20 min |
+| **Service d'IA** | 45 → 54 | C6–C8 | 15 min |
+| **Exploitation** | 55 → 64 | C20–C21 | 10 min |
 
-Les fichiers `E*.md` contiennent **le script à lire**, slide par slide. La présentation Gamma ne
-porte que **le contenu à projeter** : garde le markdown sur un second écran ou imprimé.
+## Les captures à insérer
 
-La slide doit se suffire à elle-même ; le script ajoute le détail et confirme la compréhension.
+Sept slides portent un marqueur `📷 INSÉRER LA CAPTURE` avec le nom du fichier.
+Elles sont dans `reports/captures/`. Glisser-déposer, puis supprimer la ligne du marqueur.
 
-## Avant de te connecter
-
-```bash
-./scripts/soutenance.sh start      # code de sortie 0 = tout est prêt
-```
-
-Pendant E4, après la démonstration où tu arrêtes volontairement l'API :
-
-```bash
-./scripts/soutenance.sh api-model
-```
-
-## Captures à insérer dans Gamma
-
-Elles sont dans `reports/captures/`.
-
-| Capture | Section |
+| Slide | Capture |
 |---|---|
-| `12-web-accueil-atlas-schema-dvf-dpe.jpg` | E1 — « Le terrain » |
-| `04-ci-github-verte.png` | E3 — « chaîne de livraison » · E4 — « C18 » |
-| `08-web-resultat-echelles-expliquees.jpg` | E3 — démonstration |
-| `09-web-degradation-api-indisponible.jpg` | E3 — « C10 » · E4 — démonstration |
-| `03-resultat-analyste-decomposition-ecart.jpg` | E3 — « vue analyste » |
-| `04-surveillance-locale-seuils-alertes.jpg` | E5 — « seuils et alertes » |
+| 4 — Le terrain | `12-web-accueil-atlas-schema-dvf-dpe.jpg` |
+| 26 — C10 deux clients | `09-web-degradation-api-indisponible.jpg` |
+| 29 — C13 chaîne de livraison | `04-ci-github-verte.png` |
+| 31 — Démonstration modèle | `08-web-resultat-echelles-expliquees.jpg` |
+| 44 — Démonstration application | `07-web-accueil-le-pourquoi-et-glossaire.jpg` |
+| 58 — C20 seuils et alertes | `04-surveillance-locale-seuils-alertes.jpg` |
+| 60 — C21 l'incident 405 | `06-bascule-profil-corrigee.jpg` |
+
+## Le jour J
+
+```bash
+./scripts/soutenance.sh start        # avant de te connecter — code 0 = prêt
+./scripts/soutenance.sh api-model    # après la démo où tu arrêtes l'API
+```
