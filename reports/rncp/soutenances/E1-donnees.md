@@ -462,9 +462,7 @@ def communes(
 ## Aide-mémoire
 
 ```bash
-source scripts/spark-env.sh
-docker compose up -d                      # PostgreSQL « healthy »
-python -m concorde.collect                # doit afficher 6/6 sources
+./scripts/soutenance.sh start     # tout, avec verification. Code 0 = pret.
 ```
 
 **À montrer en direct si on te le demande**
