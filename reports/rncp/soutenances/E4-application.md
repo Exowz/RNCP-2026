@@ -345,7 +345,7 @@ with pytest.raises(OfflineViolation, match="Sortie reseau bloquee"):
 
 **Sur la slide** — capture `reports/captures/04-ci-github-verte.png`
 > Déclenchée à **chaque poussée**. 17 étapes, dont :
-> `pytest` (51 tests) · `ruff` · **`bandit`** (0 HIGH/MEDIUM) · **`pip-audit`** (0 vulnérabilité) · **porte de conformité** · `uv build`
+> `pytest` (53 tests) · `ruff` · **`bandit`** (0 HIGH/MEDIUM) · **`pip-audit`** (0 vulnérabilité) · **porte de conformité** · `uv build`
 >
 > **La sécurité n'est pas relue à la main : elle est vérifiée à chaque commit.**
 > `pip-audit` = OWASP **A06 — composants vulnérables et obsolètes**.

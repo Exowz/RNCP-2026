@@ -52,7 +52,7 @@ interprétation des étapes »* — le code est attendu **commenté**, pas déco
 
 | Indicateur | Valeur |
 |---|---|
-| Tests | **49** (48 hors marqueur `local_service`), couverture **86 %** |
+| Tests | **53** (48 hors marqueur `local_service`), couverture **86 %** |
 | Porte de conformité | **12 critères** sur 3 axes, exécutable et bloquante |
 | Incidents documentés | **5**, chacun vérifié dans les deux sens |
 | Sources collectées | **5 types** exigés, 6 collecteurs |
@@ -140,7 +140,7 @@ Six compétences sont vertes et prouvées. Ne pas toucher sans raison :
 | `src/concorde/**` | C1–C3, C11–C13 |
 | `.github/workflows/verify.yml` | C18 — CI verte |
 | `scripts/conformite.py` | livrable central du n°21 |
-| `tests/**` | C12 — 49 tests |
+| `tests/**` | C12 — 53 tests |
 
 ### Règles apprises à la dure
 
