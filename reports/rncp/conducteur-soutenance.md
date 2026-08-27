@@ -81,7 +81,7 @@ Compter **1,5 à 2 minutes par slide** : viser 45 à 55 slides. Douze slides ne 
     fiable ; un cas bizarre peut être bien documenté.
 26. **C9 — l'API** : auth, validation stricte, OpenAPI. Montrer un 401 et un 422.
 27. **C11 — dérive** (Evidently), latence, erreurs, seuils, alertes.
-28. **C12 — 53 tests, 86 % de couverture**, dont robustesse du modèle.
+28. **C12 — 54 tests, 86 % de couverture**, dont robustesse du modèle.
 29. **La métrique honnête : AUC 0,9095** pour l'auto-encodeur seul. Expliquer que le rappel des
     règles est **circulaire** et n'est pas présenté comme une performance.
 30. **C13 — la chaîne CI complète**, exécutée. → capture `04-ci-github-verte.png`

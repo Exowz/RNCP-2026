@@ -9,7 +9,7 @@ une commande de reproduction ou un résultat vérifiable.
 
 | Indicateur | Valeur |
 |---|---|
-| Tests automatisés | **53** (52 hors service local), couverture **86 %** |
+| Tests automatisés | **54** (53 hors service local), couverture **86 %** |
 | Types de sources collectées | **5** exigés, 6 collecteurs |
 | Rapprochements produits | **922** — 716 appariés, **206 non évaluables assumés** |
 | Pouvoir discriminant du modèle | **AUC 0,9095** (auto-encodeur seul) |
@@ -43,7 +43,7 @@ le test qui interdit la publication d'une adresse.
 | **C9** | 🟢 | `/predict` : authentification par rôle, validation Pydantic stricte (`extra="forbid"`), OpenAPI, trois sorties **jamais fusionnées**. | `api/model/`, `docs/api-modele.md` |
 | **C10** | 🟢 | **Deux clients indépendants** consomment la même API en HTTP : application Jinja (`:8000`) et front Next.js (`:3000`). Dégradation propre quand l'API tombe. | `app/`, `app/web/`, capture `09-web-degradation-api-indisponible.jpg` |
 | **C11** | 🟢 | Evidently (dérive), métriques de latence et d'erreur par route, seuils et alertes. | `scripts/monitor_model.py`, `monitoring/model/`, `docs/monitoring-modele.md` |
-| **C12** | 🟢 | **53 tests**, couverture **86 %** : formats, nettoyage, Spark, PostgreSQL, entraînement, rechargement d'artefact, endpoints, **robustesse du modèle**, accessibilité. | `pytest -m "not local_service"` |
+| **C12** | 🟢 | **54 tests**, couverture **86 %** : formats, nettoyage, Spark, PostgreSQL, entraînement, rechargement d'artefact, endpoints, **robustesse du modèle**, accessibilité. | `pytest -m "not local_service"` |
 | **C13** | 🟢 | Chaîne complète exécutée en CI : fixtures → PostgreSQL → collecte → nettoyage → **entraînement** → tests → sécurité → **porte de conformité** → build → artefact. | [run 32857959387](https://github.com/Exowz/RNCP-2026/actions/runs/32857959387), `docs/ci.md` |
 
 **À montrer** : les trois axes séparés sur un cas, la fiche de modèle avec ses **limites assumées**,

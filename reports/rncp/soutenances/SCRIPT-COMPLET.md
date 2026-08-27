@@ -560,7 +560,7 @@ automatiquement sur des données dérivées, c'est apprendre la dérive.
 
 `Épreuve E3`
 
-Cinquante-trois tests, 86 % de couverture. Ils couvrent six familles : les données, le modèle,
+Cinquante-quatre tests, 86 % de couverture. Ils couvrent six familles : les données, le modèle,
 la robustesse, l'API, l'application, et la non-régression sur incidents.
 
 Deux points de méthode. Le test du modèle ne se contente pas d'entraîner : il écrit un artefact
@@ -1448,7 +1448,7 @@ Je vous remercie, je suis à votre disposition pour vos questions.
 `Épreuve E5`
 
 Pour conclure : dix-neuf compétences prouvées, deux partiellement couvertes et assumées
-comme telles, aucune laissée de côté. Cinquante-trois tests, quatre-vingt-six pour cent de
+comme telles, aucune laissée de côté. Cinquante-quatre tests, quatre-vingt-six pour cent de
 couverture, douze critères de conformité bloquants et cinq incidents réels documentés.
 
 Les limites, je les redis parce qu'elles font partie du travail : les métriques de règles sont

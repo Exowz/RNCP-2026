@@ -63,17 +63,26 @@ def sha256_fichier(chemin: Path, bloc: int = 1 << 20) -> str:
     return digest.hexdigest()
 
 
-def enregistrer_manifeste(resultat: ResultatCollecte) -> None:
-    """Ajoute (ou remplace) l'entree du manifeste pour cette source."""
-    MANIFEST_PATH.parent.mkdir(parents=True, exist_ok=True)
+def enregistrer_manifeste(
+    resultat: ResultatCollecte, destination: Path | None = None
+) -> None:
+    """Ajoute (ou remplace) l'entree du manifeste pour cette source.
+
+    Le manifeste vit **a cote des donnees qu'il decrit**. Une collecte ecrite
+    dans un repertoire temporaire y inscrit donc son resultat, et non dans le
+    manifeste de `data/raw/` : sans cela, un test qui provoque volontairement
+    un echec de collecte laisse cet echec dans l'artefact de demonstration.
+    """
+    chemin = (destination or DATA_RAW) / "_manifest.json"
+    chemin.parent.mkdir(parents=True, exist_ok=True)
     entrees: dict[str, dict] = {}
-    if MANIFEST_PATH.exists():
+    if chemin.exists():
         try:
-            entrees = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+            entrees = json.loads(chemin.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             entrees = {}
     entrees[resultat.nom] = asdict(resultat)
-    MANIFEST_PATH.write_text(
+    chemin.write_text(
         json.dumps(entrees, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8"
     )
 
@@ -176,5 +185,5 @@ class Collecteur(ABC):
                        "erreur_type": type(exc).__name__},
                 exc_info=True,
             )
-        enregistrer_manifeste(resultat)
+        enregistrer_manifeste(resultat, self.destination)
         return resultat

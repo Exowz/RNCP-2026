@@ -297,7 +297,7 @@ model_config = ConfigDict(
 ## Slide 9 — C12 : les tests · 1 min 15
 
 **Sur la slide**
-> **53 tests · 86 % de couverture · `pytest -m "not local_service"`**
+> **54 tests · 86 % de couverture · `pytest -m "not local_service"`**
 >
 > | Famille | Ce qui est vérifié |
 > |---|---|
@@ -311,7 +311,7 @@ model_config = ConfigDict(
 > Un test rendu hermétique est **vérifié dans les deux sens** : on retire le correctif, il doit échouer.
 
 **Script**
-> Cinquante-trois tests, 86 % de couverture. Ils couvrent six familles : les données, le modèle,
+> Cinquante-quatre tests, 86 % de couverture. Ils couvrent six familles : les données, le modèle,
 > la robustesse, l'API, l'application, et la non-régression sur incidents.
 >
 > Deux points de méthode. Le test du modèle ne se contente pas d'entraîner : il écrit un artefact
@@ -463,13 +463,13 @@ model_config = ConfigDict(
 | **C9** | `/predict` : auth par rôle, validation stricte, OpenAPI, 3 axes séparés | `api/model/` |
 | **C10** | **Deux clients HTTP indépendants**, dégradation propre testée | `app/`, `app/web/` |
 | **C11** | Evidently, latence p50/p95, taux d'erreur, seuils et alertes | `monitoring/model/` |
-| **C12** | **53 tests, 86 %**, dont robustesse ; non-régression vérifiée dans les deux sens | `pytest` |
+| **C12** | **54 tests, 86 %**, dont robustesse ; non-régression vérifiée dans les deux sens | `pytest` |
 | **C13** | Chaîne CI complète exécutée + **porte de conformité bloquante** | run public + `scripts/conformite.py` |
 
 **Script**
 > Pour résumer : une API authentifiée qui expose trois axes séparés et refuse les entrées
 > douteuses ; deux clients indépendants qui la consomment vraiment ; un monitoring de dérive, de
-> latence et d'erreurs avec des seuils ; cinquante-trois tests dont la robustesse du modèle ; et
+> latence et d'erreurs avec des seuils ; cinquante-quatre tests dont la robustesse du modèle ; et
 > une chaîne de livraison qui s'exécute réellement et qui refuse de construire si un critère de
 > conformité échoue.
 >

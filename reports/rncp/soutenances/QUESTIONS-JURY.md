@@ -21,8 +21,8 @@ C'est la plus probable. D'autres candidats sont sur Vercel ou Render avec des UR
 > pas promise. Le déploiement, lui, est prouvé autrement : l'image Docker est construite et
 > la porte de conformité s'exécute avant la construction du paquet.
 
-### 2. « Vous n'avez que 53 tests. »
-> Cinquante-trois tests, 86 % de couverture — et surtout, chacun a été vérifié dans les deux
+### 2. « Vous n'avez que 54 tests. »
+> Cinquante-quatre tests, 86 % de couverture — et surtout, chacun a été vérifié dans les deux
 > sens : j'ai retiré le correctif et confirmé que le test échoue. Un test qui n'a jamais été
 > vu rouge ne prouve rien. J'ai justement eu deux cas de tests verts par accident
 > d'environnement, que cette discipline a permis de trouver.
