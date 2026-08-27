@@ -21,9 +21,30 @@ Les sept captures ci-dessous correspondent aux sept cartes repérées dans
 | 58 | `04-surveillance-locale-seuils-alertes.jpg` | Seuils d'alerte explicites et surveillance strictement locale | C20 |
 | 60 | `06-bascule-profil-corrigee.jpg` | La bascule de profil répond 200 : l'incident C21 est corrigé | C21 |
 
-## Captures de réserve
+## Captures additionnelles, et leur carte
 
-À montrer si le jury demande à approfondir un point.
+Placées en plus des sept ci-dessus. Le numéro renvoie à la carte du Gamma ; le titre
+permet de retrouver la carte dans l'éditeur, où l'on ajoute l'image par `+` puis *Image*.
+
+| Carte | Titre de la carte | Fichier | Pourquoi là |
+|---|---|---|---|
+| 6 | Ce que Concorde fait, et ne fait pas | `15-web-comment-ca-marche-ce-qui-est-compare.jpg` | L'interface écrit « le prix est un signal de cohérence, jamais une prédiction » |
+| 8 | La chaîne, avec ses volumes réels | `10-web-comment-ca-marche-chaine-et-volumes.jpg` | Affiche 1 743 → 922 → 716 → 206 |
+| 22 | La métrique honnête | `16-web-transparence-fiche-modele-et-limites.jpg` | La fiche assume la circularité du rappel des règles |
+| 23 | Les cinq règles, et d'où viennent leurs seuils | `11-web-transparence-regles-seuils-gravite.jpg` | COH-01 à COH-05 avec seuil et gravité, servis par l'API |
+| 24 | L'artefact gelé : tout ce qu'il faut pour rejouer | `14-web-resultat-decomposition-ecart-version-modele.jpg` | La version du modèle est servie avec le résultat |
+| 26 | C10 — Deux clients indépendants de la même API | `18-resultat-jinja-profil-analyste.jpg` (avec `09`) | Les deux clients, côte à côte |
+| 41 | C17 — Intégrer un service d'IA sans lui donner autorité | `13-web-resultat-elements-qui-fondent-la-conclusion.jpg` | L'explication déjà calculée que le LLM reformule |
+| 58 | C20 — Seuils, alertes, tableau de bord | `17-surveillance-metriques-par-route.jpg` (avec `04`) | Même page : les seuils en haut, les métriques en bas |
+
+## Capture gardée en réserve
+
+`19-jinja-degradation-evaluation-impossible.jpg` — **volontairement non placée.**
+À ouvrir si le jury demande « et si le modèle tombe ? » : elle montre que l'application
+de repli refuse de conclure exactement comme le front Next.
+
+## Détail des captures additionnelles
+
 
 | Fichier | Ce qu'elle apporte | Compétences |
 |---|---|---|

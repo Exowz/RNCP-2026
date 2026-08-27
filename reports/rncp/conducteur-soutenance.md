@@ -43,7 +43,7 @@ Compter **1,5 à 2 minutes par slide** : viser 45 à 55 slides. Douze slides ne 
 *Compétences prouvées : C15*
 
 6. Schéma global : 5 sources → nettoyage → rapprochement → modèle → 2 APIs → 2 clients.
-7. **Les volumes réels** : 1 735 lignes brutes → 922 rapprochements → 716 appariés →
+7. **Les volumes réels** : 1 743 lignes brutes → 922 rapprochements → 716 appariés →
    **206 non évaluables**. → capture `10-web-comment-ca-marche-volumes-reels.jpg`
 8. **La contrainte structurante : hors ligne.** Garde-fou au niveau socket, pas une promesse.
 9. Pile technique et **pourquoi** chaque brique. *(Ne pas citer ce qu'on n'utilise pas.)*

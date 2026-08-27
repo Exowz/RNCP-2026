@@ -51,3 +51,17 @@ Elles sont dans `reports/captures/`. Glisser-déposer, puis supprimer la ligne d
 ./scripts/soutenance.sh start        # avant de te connecter — code 0 = prêt
 ./scripts/soutenance.sh api-model    # après la démo où tu arrêtes l'API
 ```
+
+## Captures : quelles cartes, quels fichiers
+
+Le détail complet, avec la justification de chaque placement, est dans
+[`reports/captures/README.md`](../../captures/README.md).
+
+Gamma n'a pas conservé les marqueurs d'insertion à la génération : il n'y a pas
+d'emplacement préalable dans le deck. On ajoute une image en cliquant sur la carte,
+puis `+` → *Image* → *Upload*. Les cartes se retrouvent par leur titre.
+
+**Sept cartes prévues au script :** 4, 26, 29, 31, 44, 58, 60.
+**Huit cartes en plus :** 6, 8, 22, 23, 24, 26 (seconde image), 41, 58 (seconde image).
+**Une capture en réserve**, non placée : `19-jinja-degradation-evaluation-impossible.jpg`,
+pour la question « et si le modèle tombe ? ».

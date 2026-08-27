@@ -9,7 +9,7 @@ une commande de reproduction ou un résultat vérifiable.
 
 | Indicateur | Valeur |
 |---|---|
-| Tests automatisés | **54** (53 hors service local), couverture **86 %** |
+| Tests automatisés | **54**, couverture **86 %** — **52** et **85 %** dans la porte, qui écarte le service local |
 | Types de sources collectées | **5** exigés, 6 collecteurs |
 | Rapprochements produits | **922** — 716 appariés, **206 non évaluables assumés** |
 | Pouvoir discriminant du modèle | **AUC 0,9095** (auto-encodeur seul) |
@@ -102,6 +102,6 @@ docker compose up -d                 # PostgreSQL 17
 python scripts/make_sample_fixture.py
 python -m concorde.collect && python -m concorde.clean
 python -m concorde.model.entrainement
-pytest -m "not local_service"        # 48 tests
+pytest -m "not local_service"        # 52 tests
 python scripts/conformite.py         # porte : 12 critères, code de sortie 0
 ```

@@ -560,7 +560,7 @@ automatiquement sur des données dérivées, c'est apprendre la dérive.
 
 `Épreuve E3`
 
-Cinquante-quatre tests, 86 % de couverture. Ils couvrent six familles : les données, le modèle,
+Cinquante-quatre tests, 86 % de couverture — 85 % dans la porte de conformité, qui écarte les deux tests exigeant le service local. Ils couvrent six familles : les données, le modèle,
 la robustesse, l'API, l'application, et la non-régression sur incidents.
 
 Deux points de méthode. Le test du modèle ne se contente pas d'entraîner : il écrit un artefact

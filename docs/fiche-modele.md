@@ -7,8 +7,8 @@ Document genere par `python -m concorde.model.entrainement`. Ne pas editer a la 
 | Champ | Valeur |
 |---|---|
 | Version | `0.1.0` |
-| Entraine le | 2026-08-27T09:40:09.644487+00:00 |
-| Commit Git | `11634bf` |
+| Entraine le | 2026-08-27T10:59:36.797348+00:00 |
+| Commit Git | `ec3403b` |
 | Graine aleatoire | `20260824` |
 | Empreinte du jeu d'entrainement | `a987ffdce586ad1f9961e4123bf468fd...` |
 | Lignes d'entrainement / validation | 499 / 109 |
